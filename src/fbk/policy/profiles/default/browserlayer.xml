@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+    name="fbk.policy"
+    interface="fbk.policy.interfaces.IFbkPolicyLayer"
+  />
+</layers>
