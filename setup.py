@@ -41,10 +41,17 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'collective.contact.core',
+        'collective.contact.membrane',
+        'eea.facetednavigation',
+        'five.grok',
         'plone.api',
+        'plone.app.dexterity',
+        'plone.autoform',
         'setuptools',
         'z3c.jbot',
-        'plone.app.dexterity',
+        'plone.app.multilingual',
+        'plone.app.contenttypes',
     ],
     extras_require={
         'test': [
