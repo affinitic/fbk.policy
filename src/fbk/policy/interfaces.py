@@ -1,25 +1,15 @@
 # -*- coding: utf-8 -*-
-"""Module where all interfaces, events and exceptions live."""
+"""
+fbk.policy
+----------
 
-from fbk.policy import _
-from zope import schema
-from zope.interface import Interface
+Created by mpeeters
+:copyright: (c) 2015 by Affinitic SPRL
+:license: GPL, see LICENCE.txt for more details.
+"""
+
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
 class IFbkPolicyLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
-
-
-class ITask(Interface):
-
-    title = schema.TextLine(
-        title=_(u"Title"),
-        required=True,
-    )
-
-    description = schema.Text(
-        title=_(u"Description"),
-        required=False,
-    )
-
