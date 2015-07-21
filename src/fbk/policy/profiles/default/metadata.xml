@@ -3,5 +3,9 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-plone.app.dexterity:default</dependency>
+    <dependency>profile-plone.app.contenttypes:plone-content</dependency>
+    <dependency>profile-plone.app.multilingual:default</dependency>
+    <dependency>profile-collective.contact.core:default</dependency>
+    <dependency>profile-collective.contact.membrane:default</dependency>
   </dependencies>
 </metadata>
