@@ -7,9 +7,11 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include package="cpskin.menu" file="lite.zcml" />
   <include package="five.grok" />
   <include package="collective.contact.core" />
   <include package="collective.contact.membrane" />
+  <include package="fbk.theme" />
 
   <include package=".browser" />
   <include package=".content" />

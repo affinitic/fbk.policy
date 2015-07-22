@@ -52,6 +52,8 @@ setup(
         'z3c.jbot',
         'plone.app.multilingual',
         'plone.app.contenttypes',
+        'cpskin.menu',
+        'fbk.theme',
     ],
     extras_require={
         'test': [
