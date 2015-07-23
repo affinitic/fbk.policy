@@ -53,11 +53,12 @@ def create_base_content(portal):
     elements = [u'Kinésiologie', u'La Fédération', u'Congrès',
                 u'Kinésiologues FBK', u'Formations', u'Informations']
     for element in elements:
-        api.content.create(
-            type='Folder',
-            title=element,
-            container=fr_folder,
-        )
+        if element not in fr_folder:
+            api.content.create(
+                type='Folder',
+                title=element,
+                container=fr_folder,
+            )
 
 
 def cleanup_contenttypes():
