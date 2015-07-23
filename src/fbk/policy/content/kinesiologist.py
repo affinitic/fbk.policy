@@ -57,6 +57,21 @@ class IKinesiologist(IPerson):
 
     form.order_after(photo='member_type')
 
+    description_fr = schema.Text(
+        title=_(u'Description (FR)'),
+        required=False,
+    )
+
+    description_en = schema.Text(
+        title=_(u'Description (EN)'),
+        required=False,
+    )
+
+    description_nl = schema.Text(
+        title=_(u'Description (NL)'),
+        required=False,
+    )
+
 
 class Kinesiologist(Person):
     grok.implements(IKinesiologist)
