@@ -16,13 +16,16 @@ from dexterity.membrane.behavior.membraneuser import IMembraneUserObject
 from dexterity.membrane.behavior.membraneuser import IMembraneUserWorkflow
 from dexterity.membrane.behavior.membraneuser import MembraneUserWorkflow
 from five import grok
+from plone import api
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel.directives import fieldset
 from zope import schema
 from zope.interface import Interface
 from zope.interface import alsoProvides
+from zope.interface import invariant
 
 from fbk.policy import _
+from fbk.policy.exception import NotUniqueEmailAddress
 
 
 class IContactInfos(Interface):
@@ -54,6 +57,15 @@ class IContactInfos(Interface):
         title=_(u"Website"),
         required=False,
     )
+
+    @invariant
+    def validate_email_uniqueness(obj):
+        """Ensure that the email is unique for membrane users"""
+        email = obj._Data_data___.get('email')
+        if obj.__context__ and email == obj.__context__.email:
+            return True
+        if api.user.get(username=email) is not None:
+            raise NotUniqueEmailAddress(email)
 
 alsoProvides(IContactInfos, IFormFieldProvider)
 
