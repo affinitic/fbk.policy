@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="fbk.policy">
+<head>
+  <metal:block fill-slot="top_slot"
+               tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                           disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+</head>
+<body>
+
+<div metal:fill-slot="main">
+  <h1 tal:content="context/Title"></h1>
+
+  <div id="formation-centers" tal:condition="view/childs">
+    <ul>
+    <tal:while repeat="element view/childs">
+      <li>
+        <a tal:attributes="href element/getURL">
+          <span tal:replace="element/Title"></span>
+        </a>
+      </li>
+    </tal:while>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
