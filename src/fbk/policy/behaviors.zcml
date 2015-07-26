@@ -10,9 +10,15 @@
   <grok:grok package=".behaviors" />
 
   <plone:behavior
-    title="Contact informations"
-    description="Contact informations (phone number, email, ...)."
-    provides=".behaviors.IContactInfos"
+    title="Membrane Contact informations"
+    description="Membrane Contact informations (phone number, email, ...)."
+    provides=".behaviors.IMembraneContactInfos"
+    />
+
+  <plone:behavior
+    title="Center Contact informations"
+    description="Center Contact informations (phone number, email, ...)."
+    provides=".behaviors.ICenterContactInfos"
     />
 
   <plone:behavior

@@ -4,7 +4,10 @@
     xmlns:grok="http://namespaces.zope.org/grok"
     i18n_domain="collective.contact.membrane">
 
-  <grok:grok package=".kinesiologist" />
   <grok:grok package=".members" />
+  <grok:grok package=".kinesiologist" />
+
+  <grok:grok package=".centers" />
+  <grok:grok package=".formationcenter" />
 
 </configure>

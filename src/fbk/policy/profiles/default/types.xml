@@ -2,4 +2,6 @@
 <object name="portal_types" meta_type="Plone Types Tool">
   <object name="Members" meta_type="Dexterity FTI"/>
   <object name="Kinesiologist" meta_type="Dexterity FTI"/>
+  <object name="Centers" meta_type="Dexterity FTI"/>
+  <object name="FormationCenter" meta_type="Dexterity FTI"/>
 </object>

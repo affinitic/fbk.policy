@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<object name="Kinesiologist" meta_type="Dexterity FTI" i18n:domain="fbk.policy"
+<object name="FormationCenter" meta_type="Dexterity FTI" i18n:domain="fbk.policy"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Kinesiologist</property>
+  <property name="title" i18n:translate="">FormationCenter</property>
   <property name="description" i18n:translate=""></property>
   <property name="content_icon">person_icon.png</property>
-  <property name="factory">Kinesiologist</property>
-  <property name="add_view_expr">string:${folder_url}/++add++Kinesiologist</property>
+  <property name="factory">FormationCenter</property>
+  <property name="add_view_expr">string:${folder_url}/++add++FormationCenter</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">False</property>
@@ -18,14 +18,14 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">fbk.policy.content.kinesiologist.Kinesiologist</property>
+  <property name="klass">fbk.policy.content.formationcenter.FormationCenter</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
-    <element value="fbk.policy.behaviors.IMembraneContactInfos"/>
+    <element value="fbk.policy.behaviors.ICenterContactInfos"/>
     <element value="fbk.policy.behaviors.IFBKMembraneUser"/>
     <element value="dexterity.membrane.behavior.membranepassword.IProvidePasswords"/>
   </property>
-  <property name="schema_policy">kinesiologist_schema_policy</property>
+  <property name="schema_policy">formationcenter_schema_policy</property>
   <alias from="(Default)" to="(dynamic view)"/>
   <alias from="edit" to="@@edit"/>
   <alias from="sharing" to="@@sharing"/>

@@ -8,4 +8,9 @@
    <bound-workflow workflow_id="fbk_policy_user_workflow"/>
   </type>
  </bindings>
+ <bindings>
+  <type type_id="FormationCenter">
+   <bound-workflow workflow_id="fbk_policy_user_workflow"/>
+  </type>
+ </bindings>
 </object>
