@@ -25,4 +25,22 @@
     permission="zope2.View"
     />
 
+  <!-- Kinesiologist -->
+
+  <browser:page
+    name="view"
+    for="fbk.policy.content.kinesiologist.IKinesiologist"
+    class=".kinesiologist.KinesiologistView"
+    template="templates/kinesiologist.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="kinesiologist-fields"
+    for="fbk.policy.content.kinesiologist.IKinesiologist"
+    class=".kinesiologist.KinesiologistFieldsView"
+    template="templates/kinesiologist-fields.pt"
+    permission="zope2.View"
+    />
+
 </configure>
