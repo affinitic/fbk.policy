@@ -43,4 +43,22 @@
     permission="zope2.View"
     />
 
+  <!-- FormationCenter -->
+
+  <browser:page
+    name="view"
+    for="fbk.policy.content.formationcenter.IFormationCenter"
+    class=".formationcenter.FormationCenterView"
+    template="templates/formationcenter.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="formationcenter-fields"
+    for="fbk.policy.content.formationcenter.IFormationCenter"
+    class=".formationcenter.FormationCenterFieldsView"
+    template="templates/formationcenter-fields.pt"
+    permission="zope2.View"
+    />
+
 </configure>
