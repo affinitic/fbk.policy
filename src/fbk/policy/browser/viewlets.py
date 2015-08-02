@@ -8,6 +8,7 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from plone import api
 from plone.app.layout.viewlets import common
 
 
@@ -47,3 +48,22 @@ class ContentActionsViewlet(BaseTraversedViewlet, common.ContentActionsViewlet):
         if self.traversed:
             return ''
         return super(ContentActionsViewlet, self).render()
+
+
+class PersonalBarViewlet(common.PersonalBarViewlet):
+
+    def update(self):
+        super(PersonalBarViewlet, self).update()
+        current_user = api.user.get_current()
+        tool = api.portal.get_tool('membrane_tool')
+        self.membrane_object = tool.getUserObject(user_id=current_user.id)
+
+    @property
+    def is_membrane_user(self):
+        if self.membrane_object is not None:
+            return True
+        return False
+
+    @property
+    def membrane_user_link(self):
+        return self.membrane_object.absolute_url()

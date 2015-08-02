@@ -119,4 +119,13 @@
     permission="zope2.View"
     />
 
+  <browser:viewlet
+    name="plone.personal_bar"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class=".viewlets.PersonalBarViewlet"
+    template="templates/personal_bar.pt"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
 </configure>
