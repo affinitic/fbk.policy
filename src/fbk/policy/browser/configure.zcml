@@ -36,10 +36,25 @@
     />
 
   <browser:page
+    name="traverser-view"
+    for="fbk.policy.content.kinesiologist.IKinesiologist"
+    class=".kinesiologist.KinesiologistView"
+    template="templates/traverser-kinesiologist.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="kinesiologist-fields"
     for="fbk.policy.content.kinesiologist.IKinesiologist"
     class=".kinesiologist.KinesiologistFieldsView"
     template="templates/kinesiologist-fields.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="kinesiologist"
+    for="*"
+    class=".kinesiologist.KinesiologistTraverser"
     permission="zope2.View"
     />
 
@@ -54,10 +69,25 @@
     />
 
   <browser:page
+    name="traverser-view"
+    for="fbk.policy.content.formationcenter.IFormationCenter"
+    class=".formationcenter.FormationCenterView"
+    template="templates/traverser-formationcenter.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="formationcenter-fields"
     for="fbk.policy.content.formationcenter.IFormationCenter"
     class=".formationcenter.FormationCenterFieldsView"
     template="templates/formationcenter-fields.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="formationcenter"
+    for="*"
+    class=".formationcenter.FormationCenterTraverser"
     permission="zope2.View"
     />
 
