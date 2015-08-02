@@ -91,4 +91,32 @@
     permission="zope2.View"
     />
 
+  <!-- Viewlets -->
+
+  <browser:viewlet
+    name="plone.path_bar"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class=".viewlets.PathBarViewlet"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="plone.contentviews"
+    manager="plone.app.layout.viewlets.interfaces.IContentViews"
+    class=".viewlets.ContentViewsViewlet"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="plone.contentactions"
+    for="*"
+    view="plone.app.content.browser.interfaces.IFolderContentsView"
+    manager="plone.app.layout.viewlets.interfaces.IContentViews"
+    class=".viewlets.ContentActionsViewlet"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
 </configure>
