@@ -30,4 +30,10 @@
     for="dexterity.membrane.content.member.IEmail"
     />
 
+  <plone:behavior
+    title="Exclude from navigation (Default)"
+    description="Exclude an element from navigation by default"
+    provides=".behaviors.IDefaultExcludeFromNavigation"
+    />
+
 </configure>

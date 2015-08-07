@@ -17,6 +17,8 @@ from dexterity.membrane.behavior.membraneuser import IMembraneUserWorkflow
 from dexterity.membrane.behavior.membraneuser import MembraneUserWorkflow
 from five import grok
 from plone import api
+from plone.app.dexterity import MessageFactory as DX_MF
+from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel.directives import fieldset
 from zope import schema
@@ -201,3 +203,19 @@ class FBKMembraneUserWorkflow(grok.Adapter, MembraneUserWorkflow,
     grok.implements(IMembraneUserWorkflow)
 
     allowed_states = ('active', 'deactivated')
+
+
+class IDefaultExcludeFromNavigation(IExcludeFromNavigation):
+
+    exclude_from_nav = schema.Bool(
+        title=DX_MF(
+            u'label_exclude_from_nav',
+            default=u'Exclude from navigation'
+        ),
+        description=DX_MF(
+            u'help_exclude_from_nav',
+            default=u'If selected, this item will not appear in the ' +
+                    u'navigation tree'
+        ),
+        default=True
+    )
