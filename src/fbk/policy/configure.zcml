@@ -33,4 +33,19 @@
     handler=".setuphandlers.post_install">
   </genericsetup:importStep>
 
+  <genericsetup:registerProfile
+    name="extra"
+    title="fbk.policy (extra)"
+    directory="profiles/extra"
+    description="Installs the fbk.policy add-on extra."
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <genericsetup:importStep
+    name="fbk.policy.extra-postInstall"
+    title="fbk.policy extra post_install import step"
+    description="Post install import step from fbk.policy extra"
+    handler=".setuphandlers.setup_extra_contents">
+  </genericsetup:importStep>
+
 </configure>
