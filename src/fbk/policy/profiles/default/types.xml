@@ -4,4 +4,6 @@
   <object name="Kinesiologist" meta_type="Dexterity FTI"/>
   <object name="Centers" meta_type="Dexterity FTI"/>
   <object name="FormationCenter" meta_type="Dexterity FTI"/>
+  <object name="FormationCenterFolder" meta_type="Dexterity FTI"/>
+  <object name="FormationCenterListing" meta_type="Dexterity FTI"/>
 </object>
