@@ -6,6 +6,8 @@
 
   <grok:grok package=".members" />
   <grok:grok package=".kinesiologist" />
+  <grok:grok package=".kinesiologistfolder" />
+  <grok:grok package=".kinesiologistlisting" />
 
   <grok:grok package=".centers" />
   <grok:grok package=".formationcenter" />
