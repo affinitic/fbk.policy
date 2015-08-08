@@ -11,6 +11,7 @@ Created by mpeeters
 from plone.dexterity.browser.view import DefaultView
 
 from fbk.policy.browser.base import BaseMembraneFolder
+from fbk.policy.browser.base import DefaultFieldsView
 from fbk.policy.browser.base import TraverserEditView
 
 
@@ -22,8 +23,13 @@ class FormationCenterTraverserEditView(TraverserEditView):
     pass
 
 
-class FormationCenterFieldsView(DefaultView):
-    pass
+class FormationCenterFieldsView(DefaultFieldsView):
+    excluded_fields = (
+        'name',
+        'description_fr',
+        'description_en',
+        'description_nl',
+    )
 
 
 class FormationCenterFolderView(BaseMembraneFolder):

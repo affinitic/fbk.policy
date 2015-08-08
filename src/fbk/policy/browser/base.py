@@ -86,7 +86,7 @@ class BaseMembraneFolder(DefaultView):
             raise NotFound(self.notfound_error.format(self.contenttype,
                                                       self.section))
         obj = folder.get(self.id)
-        obj.description = getattr(
+        obj.translated_description = getattr(
             obj,
             'description_{0}'.format(self.context.language),
             'description_fr',
@@ -100,3 +100,19 @@ class BaseMembraneFolder(DefaultView):
             request=self.request,
         )
         return view()
+
+
+class DefaultFieldsView(DefaultView):
+    excluded_fields = []
+
+    @property
+    def description(self):
+        if hasattr(self.context, 'translated_description'):
+            return self.context.translated_description
+        return self.context.description_fr
+
+    def updateWidgets(self):
+        super(DefaultFieldsView, self).updateWidgets()
+        for field in self.excluded_fields:
+            if field in self.widgets:
+                del self.widgets[field]
