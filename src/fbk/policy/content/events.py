@@ -13,14 +13,15 @@ from plone import api
 from plone.app.multilingual.interfaces import ITranslationManager
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectRemovedEvent
+from Products.DCWorkflow.interfaces import IAfterTransitionEvent
 
-from fbk.policy.content.kinesiologist import IKinesiologist
 from fbk.policy.content.formationcenter import IFormationCenter
+from fbk.policy.content.kinesiologist import IKinesiologist
 
 
 @grok.subscribe(IObjectAddedEvent)
 def membranetype_added(event):
-    contenttype = check_contenttype(event)
+    contenttype = check_membrane_contenttype(event)
 
     if contenttype is not None:
         create_membrane_languages_folders(
@@ -32,7 +33,7 @@ def membranetype_added(event):
 
 @grok.subscribe(IObjectRemovedEvent)
 def membranetype_removed(event):
-    contenttype = check_contenttype(event)
+    contenttype = check_membrane_contenttype(event)
 
     if contenttype is not None:
         remove_membrane_languages_folders(
@@ -41,7 +42,19 @@ def membranetype_removed(event):
         )
 
 
-def check_contenttype(event):
+@grok.subscribe(IAfterTransitionEvent)
+def membranetype_change_state(event):
+    contenttype = check_membrane_contenttype(event)
+
+    if contenttype is not None:
+        change_state(
+            id=event.object.id,
+            type=contenttype,
+            transition=event.status.get('action')
+        )
+
+
+def check_membrane_contenttype(event):
     if IFormationCenter.providedBy(event.object):
         return 'FormationCenterFolder'
     if IKinesiologist.providedBy(event.object):
@@ -83,3 +96,10 @@ def get_languages():
     """Return the active languages"""
     portal_languages = api.portal.get_tool('portal_languages')
     return portal_languages.supported_langs
+
+
+def change_state(id, type, transition):
+    brains = api.content.find(portal_type=type, id=id)
+    for brain in brains:
+        obj = brain.getObject()
+        api.content.transition(obj=obj, transition=transition)
