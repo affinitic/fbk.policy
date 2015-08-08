@@ -36,6 +36,8 @@ def membranetype_added(event):
 @grok.subscribe(IObjectRemovedEvent)
 def membranetype_removed(event):
     contenttype = check_membrane_contenttype(event)
+    if not contenttype:
+        contenttype = check_membrane_folder_contenttypes(event)
 
     if contenttype is not None:
         remove_membrane_languages_folders(
@@ -88,7 +90,9 @@ def create_membrane_languages_folders(**kwargs):
 
 def remove_membrane_languages_folders(id, type):
     brains = api.content.find(portal_type=type, id=id)
-    api.content.delete(objects=[b.getObject() for b in brains])
+    objects = [b.getObject() for b in brains]
+    if objects:
+        api.content.delete(objects=objects)
 
 
 def get_container(type, language):
