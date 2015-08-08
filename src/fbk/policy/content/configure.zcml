@@ -16,6 +16,8 @@
 
   <grok:grok package=".address" />
 
+  <grok:grok package=".formation" />
+
   <grok:grok package=".events" />
 
 </configure>

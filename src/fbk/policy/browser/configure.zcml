@@ -139,6 +139,16 @@
     permission="zope2.View"
     />
 
+  <!-- Formation -->
+
+  <browser:page
+    name="customview"
+    for="fbk.policy.content.formation.IFormation"
+    class="plone.dexterity.browser.view.DefaultView"
+    template="templates/formationcustom.pt"
+    permission="zope2.View"
+    />
+
   <!-- Viewlets -->
 
   <browser:viewlet
