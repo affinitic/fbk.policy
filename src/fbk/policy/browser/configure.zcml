@@ -44,6 +44,14 @@
     />
 
   <browser:page
+    name="traverser-edit"
+    for="fbk.policy.content.kinesiologist.IKinesiologist"
+    class=".kinesiologist.KinesiologistTraverserEditView"
+    template="templates/traverser-edit.pt"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
     name="kinesiologist-fields"
     for="fbk.policy.content.kinesiologist.IKinesiologist"
     class=".kinesiologist.KinesiologistFieldsView"
@@ -51,11 +59,22 @@
     permission="zope2.View"
     />
 
+  <!-- Kinesiologist Folder -->
+
   <browser:page
-    name="kinesiologist"
-    for="*"
-    class=".kinesiologist.KinesiologistTraverser"
+    name="view"
+    for="fbk.policy.content.kinesiologistfolder.IKinesiologistFolder"
+    class=".kinesiologist.KinesiologistFolderView"
+    template="templates/membraneuserfolder.pt"
     permission="zope2.View"
+    />
+
+  <browser:page
+    name="edit"
+    for="fbk.policy.content.kinesiologistfolder.IKinesiologistFolder"
+    class=".kinesiologist.KinesiologistFolderEditView"
+    template="templates/membraneuserfolder.pt"
+    permission="cmf.ModifyPortalContent"
     />
 
   <!-- FormationCenter -->
@@ -77,6 +96,14 @@
     />
 
   <browser:page
+    name="traverser-edit"
+    for="fbk.policy.content.formationcenter.IFormationCenter"
+    class=".formationcenter.FormationCenterTraverserEditView"
+    template="templates/traverser-edit.pt"
+    permission="cmf.ModifyPortalContent"
+    />
+
+  <browser:page
     name="formationcenter-fields"
     for="fbk.policy.content.formationcenter.IFormationCenter"
     class=".formationcenter.FormationCenterFieldsView"
@@ -84,11 +111,22 @@
     permission="zope2.View"
     />
 
+  <!-- FormationCenter Folder -->
+
   <browser:page
-    name="formationcenter"
-    for="*"
-    class=".formationcenter.FormationCenterTraverser"
+    name="view"
+    for="fbk.policy.content.formationcenterfolder.IFormationCenterFolder"
+    class=".formationcenter.FormationCenterFolderView"
+    template="templates/membraneuserfolder.pt"
     permission="zope2.View"
+    />
+
+  <browser:page
+    name="edit"
+    for="fbk.policy.content.formationcenterfolder.IFormationCenterFolder"
+    class=".formationcenter.FormationCenterFolderEditView"
+    template="templates/membraneuserfolder.pt"
+    permission="cmf.ModifyPortalContent"
     />
 
   <!-- Viewlets -->

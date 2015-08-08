@@ -9,14 +9,16 @@ Created by mpeeters
 """
 
 from plone.dexterity.browser.view import DefaultView
-from zope.publisher.interfaces.browser import IPublishTraverse
-from zope.interface import implementer
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from fbk.policy.browser.base import BaseTraverser
+from fbk.policy.browser.base import BaseMembraneFolder
+from fbk.policy.browser.base import TraverserEditView
 
 
 class KinesiologistView(DefaultView):
+    pass
+
+
+class KinesiologistTraverserEditView(TraverserEditView):
     pass
 
 
@@ -24,9 +26,13 @@ class KinesiologistFieldsView(DefaultView):
     pass
 
 
-@implementer(IPublishTraverse)
-class KinesiologistTraverser(BaseTraverser):
-    """Custom Traverser"""
-    template = ViewPageTemplateFile('templates/kinesiologist-traversed.pt')
+class KinesiologistFolderView(BaseMembraneFolder):
     foldername = 'members'
     contenttype = 'kinesiologist'
+    viewname = 'traverser-view'
+
+
+class KinesiologistFolderEditView(BaseMembraneFolder):
+    foldername = 'members'
+    contenttype = 'kinesiologist'
+    viewname = 'traverser-edit'

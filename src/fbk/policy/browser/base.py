@@ -8,9 +8,13 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from Products.CMFPlone.utils import getToolByName
 from plone import api
+from plone.dexterity.browser.edit import DefaultEditForm
 from plone.dexterity.browser.view import DefaultView
-from Products.Five.browser import BrowserView
+from plone.dexterity.interfaces import IDexterityEditForm
+from plone.z3cform import layout
+from zope.interface import classImplements
 from zope.publisher.interfaces import NotFound
 
 
@@ -33,10 +37,37 @@ class ContainerView(DefaultView):
         return {'query': current_path, 'depth': self.search_depth}
 
 
-class BaseTraverser(BrowserView):
-    """Base class for formation center and kinesiologist traversers"""
+class TraverserEditForm(DefaultEditForm):
+
+    def nextURL(self):
+        view_url = self.request.get('PARENTS')[0].absolute_url()
+        portal_properties = getToolByName(self, 'portal_properties', None)
+        if portal_properties is not None:
+            site_properties = getattr(
+                portal_properties,
+                'site_properties',
+                None
+            )
+            portal_type = self.portal_type
+            if site_properties is not None and portal_type is not None:
+                use_view_action = site_properties.getProperty(
+                    'typesUseViewActionInListings',
+                    ()
+                )
+                if portal_type in use_view_action:
+                    view_url = view_url + '/view'
+        return view_url
+
+
+TraverserEditView = layout.wrap_form(TraverserEditForm)
+classImplements(TraverserEditView, IDexterityEditForm)
+
+
+class BaseMembraneFolder(DefaultView):
+    """Base class for membrane folder"""
     foldername = None
     contenttype = None
+    viewname = None
     notfound_error = "the {0} '{1}' does not exist"
 
     @property
@@ -44,38 +75,27 @@ class BaseTraverser(BrowserView):
         portal = api.portal.get()
         return portal.get(self.foldername)
 
-    def __init__(self, context, request):
-        super(BaseTraverser, self).__init__(context, request)
-        if len(request.path) == 2:
-            [self.section, profileid] = request.path
-        elif len(self.request.path) == 1:
-            self.section = request.path[0]
+    @property
+    def id(self):
+        return self.context.id
 
-    def __call__(self):
+    @property
+    def obj(self):
         folder = self.base_folder
-        if self.section not in folder:
+        if self.id not in folder:
             raise NotFound(self.notfound_error.format(self.contenttype,
                                                       self.section))
-        obj = folder.get(self.section)
+        obj = folder.get(self.id)
         obj.description = getattr(
             obj,
             'description_{0}'.format(self.context.language),
             'description_fr',
         )
-        self.obj = obj
-        self.request.set('traversed', True)
-        self.request.set('traversed_title', obj.Title())
-        return self.template()
+        return obj
 
-    def publishTraverse(self, request, name):
-        # stop traversing, we have arrived
-        request['TraversalRequestNameStack'] = []
-        # return self so the publisher calls this view
-        return self
-
-    def traverse_render(self):
+    def traverser_render(self):
         view = api.content.get_view(
-            name='traverser-view',
+            name=self.viewname,
             context=self.obj.aq_inner,
             request=self.request,
         )
