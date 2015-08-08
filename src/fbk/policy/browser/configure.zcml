@@ -129,6 +129,16 @@
     permission="cmf.ModifyPortalContent"
     />
 
+  <!-- Address -->
+
+  <browser:page
+    name="customview"
+    for="fbk.policy.content.address.IAddress"
+    class=".address.AddressCustomView"
+    template="templates/address.pt"
+    permission="zope2.View"
+    />
+
   <!-- Viewlets -->
 
   <browser:viewlet

@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="fbk.policy" tal:omit-tag="">
+
+  <div class="address">
+    <h3 tal:content="view/context/Title"></h3>
+
+    <tal:widgets repeat="widget view/widgets/values">
+        <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+    </tal:widgets>
+  </div>
+
+</html>

@@ -8,4 +8,5 @@
   <object name="FormationCenter" meta_type="Dexterity FTI"/>
   <object name="FormationCenterFolder" meta_type="Dexterity FTI"/>
   <object name="FormationCenterListing" meta_type="Dexterity FTI"/>
+  <object name="Address" meta_type="Dexterity FTI"/>
 </object>
