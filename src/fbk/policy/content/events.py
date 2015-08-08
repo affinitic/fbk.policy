@@ -8,15 +8,18 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from Products.DCWorkflow.interfaces import IAfterTransitionEvent
 from five import grok
 from plone import api
 from plone.app.multilingual.interfaces import ITranslationManager
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+from zope.component import getUtility
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectRemovedEvent
-from Products.DCWorkflow.interfaces import IAfterTransitionEvent
 
 from fbk.policy.content.formationcenter import IFormationCenter
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
+from fbk.policy.content.formationevent import IFormationEvent
 from fbk.policy.content.kinesiologist import IKinesiologist
 from fbk.policy.content.kinesiologistfolder import IKinesiologistFolder
 
@@ -58,6 +61,18 @@ def membranetype_change_state(event):
             type=contenttype,
             transition=event.status.get('action')
         )
+
+
+@grok.subscribe(IObjectAddedEvent)
+def formation_event_added(event):
+    if IFormationEvent.providedBy(event.object):
+        obj = event.object
+        obj.name = '{0} {1}'.format(
+            obj.name,
+            obj.start_date.strftime('%d-%m-%Y'),
+        )
+        normalizer = getUtility(IIDNormalizer)
+        api.content.rename(obj=obj, new_id=normalizer.normalize(obj.name))
 
 
 def check_membrane_contenttype(event):
