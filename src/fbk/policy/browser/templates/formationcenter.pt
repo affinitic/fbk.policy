@@ -9,7 +9,7 @@
   <div id="formationcenter" metal:fill-slot="main">
     <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" tal:condition="not:ajax_load" />
 
-    <div tal:replace="structure context/@@basefields" />
+    <h1 class="fn" tal:content="view/context/Title"></h1>
     <div tal:replace="structure context/@@formationcenter-fields" />
 
   </div>
