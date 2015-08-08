@@ -16,7 +16,9 @@ from zope.lifecycleevent.interfaces import IObjectRemovedEvent
 from Products.DCWorkflow.interfaces import IAfterTransitionEvent
 
 from fbk.policy.content.formationcenter import IFormationCenter
+from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 from fbk.policy.content.kinesiologist import IKinesiologist
+from fbk.policy.content.kinesiologistfolder import IKinesiologistFolder
 
 
 @grok.subscribe(IObjectAddedEvent)
@@ -45,6 +47,8 @@ def membranetype_removed(event):
 @grok.subscribe(IAfterTransitionEvent)
 def membranetype_change_state(event):
     contenttype = check_membrane_contenttype(event)
+    if not contenttype:
+        contenttype = check_membrane_folder_contenttypes(event)
 
     if contenttype is not None:
         change_state(
@@ -59,6 +63,13 @@ def check_membrane_contenttype(event):
         return 'FormationCenterFolder'
     if IKinesiologist.providedBy(event.object):
         return 'KinesiologistFolder'
+
+
+def check_membrane_folder_contenttypes(event):
+    if IFormationCenterFolder.providedBy(event.object):
+        return 'FormationCenter'
+    if IKinesiologistFolder.providedBy(event.object):
+        return 'Kinesiologist'
 
 
 def create_membrane_languages_folders(**kwargs):
@@ -102,4 +113,14 @@ def change_state(id, type, transition):
     brains = api.content.find(portal_type=type, id=id)
     for brain in brains:
         obj = brain.getObject()
-        api.content.transition(obj=obj, transition=transition)
+        if is_valid_transition(obj, transition) is True:
+            api.content.transition(obj=obj, transition=transition)
+
+
+def is_valid_transition(obj, transition):
+    p_workflow = api.portal.get_tool('portal_workflow')
+    chain = p_workflow.getChainFor(obj)[0]
+    workflow = p_workflow.get(chain)
+    current_state = api.content.get_state(obj)
+    current_transitions = workflow.transitions.states.get(current_state)
+    return transition in current_transitions.transitions
