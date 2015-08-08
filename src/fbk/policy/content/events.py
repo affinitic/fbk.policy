@@ -19,41 +19,33 @@ from fbk.policy.content.formationcenter import IFormationCenter
 
 
 @grok.subscribe(IObjectAddedEvent)
-def formationcenter_added(event):
-    if IFormationCenter.providedBy(event.object):
+def membranetype_added(event):
+    contenttype = check_contenttype(event)
+
+    if contenttype is not None:
         create_membrane_languages_folders(
             id=event.object.id,
             title=event.object.Title(),
-            type='FormationCenterFolder',
+            type=contenttype,
         )
 
 
 @grok.subscribe(IObjectRemovedEvent)
-def formationcenter_removed(event):
+def membranetype_removed(event):
+    contenttype = check_contenttype(event)
+
+    if contenttype is not None:
+        remove_membrane_languages_folders(
+            id=event.object.id,
+            type=contenttype,
+        )
+
+
+def check_contenttype(event):
     if IFormationCenter.providedBy(event.object):
-        remove_membrane_languages_folders(
-            id=event.object.id,
-            type='FormationCenterFolder',
-        )
-
-
-@grok.subscribe(IObjectAddedEvent)
-def kinesiologist_added(event):
+        return 'FormationCenterFolder'
     if IKinesiologist.providedBy(event.object):
-        create_membrane_languages_folders(
-            id=event.object.id,
-            title=event.object.Title(),
-            type='KinesiologistFolder',
-        )
-
-
-@grok.subscribe(IObjectRemovedEvent)
-def kinesiologist_removed(event):
-    if IKinesiologist.providedBy(event.object):
-        remove_membrane_languages_folders(
-            id=event.object.id,
-            type='KinesiologistFolder',
-        )
+        return 'KinesiologistFolder'
 
 
 def create_membrane_languages_folders(**kwargs):
