@@ -8,6 +8,7 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from datetime import datetime
 from five import grok
 from plone.app.contenttypes.interfaces import IEvent
 from plone.dexterity.content import Item
@@ -23,11 +24,17 @@ class IFormationEvent(IEvent):
     start_date = schema.Datetime(
         title=_(u'Start date'),
         required=True,
+        min=datetime.now().replace(hour=0, minute=0, second=0),
+        max=datetime(2030, 12, 31),
+        default=datetime.now().replace(hour=0, minute=0, second=0),
     )
 
     end_date = schema.Datetime(
         title=_(u'End date'),
         required=True,
+        min=datetime.now().replace(hour=0, minute=0, second=0),
+        max=datetime(2030, 12, 31),
+        default=datetime.now().replace(hour=0, minute=0, second=0),
     )
 
     price = schema.Int(
