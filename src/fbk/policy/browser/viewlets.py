@@ -54,7 +54,7 @@ class FormationViewlet(BaseViewlet):
 
     def update(self):
         if self.can_view() is True:
-            self.items = self.query('Formation')
+            self.items = self.query('Formation', review_state='active')
 
 
 class FormationFBKViewlet(BaseViewlet):
@@ -98,7 +98,10 @@ class FormationEventViewlet(BaseViewlet):
             'FormationEvent',
             depth=2,
             start={'query': (start, end), 'range': 'min:max'},
-            sort_on='start')
+            sort_on='start',
+        )
+        self.items = [i for i in self.items
+                      if api.content.get_state(i.aq_parent) == 'active']
 
 
 class PersonalBarViewlet(common.PersonalBarViewlet):
