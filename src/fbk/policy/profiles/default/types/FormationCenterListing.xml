@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <object name="FormationCenterListing" meta_type="Dexterity FTI" i18n:domain="fbk.policy"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Formation Center Listing</property>
+  <property name="title" i18n:translate="">Training Center Listing</property>
   <property name="description" i18n:translate=""></property>
   <property name="content_icon">person_icon.png</property>
   <property name="factory">FormationCenterListing</property>
