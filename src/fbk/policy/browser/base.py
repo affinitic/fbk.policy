@@ -101,6 +101,14 @@ class BaseMembraneFolder(DefaultView):
         )
         return view()
 
+    def query(self, portal_type, depth=1):
+        brains = api.content.find(
+            portal_type=portal_type,
+            context=self.context,
+            depth=depth,
+        )
+        return [b.getObject() for b in brains]
+
 
 class DefaultFieldsView(DefaultView):
     excluded_fields = []
