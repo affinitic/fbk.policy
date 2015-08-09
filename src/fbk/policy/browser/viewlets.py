@@ -8,46 +8,93 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from datetime import datetime
 from plone import api
 from plone.app.layout.viewlets import common
+from fbk.policy.content.formation import IFormation
+from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
-class BaseTraversedViewlet(object):
+class BaseViewlet(common.ViewletBase):
+    authorized_interfaces = []
 
-    @property
-    def traversed(self):
-        return self.request.get('traversed')
+    def can_view(self):
+        for interface in self.authorized_interfaces:
+            if interface.providedBy(self.context):
+                return True
+        return False
+
+    def query(self, portal_type, depth=1, **kwargs):
+        brains = api.content.find(
+            portal_type=portal_type,
+            context=self.context,
+            depth=depth,
+            **kwargs
+        )
+        return [b.getObject() for b in brains]
+
+    def has_items(self):
+        return len(self.items) > 0
 
 
-class PathBarViewlet(BaseTraversedViewlet, common.PathBarViewlet):
-
-    @property
-    def traversed_title(self):
-        return self.request.get('traversed_title')
+class AddressViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IFormationCenterFolder,
+    )
 
     def update(self):
-        super(PathBarViewlet, self).update()
-        if self.traversed:
-            self.breadcrumbs += ({
-                'absolute_url': '',
-                'Title': self.traversed_title},
-            )
+        if self.can_view() is True:
+            self.items = self.query('Address')
 
 
-class ContentViewsViewlet(BaseTraversedViewlet, common.ContentViewsViewlet):
+class FormationViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IFormationCenterFolder,
+    )
 
-    def render(self):
-        if self.traversed:
-            return ''
-        return super(ContentViewsViewlet, self).render()
+    def update(self):
+        if self.can_view() is True:
+            self.items = self.query('Formation')
 
 
-class ContentActionsViewlet(BaseTraversedViewlet, common.ContentActionsViewlet):
+class FormationFBKViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IFormation,
+    )
 
-    def render(self):
-        if self.traversed:
-            return ''
-        return super(ContentActionsViewlet, self).render()
+    def can_view(self):
+        result = super(FormationFBKViewlet, self).can_view()
+        if result is True:
+            if self.context.fbk_formation:
+                return True
+            return False
+        else:
+            return False
+
+    def update(self):
+        if self.can_view() is True:
+            root = api.portal.get_navigation_root(self.context)
+            self.formationfbk = api.content.find(
+                portal_type='FormationFBK',
+                context=root,
+                id=self.context.fbk_formation,
+            )[0].getObject()
+
+
+class FormationEventViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IFormation,
+        IFormationCenterFolder,
+    )
+
+    def update(self):
+        start = datetime.now()
+        end = datetime.now().replace(year=start.year + 1)
+        self.items = self.query(
+            'FormationEvent',
+            depth=2,
+            start={'query': (start, end), 'range': 'min:max'},
+            sort_on='start')
 
 
 class PersonalBarViewlet(common.PersonalBarViewlet):

@@ -160,27 +160,37 @@
   <!-- Viewlets -->
 
   <browser:viewlet
-    name="plone.path_bar"
-    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-    class=".viewlets.PathBarViewlet"
+    name="fbk.policy.address"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".viewlets.AddressViewlet"
+    template="templates/address_viewlet.pt"
     layer="fbk.theme.interfaces.IFbkThemeLayer"
     permission="zope2.View"
     />
 
   <browser:viewlet
-    name="plone.contentviews"
-    manager="plone.app.layout.viewlets.interfaces.IContentViews"
-    class=".viewlets.ContentViewsViewlet"
+    name="fbk.policy.formation"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".viewlets.FormationViewlet"
+    template="templates/formation_viewlet.pt"
     layer="fbk.theme.interfaces.IFbkThemeLayer"
     permission="zope2.View"
     />
 
   <browser:viewlet
-    name="plone.contentactions"
-    for="*"
-    view="plone.app.content.browser.interfaces.IFolderContentsView"
-    manager="plone.app.layout.viewlets.interfaces.IContentViews"
-    class=".viewlets.ContentActionsViewlet"
+    name="fbk.policy.formationevent"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".viewlets.FormationEventViewlet"
+    template="templates/formationevent_viewlet.pt"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="fbk.policy.formationfbk"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+    class=".viewlets.FormationFBKViewlet"
+    template="templates/formationfbk_viewlet.pt"
     layer="fbk.theme.interfaces.IFbkThemeLayer"
     permission="zope2.View"
     />
