@@ -11,6 +11,8 @@
     <h1 class="fn" tal:content="view/context/Title"></h1>
     <div tal:replace="structure context/@@formationcenter-fields" />
 
+    <div id="viewlet-below-content-body" tal:content="structure provider:plone.belowcontentbody" />
+
   </div>
 
 </html>
