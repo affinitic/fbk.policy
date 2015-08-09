@@ -142,6 +142,14 @@
   <!-- Formation -->
 
   <browser:page
+    name="view"
+    for="fbk.policy.content.formation.IFormation"
+    class=".formation.FormationView"
+    template="templates/formation.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
     name="customview"
     for="fbk.policy.content.formation.IFormation"
     class="plone.dexterity.browser.view.DefaultView"
