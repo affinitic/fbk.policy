@@ -11,6 +11,7 @@ Created by mpeeters
 from plone.dexterity.browser.view import DefaultView
 
 from fbk.policy.browser.base import BaseMembraneFolder
+from fbk.policy.browser.base import DefaultFieldsView
 from fbk.policy.browser.base import TraverserEditView
 
 
@@ -22,8 +23,13 @@ class KinesiologistTraverserEditView(TraverserEditView):
     pass
 
 
-class KinesiologistFieldsView(DefaultView):
-    pass
+class KinesiologistFieldsView(DefaultFieldsView):
+    excluded_fields = (
+        'name',
+        'description_fr',
+        'description_en',
+        'description_nl',
+    )
 
 
 class KinesiologistFolderView(BaseMembraneFolder):

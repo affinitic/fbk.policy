@@ -3,7 +3,12 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      tal:define="portal_url context/@@plone_portal_state/portal_url;"
       i18n:domain="fbk.policy" tal:omit-tag="">
+
+  <p tal:content="view/description"></p>
+
+  <tal:widgets repeat="widget view/widgets/values">
+      <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+  </tal:widgets>
 
 </html>

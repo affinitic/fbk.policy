@@ -13,8 +13,8 @@ from collective.contact.core.content.person import Person
 from five import grok
 from plone.autoform import directives as form
 from plone.dexterity.schema import DexteritySchemaPolicy
-from zope.schema.vocabulary import SimpleVocabulary
 from zope import schema
+from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 
