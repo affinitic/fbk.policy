@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-09 15:58+0000\n"
+"POT-Creation-Date: 2015-08-09 18:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,6 +219,10 @@ msgstr "Province"
 #: ../content/formation.py:29
 msgid "Recognized FBK training"
 msgstr "Formations reconnues par la FBK"
+
+#: ../browser/templates/formationcenter-fields.pt:17
+msgid "Secretariat"
+msgstr "Secrétariat"
 
 #: ../content/formationevent.py:25
 msgid "Start date"
