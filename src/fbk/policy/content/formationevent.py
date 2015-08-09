@@ -13,6 +13,7 @@ from plone.app.contenttypes.interfaces import IEvent
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
+from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 
@@ -37,6 +38,13 @@ class IFormationEvent(IEvent):
     instructor = schema.TextLine(
         title=_(u'Instructor'),
         required=True,
+    )
+
+    language = schema.Choice(
+        title=_(u'Language'),
+        required=True,
+        vocabulary=SimpleVocabulary.fromValues([u'FR', u'NL', u'DE', u'EN']),
+        default=u'FR',
     )
 
     training_check = schema.Bool(
