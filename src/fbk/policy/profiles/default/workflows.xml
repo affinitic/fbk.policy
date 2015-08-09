@@ -23,4 +23,9 @@
    <bound-workflow workflow_id="fbk_policy_user_workflow"/>
   </type>
  </bindings>
+ <bindings>
+  <type type_id="Formation">
+    <bound-workflow workflow_id="fbk_policy_user_workflow"/>
+  </type>
+ </bindings>
 </object>
