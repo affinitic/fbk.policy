@@ -67,12 +67,25 @@ def membranetype_change_state(event):
 def formation_event_added(event):
     if IFormationEvent.providedBy(event.object):
         obj = event.object
+        parent = obj.aq_parent
         obj.name = '{0} {1}'.format(
-            obj.name,
+            parent.Title(),
             obj.start_date.strftime('%d-%m-%Y'),
         )
         normalizer = getUtility(IIDNormalizer)
-        api.content.rename(obj=obj, new_id=normalizer.normalize(obj.name))
+        id = normalizer.normalize(obj.name)
+        if id in parent:
+            exist = True
+            idx = 0
+            while exist is True:
+                idx += 1
+                new_id = '{0}-{1}'.format(id, idx)
+                if new_id not in parent:
+                    break
+        else:
+            new_id = id
+
+        api.content.rename(obj=obj, new_id=new_id)
 
 
 def check_membrane_contenttype(event):
