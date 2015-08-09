@@ -19,5 +19,11 @@
   <type type_id="Formation">
     <bound-workflow workflow_id="fbk_policy_user_workflow"/>
   </type>
+  <type type_id="FormationEvent">
+    <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
+  <type type_id="Address">
+    <bound-workflow workflow_id="one_state_workflow"/>
+  </type>
  </bindings>
 </object>
