@@ -157,6 +157,16 @@
     permission="zope2.View"
     />
 
+  <!-- Formation event -->
+
+  <browser:page
+    name="customview"
+    for="fbk.policy.content.formationevent.IFormationEvent"
+    class=".formationevent.FormationEventView"
+    template="templates/formationevent.pt"
+    permission="zope2.View"
+    />
+
   <!-- Viewlets -->
 
   <browser:viewlet
