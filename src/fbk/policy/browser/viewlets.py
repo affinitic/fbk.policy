@@ -73,12 +73,16 @@ class FormationFBKViewlet(BaseViewlet):
 
     def update(self):
         if self.can_view() is True:
+            self.formationfbk = None
             root = api.portal.get_navigation_root(self.context)
-            self.formationfbk = api.content.find(
+            brains = api.content.find(
                 portal_type='FormationFBK',
                 context=root,
                 id=self.context.fbk_formation,
-            )[0].getObject()
+                review_state='published',
+            )
+            if brains:
+                self.formationfbk = brains[0].getObject()
 
 
 class FormationEventViewlet(BaseViewlet):

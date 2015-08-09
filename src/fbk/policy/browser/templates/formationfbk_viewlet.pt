@@ -5,7 +5,7 @@
       i18n:domain="fbk.policy" lang="en">
 
   <tal:if condition="view/can_view">
-  <div class="listing">
+  <div class="listing" tal:condition="view/formationfbk">
     <div class="container">
       <a href="" tal:attributes="href view/formationfbk/absolute_url">
         <h3 tal:content="view/formationfbk/Title"></h3>

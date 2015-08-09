@@ -20,7 +20,8 @@ class FBKFormations(grok.GlobalUtility):
 
     def __call__(self, context):
         root = api.portal.get_navigation_root(context)
-        brains = api.content.find(context=root, portal_type='FormationFBK')
+        brains = api.content.find(context=root, portal_type='FormationFBK',
+                                  review_state='published')
 
         terms = []
         for b in brains:
