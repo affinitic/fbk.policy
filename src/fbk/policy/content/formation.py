@@ -9,7 +9,6 @@ Created by mpeeters
 """
 
 from five import grok
-from plone.app.textfield import RichText
 from plone.dexterity.content import Container
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
@@ -41,7 +40,7 @@ class IFormation(Interface):
         ]),
     )
 
-    description = RichText(
+    description = schema.Text(
         title=_(u'Description'),
         required=True,
     )
