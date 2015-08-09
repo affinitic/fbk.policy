@@ -26,7 +26,7 @@ class FBKFormations(grok.GlobalUtility):
         for b in brains:
             terms.append(SimpleVocabulary.createTerm(
                 b.id,
-                b.Title,
                 b.id,
+                b.Title,
             ))
         return SimpleVocabulary(terms)
