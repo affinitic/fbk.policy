@@ -26,16 +26,10 @@ class IFormation(Interface):
         required=True,
     )
 
-    description = RichText(
-        title=_(u'Description'),
-        required=True,
-    )
-
-    language = schema.Choice(
-        title=_(u'Language'),
-        required=True,
-        vocabulary=SimpleVocabulary.fromValues([u'FR', u'NL', u'DE', u'EN']),
-        default=u'FR',
+    fbk_formation = schema.Choice(
+        title=_(u'Recognized FBK training'),
+        required=False,
+        vocabulary='fbk.policy.fbkformations.vocabulary',
     )
 
     category = schema.Choice(
@@ -45,6 +39,11 @@ class IFormation(Interface):
             _(u'Category 1'),
             _(u'Category 2'),
         ]),
+    )
+
+    description = RichText(
+        title=_(u'Description'),
+        required=True,
     )
 
 
