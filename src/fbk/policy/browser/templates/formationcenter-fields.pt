@@ -13,4 +13,12 @@
 
   <p tal:content="view/description"></p>
 
+  <div id="secretariat">
+    <h2 i18n:translate="">Secretariat</h2>
+    <tal:widgets repeat="widget view/fieldsets/contact_informations/widgets/values">
+        <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+    </tal:widgets>
+    <div style="clear: both;"></div>
+  </div>
+
 </html>
