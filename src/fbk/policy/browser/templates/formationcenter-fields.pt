@@ -9,6 +9,7 @@
   <tal:widgets repeat="widget view/widgets/values">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
   </tal:widgets>
+  <div style="clear: both;"></div>
 
   <p tal:content="view/description"></p>
 
