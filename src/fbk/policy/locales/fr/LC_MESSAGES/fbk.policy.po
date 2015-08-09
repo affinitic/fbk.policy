@@ -17,30 +17,30 @@ msgstr ""
 #: ../behaviors.py:106
 #: ../content/address.py:35
 msgid "Additional address details"
-msgstr ""
+msgstr "Informations complémentaires"
 
 #: ../profiles/default/types/Address.xml
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: ../browser/templates/address_viewlet.pt:8
 msgid "Addresses"
-msgstr ""
+msgstr "Adresses"
 
 #: ../behaviors.py:163
 msgid "Administrator informations"
-msgstr ""
+msgstr "Informations sur l'administrateur"
 
 #: ../behaviors.py:129
 #: ../content/address.py:58
 msgid "Belgium"
-msgstr ""
+msgstr "Belgique"
 
 #: ../content/formation.py:35
 #: ../content/formationcenter.py:31
 #: ../content/formationfbk.py:30
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: ../content/formation.py:38
 #: ../content/formationcenter.py:34
@@ -56,234 +56,234 @@ msgstr ""
 
 #: ../behaviors.py:69
 msgid "Cell phone"
-msgstr ""
+msgstr "GSM"
 
 #: ../profiles/default/types/Centers.xml
 msgid "Centers"
-msgstr ""
+msgstr "Centres"
 
 #: ../content/kinesiologist.py:53
 msgid "Certification in progress"
-msgstr ""
+msgstr "Certification en cours"
 
 #: ../content/kinesiologist.py:52
 msgid "Certified"
-msgstr ""
+msgstr "Certifié"
 
 #: ../behaviors.py:116
 #: ../content/address.py:45
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 #: ../behaviors.py:52
 msgid "Contact informations"
-msgstr ""
+msgstr "Informations de contact"
 
 #: ../behaviors.py:126
 #: ../content/address.py:55
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: ../content/formation.py:44
 #: ../content/formationfbk.py:39
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../content/formationcenter.py:52
 #: ../content/kinesiologist.py:66
 msgid "Description (EN)"
-msgstr ""
+msgstr "Description (EN)"
 
 #: ../content/formationcenter.py:47
 #: ../content/kinesiologist.py:61
 msgid "Description (FR)"
-msgstr ""
+msgstr "Description (FR)"
 
 #: ../content/formationcenter.py:57
 #: ../content/kinesiologist.py:71
 msgid "Description (NL)"
-msgstr ""
+msgstr "Description (NL)"
 
 #: ../behaviors.py:57
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: ../content/formationevent.py:33
 msgid "End date"
-msgstr ""
+msgstr "Date de fin"
 
 #: ../behaviors.py:151
 msgid "Fax"
-msgstr ""
+msgstr "Fax"
 
 #: ../behaviors.py:179
 #: ../content/kinesiologist.py:31
 msgid "Firstname"
-msgstr ""
+msgstr "Prénom"
 
 #: ../behaviors.py:130
 #: ../content/address.py:59
 msgid "France"
-msgstr ""
+msgstr "France"
 
 #: ../content/kinesiologist.py:36
 msgid "Gender"
-msgstr ""
+msgstr "Sexe"
 
 #: ../behaviors.py:132
 #: ../content/address.py:61
 msgid "Germany"
-msgstr ""
+msgstr "Allemagne"
 
 #: ../content/formationevent.py:46
 msgid "Instructor"
-msgstr ""
+msgstr "Instructeur"
 
 #: ../profiles/default/types/Kinesiologist.xml
 msgid "Kinesiologist"
-msgstr ""
+msgstr "Kinésiologue"
 
 #: ../profiles/default/types/KinesiologistFolder.xml
 msgid "Kinesiologist Folder"
-msgstr ""
+msgstr "Kinésiologue Dossier"
 
 #: ../profiles/default/types/KinesiologistListing.xml
 msgid "Kinesiologist Listing"
-msgstr ""
+msgstr "Listing de Kinésiologue"
 
 #: ../content/formationevent.py:51
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #: ../content/kinesiologist.py:43
 msgid "Language(s)"
-msgstr ""
+msgstr "Langue(s)"
 
 #: ../behaviors.py:174
 #: ../content/kinesiologist.py:26
 msgid "Lastname"
-msgstr ""
+msgstr "Nom"
 
 #: ../behaviors.py:131
 #: ../content/address.py:60
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 #: ../content/kinesiologist.py:54
 msgid "Member"
-msgstr ""
+msgstr "Membre"
 
 #: ../content/kinesiologist.py:49
 msgid "Member type"
-msgstr ""
+msgstr "Type de membre"
 
 #: ../profiles/default/types/Members.xml
 msgid "Members"
-msgstr ""
+msgstr "Membres"
 
 #: ../content/formation.py:24
 #: ../content/formationcenter.py:26
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../behaviors.py:133
 #: ../content/address.py:62
 msgid "Nederland"
-msgstr ""
+msgstr "Pays-Bas"
 
 #: ../browser/templates/formationevent_viewlet.pt:8
 msgid "Next Trainings"
-msgstr ""
+msgstr "Prochaines formations"
 
 #: ../browser/templates/address_viewlet.pt:13
 msgid "No address given"
-msgstr ""
+msgstr "Aucune adresse renseignée"
 
 #: ../exception.py:18
 msgid "Not unique email address"
-msgstr ""
+msgstr "L'adresse email n'est pas unique"
 
 #: ../behaviors.py:63
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #: ../content/formationevent.py:41
 msgid "Price"
-msgstr ""
+msgstr "Prix"
 
 #: ../behaviors.py:121
 #: ../content/address.py:50
 msgid "Province"
-msgstr ""
+msgstr "Province"
 
 #: ../content/formation.py:29
 msgid "Recognized FBK training"
-msgstr ""
+msgstr "Formations reconnues par la FBK"
 
 #: ../content/formationevent.py:25
 msgid "Start date"
-msgstr ""
+msgstr "Date de début"
 
 #: ../behaviors.py:101
 #: ../content/address.py:30
 msgid "Street"
-msgstr ""
+msgstr "Rue"
 
 #: ../browser/templates/formation_viewlet.pt:13
 msgid "There is no trainings for the moment"
-msgstr ""
+msgstr "Il n'y a pas de formations pour le moment"
 
 #: ../browser/templates/formationevent_viewlet.pt:13
 msgid "There is no trainings in the next months"
-msgstr ""
+msgstr "Il n'y a pas de formations programmées dans les prochains mois"
 
 #: ../content/address.py:25
 #: ../content/formationfbk.py:25
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: ../profiles/default/types/Formation.xml
 msgid "Training"
-msgstr ""
+msgstr "Formation"
 
 #: ../profiles/default/types/FormationCenter.xml
 msgid "Training Center"
-msgstr ""
+msgstr "Centre de formation"
 
 #: ../profiles/default/types/FormationCenterFolder.xml
 msgid "Training Center Folder"
-msgstr ""
+msgstr "Centre de formation dossier"
 
 #: ../profiles/default/types/FormationCenterListing.xml
 msgid "Training Center Listing"
-msgstr ""
+msgstr "Centre de formation listing"
 
 #: ../profiles/default/types/FormationEvent.xml
 msgid "Training Event"
-msgstr ""
+msgstr "Programmation d'un événement"
 
 #: ../profiles/default/types/FormationFBK.xml
 msgid "Training FBK"
-msgstr ""
+msgstr "Formation reconnue FBK"
 
 #: ../content/formationevent.py:58
 msgid "Training check"
-msgstr ""
+msgstr "Prise en charge des chèques formations"
 
 #: ../content/formationcenter.py:41
 msgid "Training language(s)"
-msgstr ""
+msgstr "Langue(s) des formations"
 
 #: ../browser/templates/formation_viewlet.pt:8
 msgid "Trainings"
-msgstr ""
+msgstr "Formations"
 
 #: ../behaviors.py:74
 msgid "Website"
-msgstr ""
+msgstr "Site internet"
 
 #: ../behaviors.py:111
 #: ../content/address.py:40
 msgid "Zip code"
-msgstr ""
+msgstr "Code postal"
 
