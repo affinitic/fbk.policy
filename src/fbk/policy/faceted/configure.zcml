@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:faceted="http://namespaces.zope.org/faceted"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="fbk.policy">
+
+  <faceted:view
+    name="faceted-formationcenter-items"
+    template="templates/formationcenter-items.pt"
+    title="Faceted Training Center preview"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="faceted-formationcenter-item"
+    for="zope.interface.Interface"
+    template="templates/formationcenter-item.pt"
+    class=".formationcenter.FormationCenterFacetedView"
+    permission="zope2.View"
+    />
+
+</configure>
