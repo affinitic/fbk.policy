@@ -4,4 +4,8 @@
         <indexed_attr value="category"/>
     </index>
     <column value="category"/>
+    <index name="fbk_formation" meta_type="FieldIndex">
+        <indexed_attr value="fbk_formation"/>
+    </index>
+    <column value="fbk_formation"/>
 </object>
