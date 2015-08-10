@@ -12,6 +12,7 @@ from datetime import datetime
 from plone import api
 from plone.app.layout.viewlets import common
 from fbk.policy.content.formation import IFormation
+from fbk.policy.content.formationfbk import IFormationFBK
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
@@ -24,10 +25,12 @@ class BaseViewlet(common.ViewletBase):
                 return True
         return False
 
-    def query(self, portal_type, depth=1, **kwargs):
+    def query(self, portal_type, context=None, depth=1, **kwargs):
+        if context is None:
+            context = self.context
         brains = api.content.find(
             portal_type=portal_type,
-            context=self.context,
+            context=context,
             depth=depth,
             **kwargs
         )
@@ -55,6 +58,23 @@ class FormationViewlet(BaseViewlet):
     def update(self):
         if self.can_view() is True:
             self.items = self.query('Formation', review_state='active')
+
+
+class FormationFBKFormationViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IFormationFBK,
+    )
+
+    def update(self):
+        if self.can_view() is True:
+            root = api.portal.get_navigation_root(self.context)
+            self.items = self.query(
+                'Formation',
+                context=root,
+                review_state='active',
+                fbk_formation=self.context.id,
+                depth=None,
+            )
 
 
 class FormationFBKViewlet(BaseViewlet):

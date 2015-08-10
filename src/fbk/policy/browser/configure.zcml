@@ -198,6 +198,15 @@
     />
 
   <browser:viewlet
+    name="fbk.policy.formationfbkformation"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".viewlets.FormationFBKFormationViewlet"
+    template="templates/formation_viewlet.pt"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
     name="fbk.policy.formationevent"
     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
     class=".viewlets.FormationEventViewlet"
