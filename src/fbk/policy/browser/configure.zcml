@@ -167,6 +167,16 @@
     permission="zope2.View"
     />
 
+  <!-- Formation FBK -->
+
+  <browser:page
+    name="view"
+    for="fbk.policy.content.formationfbk.IFormationFBK"
+    class=".formationfbk.FormationFBKView"
+    template="templates/formationfbk.pt"
+    permission="zope2.View"
+    />
+
   <!-- Viewlets -->
 
   <browser:viewlet
