@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="fbk.policy">
+<body>
+  <div metal:fill-slot="main">
+    <h1 tal:content="context/Title"></h1>
+
+    <tal:main-macro metal:define-macro="main">
+    <tal:block tal:repeat="item view/contents">
+    <div class="listing">
+      <div class="container"
+           tal:define="item_url item/getURL|item/absolute_url;
+                       item_title_or_id item/pretty_title_or_id">
+        <a href=""
+           tal:attributes="href item_url"
+           tal:content="item_title_or_id">
+        </a>
+      </div>
+    </div>
+    </tal:block>
+    </tal:main-macro>
+  </div>
+</body>
+</html>

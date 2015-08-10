@@ -214,4 +214,22 @@
     permission="zope2.View"
     />
 
+  <!-- Listing views -->
+
+  <browser:menuItem
+    for="plone.app.contenttypes.interfaces.IFolder"
+    menu="plone_displayviews"
+    title="FBK Listing"
+    action="@@item_listing"
+    description="List folder contents"
+    />
+
+  <browser:page
+    name="item_listing"
+    for="plone.app.contenttypes.interfaces.IFolder"
+    class=".itemlisting.ItemListingView"
+    template="templates/item_listing.pt"
+    permission="zope2.View"
+    />
+
 </configure>

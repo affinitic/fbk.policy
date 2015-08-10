@@ -124,3 +124,21 @@ class DefaultFieldsView(DefaultView):
         for field in self.excluded_fields:
             if field in self.widgets:
                 del self.widgets[field]
+
+
+class ListingBaseView(DefaultView):
+    portal_type = None
+    depth = 1
+
+    def update(self):
+        if self.portal_type:
+            self.contents = api.content.find(
+                context=self.context,
+                portal_type=self.portal_type,
+                depth=self.depth,
+            )
+        else:
+            self.contents = api.content.find(
+                context=self.context,
+                depth=self.depth,
+            )
