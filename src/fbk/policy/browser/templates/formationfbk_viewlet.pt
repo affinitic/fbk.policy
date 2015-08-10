@@ -10,7 +10,10 @@
       <a href="" tal:attributes="href view/formationfbk/absolute_url">
         <h3 tal:content="view/formationfbk/Title"></h3>
       </a>
-      <span tal:replace="structure view/formationfbk/description"></span>
+      <p class="description"
+         tal:content="view/formationfbk/description"
+         tal:condition="view/formationfbk/description"></p>
+      <span tal:replace="structure view/formationfbk/text/output"></span>
     </div>
   </div>
   </tal:if>

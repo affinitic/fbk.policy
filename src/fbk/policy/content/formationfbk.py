@@ -35,8 +35,13 @@ class IFormationFBK(Interface):
         ]),
     )
 
-    description = RichText(
+    description = schema.Text(
         title=_(u'Description'),
+        required=False,
+    )
+
+    text = RichText(
+        title=_(u'Texte'),
         required=True,
     )
 
