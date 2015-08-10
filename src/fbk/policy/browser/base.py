@@ -136,9 +136,11 @@ class ListingBaseView(DefaultView):
                 context=self.context,
                 portal_type=self.portal_type,
                 depth=self.depth,
+                sort_on='sortable_title',
             )
         else:
             self.contents = api.content.find(
                 context=self.context,
                 depth=self.depth,
+                sort_on='sortable_title',
             )
