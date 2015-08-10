@@ -4,11 +4,6 @@
   xmlns:plone="http://namespaces.plone.org/plone"
   i18n_domain="fbk.policy">
 
-  <browser:resourceDirectory
-    name="fbk.policy"
-    directory="static"
-    />
-
   <browser:page
     name="view"
     for="fbk.policy.content.centers.ICenters"
