@@ -7,8 +7,8 @@
 
   <div class="formation listing">
     <div class="container">
-    <a href="" tal:attributes="href view/context/absolute_url">
-      <h3 tal:content="view/context/Title"></h3>
+    <a href="" tal:attributes="href view/context/absolute_url"
+               tal:content="view/context/Title">
     </a>
     </div>
   </div>

@@ -10,6 +10,6 @@
   </tal:widgets>
   <div style="clear: both;"></div>
 
-  <p tal:content="view/description"></p>
+  <p class="description" tal:content="view/description"></p>
 
 </html>
