@@ -23,6 +23,16 @@
 
   <grok:grok package=".vocabulary" />
 
+  <adapter
+    factory=".roles.FormationCenterRoleProvider"
+    name="fbk.policy.FormationCenterRoleProvider"
+    />
+
+  <adapter
+    factory=".roles.KinesiologistRoleProvider"
+    name="fbk.policy.KinesiologistRoleProvider"
+    />
+
   <genericsetup:registerProfile
     name="default"
     title="fbk.policy"
