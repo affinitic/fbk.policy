@@ -41,7 +41,7 @@ class IFormationFBK(Interface):
     )
 
     text = RichText(
-        title=_(u'Texte'),
+        title=_(u'Text'),
         required=True,
     )
 

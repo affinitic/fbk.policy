@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-09 18:43+0000\n"
+"POT-Creation-Date: 2015-08-10 12:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,6 +234,10 @@ msgstr ""
 #: ../behaviors.py:101
 #: ../content/address.py:30
 msgid "Street"
+msgstr ""
+
+#: ../content/formationfbk.py:44
+msgid "Text"
 msgstr ""
 
 #: ../browser/templates/formation_viewlet.pt:13
