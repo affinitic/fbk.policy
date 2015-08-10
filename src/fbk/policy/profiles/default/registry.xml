@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.local_roles">
+    <value>
+        <element>Reader</element>
+        <element>Editor</element>
+        <element>Creator</element>
+        <element>Contributor</element>
+    </value>
+  </record>
+</registry>
