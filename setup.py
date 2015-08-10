@@ -43,17 +43,17 @@ setup(
     install_requires=[
         'collective.contact.core',
         'collective.contact.membrane',
+        'cpskin.menu',
         'eea.facetednavigation',
+        'fbk.theme',
         'five.grok',
         'plone.api',
+        'plone.app.contenttypes',
         'plone.app.dexterity',
+        'plone.app.multilingual',
         'plone.autoform',
         'setuptools',
         'z3c.jbot',
-        'plone.app.multilingual',
-        'plone.app.contenttypes',
-        'cpskin.menu',
-        'fbk.theme',
     ],
     extras_require={
         'test': [
