@@ -239,11 +239,11 @@ msgstr "Texte"
 
 #: ../browser/templates/formation_viewlet.pt:13
 msgid "There is no trainings for the moment"
-msgstr "Il n'y a pas de formations pour le moment"
+msgstr "Il n'y a pas de formation pour le moment"
 
 #: ../browser/templates/formationevent_viewlet.pt:13
 msgid "There is no trainings in the next months"
-msgstr "Il n'y a pas de formations programmées dans les prochains mois"
+msgstr "Il n'y a pas de formation programmée dans les prochains mois"
 
 #: ../content/address.py:25
 #: ../content/formationfbk.py:25
