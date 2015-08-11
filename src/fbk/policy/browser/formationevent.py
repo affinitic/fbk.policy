@@ -15,3 +15,4 @@ class FormationEventView(DefaultView):
 
     def update(self):
         self.parent = self.context.aq_parent
+        self.formationcenter = self.parent.aq_parent

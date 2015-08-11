@@ -9,6 +9,7 @@ Created by mpeeters
 """
 
 from fbk.policy.browser.base import DefaultFieldsView
+from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
 class FormationView(DefaultFieldsView):
@@ -17,3 +18,13 @@ class FormationView(DefaultFieldsView):
         'fbk_formation',
         'description',
     )
+
+    def on_formation_center(self):
+        published = self.request.get('PUBLISHED', None)
+        context = getattr(published, '__parent__', None)
+        if IFormationCenterFolder.providedBy(context):
+            return True
+        return False
+
+    def update(self):
+        self.parent = self.context.aq_parent

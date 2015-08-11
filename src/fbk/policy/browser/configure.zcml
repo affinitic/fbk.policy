@@ -147,7 +147,7 @@
   <browser:page
     name="customview"
     for="fbk.policy.content.formation.IFormation"
-    class="plone.dexterity.browser.view.DefaultView"
+    class=".formation.FormationView"
     template="templates/formationcustom.pt"
     permission="zope2.View"
     />

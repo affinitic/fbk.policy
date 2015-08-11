@@ -10,6 +10,11 @@
       <a href="" tal:attributes="href view/parent/absolute_url">
         <h3 tal:content="view/parent/Title"></h3>
       </a>
+      <div>
+      <a href="" tal:content="view/formationcenter/Title"
+                 tal:attributes="href view/formationcenter/absolute_url">
+      </a>
+      </div>
       <tal:widgets repeat="widget view/widgets/values">
         <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
       </tal:widgets>
