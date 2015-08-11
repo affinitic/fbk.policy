@@ -10,7 +10,7 @@
       <a href="" tal:attributes="href view/parent/absolute_url">
         <h3 tal:content="view/parent/Title"></h3>
       </a>
-      <div>
+      <div tal:condition="not: view/on_formation_center">
       <a href="" tal:content="view/formationcenter/Title"
                  tal:attributes="href view/formationcenter/absolute_url">
       </a>
