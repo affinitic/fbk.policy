@@ -3,7 +3,7 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">Kinesiologist Folder</property>
   <property name="description" i18n:translate=""></property>
-  <property name="content_icon">person_icon.png</property>
+  <property name="content_icon">/++resource++fbk.policy/user_icon.png</property>
   <property name="factory">KinesiologistFolder</property>
   <property name="add_view_expr">string:${folder_url}/++add++KinesiologistFolder</property>
   <property name="link_target"></property>

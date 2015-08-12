@@ -3,7 +3,7 @@
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">Training FBK</property>
   <property name="description" i18n:translate=""></property>
-  <property name="content_icon">person_icon.png</property>
+  <property name="content_icon">/++resource++fbk.policy/book_icon.png</property>
   <property name="factory">FormationFBK</property>
   <property name="add_view_expr">string:${folder_url}/++add++FormationFBK</property>
   <property name="link_target"></property>
