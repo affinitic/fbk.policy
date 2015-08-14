@@ -2,24 +2,16 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
-      i18n:domain="fbk.policy" tal:omit-tag="">
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="fbk.policy" lang="en">
 
-  <div class="formationevent listing">
-    <div class="container">
-      <a href="" tal:attributes="href view/parent/absolute_url">
-        <h3 tal:content="view/parent/Title"></h3>
-      </a>
-      <div tal:condition="not: view/on_formation_center">
-      <a href="" tal:content="view/formationcenter/Title"
-                 tal:attributes="href view/formationcenter/absolute_url">
-      </a>
-      </div>
-      <tal:widgets repeat="widget view/widgets/values">
-        <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
-      </tal:widgets>
-      <div style="clear: both;"></div>
-    </div>
+  <div id="formationevent" metal:fill-slot="content-core">
+    <span tal:content="structure view/parent/@@customview" />
+
+    <tal:widgets repeat="widget view/widgets/values">
+      <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+    </tal:widgets>
+    <div style="clear: both;"></div>
   </div>
 
 </html>

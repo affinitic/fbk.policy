@@ -160,10 +160,18 @@
   <!-- Formation event -->
 
   <browser:page
-    name="customview"
+    name="view"
     for="fbk.policy.content.formationevent.IFormationEvent"
     class=".formationevent.FormationEventView"
     template="templates/formationevent.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="customview"
+    for="fbk.policy.content.formationevent.IFormationEvent"
+    class=".formationevent.FormationEventView"
+    template="templates/formationeventcustom.pt"
     permission="zope2.View"
     />
 
