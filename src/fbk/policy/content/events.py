@@ -68,7 +68,7 @@ def formation_event_added(event):
     if IFormationEvent.providedBy(event.object):
         obj = event.object
         parent = obj.aq_parent
-        obj.name = '{0} {1}'.format(
+        obj.name = '{0} - {1}'.format(
             parent.Title(),
             obj.start_date.strftime('%d-%m-%Y'),
         )
