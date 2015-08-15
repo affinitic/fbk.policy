@@ -9,6 +9,7 @@ Created by mpeeters
 """
 
 from five import grok
+from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Container
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
@@ -18,6 +19,7 @@ from fbk.policy import _
 
 
 class IFormation(Interface):
+    directives.languageindependent('category')
 
     title = schema.TextLine(
         title=_(u'Name'),

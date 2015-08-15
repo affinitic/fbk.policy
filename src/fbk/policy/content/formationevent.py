@@ -11,6 +11,7 @@ Created by mpeeters
 from datetime import datetime
 from five import grok
 from plone.app.contenttypes.interfaces import IEvent
+from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
@@ -19,6 +20,14 @@ from fbk.policy import _
 
 
 class IFormationEvent(IEvent):
+    directives.languageindependent(
+        'start_date',
+        'end_date',
+        'price',
+        'instructor',
+        'language',
+        'training_check',
+    )
 
     start_date = schema.Datetime(
         title=_(u'Start date'),
