@@ -14,7 +14,6 @@ from five import grok
 from plone.autoform import directives as form
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
-from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 
@@ -42,17 +41,13 @@ class IKinesiologist(IPerson):
     languages = schema.Choice(
         title=_(u'Language(s)'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([u'FR', u'NL', u'DE', u'EN']),
+        vocabulary='fbk.policy.languages',
     )
 
     member_type = schema.Choice(
         title=_(u'Member type'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([
-            _(u'Certified'),
-            _(u'Certification in progress'),
-            _(u'Member'),
-        ]),
+        vocabulary='fbk.policy.kinesiologist.categories',
     )
 
     form.order_after(photo='member_type')

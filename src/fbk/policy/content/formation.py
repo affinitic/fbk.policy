@@ -13,7 +13,6 @@ from plone.dexterity.content import Container
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
 from zope.interface import Interface
-from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 
@@ -34,10 +33,7 @@ class IFormation(Interface):
     category = schema.Choice(
         title=_(u'Category'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([
-            _(u'Category 1'),
-            _(u'Category 2'),
-        ]),
+        vocabulary='fbk.policy.formation.categories',
     )
 
     description = schema.Text(

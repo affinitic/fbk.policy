@@ -14,7 +14,6 @@ from five import grok
 from plone.autoform import directives as form
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
-from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 
@@ -30,17 +29,14 @@ class IFormationCenter(IPerson):
     category = schema.Choice(
         title=_(u'Category'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([
-            _(u'Category 1'),
-            _(u'Category 2'),
-        ]),
+        vocabulary='fbk.policy.formationcenter.categories',
     )
 
     form.widget(training_languages='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     training_languages = schema.Choice(
         title=_(u'Training language(s)'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([u'FR', u'NL', u'DE', u'EN']),
+        vocabulary='fbk.policy.languages',
     )
 
     description_fr = schema.Text(
