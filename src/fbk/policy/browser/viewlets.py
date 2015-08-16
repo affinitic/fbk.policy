@@ -12,8 +12,10 @@ from datetime import datetime
 from plone import api
 from plone.app.layout.viewlets import common
 from fbk.policy.content.formation import IFormation
-from fbk.policy.content.formationfbk import IFormationFBK
+from fbk.policy.content.formationcenter import IFormationCenter
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
+from fbk.policy.content.formationfbk import IFormationFBK
+from fbk.policy.content.kinesiologist import IKinesiologist
 
 
 class BaseViewlet(common.ViewletBase):
@@ -131,13 +133,27 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
         current_user = api.user.get_current()
         tool = api.portal.get_tool('membrane_tool')
         self.membrane_object = tool.getUserObject(user_id=current_user.id)
+        if self.membrane_object is not None:
+            navigation_root = api.portal.get_navigation_root(self.context)
+            brains = api.content.find(
+                context=navigation_root,
+                portal_type=self._get_portal_type(self.membrane_object),
+                id=self.membrane_object.id,
+            )
+            self.member_folder = brains[0].getObject()
 
     @property
     def is_membrane_user(self):
-        if self.membrane_object is not None:
+        if hasattr(self, 'membrane_object'):
             return True
         return False
 
     @property
     def membrane_user_link(self):
-        return self.membrane_object.absolute_url()
+        return self.member_folder.absolute_url()
+
+    def _get_portal_type(self, membrane_object):
+        if IFormationCenter.providedBy(membrane_object):
+            return 'FormationCenterFolder'
+        elif IKinesiologist.providedBy(membrane_object):
+            return 'KinesiologistFolder'
