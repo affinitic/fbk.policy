@@ -21,6 +21,7 @@
   <property name="klass">fbk.policy.content.formationfbk.FormationFBK</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
     <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable"/>
     <element value="fbk.policy.behaviors.IDefaultExcludeFromNavigation"/>
   </property>
