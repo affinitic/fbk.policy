@@ -14,12 +14,13 @@ from plone.app.contenttypes.interfaces import IEvent
 from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
+from plone.supermodel import model
 from zope import schema
 
 from fbk.policy import _
 
 
-class IFormationEvent(IEvent):
+class IFormationEvent(model.Schema, IEvent):
     directives.languageindependent(
         'start_date',
         'end_date',

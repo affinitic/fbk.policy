@@ -12,13 +12,13 @@ from five import grok
 from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Container
 from plone.dexterity.schema import DexteritySchemaPolicy
+from plone.supermodel import model
 from zope import schema
-from zope.interface import Interface
 
 from fbk.policy import _
 
 
-class IFormation(Interface):
+class IFormation(model.Schema):
     directives.languageindependent('category')
 
     title = schema.TextLine(
