@@ -1,0 +1,37 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  i18n_domain="fbk.policy">
+
+  <include package="eea.facetednavigation.layout" file="overrides.zcml" />
+
+  <unconfigure>
+    <browser:menu
+      id="plone_contentmenu_display"
+      title="The 'display' menu - allows the user to select the view of an object"
+      class="eea.facetednavigation.layout.menu.FacetedDisplayMenu"
+      />
+  </unconfigure>
+
+  <!-- Menu -->
+
+  <browser:menu
+    id="plone_contentmenu_actions"
+    title="The 'actions' menu - allows the user to execute actions on an object"
+    class=".menu.ActionsMenu"
+    />
+
+  <browser:menu
+    id="plone_contentmenu_display"
+    title="The 'display' menu - allows the user to select the view of an object"
+    class=".menu.DisplayMenu"
+    />
+
+  <browser:menu
+    id="plone_contentmenu_multilingual"
+    title="Translate menu - contains translation-related actions"
+    class=".menu.TranslationMenu"/>
+    />
+
+</configure>

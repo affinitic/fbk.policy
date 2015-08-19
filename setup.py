@@ -54,6 +54,7 @@ setup(
         'plone.autoform',
         'setuptools',
         'z3c.jbot',
+        'z3c.unconfigure',
     ],
     extras_require={
         'test': [
@@ -63,5 +64,8 @@ setup(
         ],
     },
     entry_points="""
+    # -*- Entry points: -*-
+    [z3c.autoinclude.plugin]
+    target = plone
     """,
 )
