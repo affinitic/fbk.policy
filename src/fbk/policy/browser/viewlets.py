@@ -150,7 +150,9 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
 
     @property
     def membrane_user_link(self):
-        return self.member_folder.absolute_url()
+        if hasattr(self, 'member_folder'):
+            return self.member_folder.absolute_url()
+        return ''
 
     def _get_portal_type(self, membrane_object):
         if IFormationCenter.providedBy(membrane_object):
