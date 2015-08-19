@@ -30,6 +30,7 @@ def post_install(context):
     setup_languages(portal)
     delete_default_content(portal)
     cleanup_contenttypes()
+    cleanup_actions()
 
 
 def setup_languages(portal):
@@ -64,6 +65,21 @@ def cleanup_contenttypes():
     for t in types:
         if t in portal_types:
             del portal_types[t]
+
+
+def cleanup_actions():
+    """Remove unwanted actions"""
+    portal_actions = api.portal.get_tool(name='portal_actions')
+    object_buttons = portal_actions.object_buttons
+    action_list = (
+        'enable_4th_level_navigation',
+        'disable_4th_level_navigation',
+        'disable_direct_access',
+        'enable_direct_access',
+    )
+    for action in action_list:
+        if action in object_buttons:
+            del object_buttons[action]
 
 
 def setup_extra_contents(context):
