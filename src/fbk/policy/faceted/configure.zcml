@@ -4,6 +4,17 @@
   xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="fbk.policy">
 
+  <!-- global -->
+
+  <faceted:view
+    name="fbk-faceted-items"
+    template="templates/faceted-items.pt"
+    title="FBK Faceted preview"
+    permission="zope2.View"
+    />
+
+  <!-- formation center -->
+
   <faceted:view
     name="faceted-formationcenter-items"
     template="templates/formationcenter-items.pt"
