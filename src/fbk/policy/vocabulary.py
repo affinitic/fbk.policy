@@ -10,6 +10,7 @@ Created by mpeeters
 
 from five import grok
 from plone import api
+from Products.CMFPlone import PloneMessageFactory as PMF
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -86,8 +87,8 @@ class FBKTrainingCheck(grok.GlobalUtility):
 
     def __call__(self, context):
         values = {
-            u'yes': u'Yes',
-            u'no': u'No',
+            u'yes': PMF(u'Yes'),
+            u'no': PMF(u'No'),
         }
         return dict_2_vocabulary(values)
 
@@ -98,7 +99,7 @@ class FBKTrainingCheckFaceted(grok.GlobalUtility):
 
     def __call__(self, context):
         values = {
-            u'yes': u'Yes',
+            u'yes': PMF(u'Yes'),
         }
         return dict_2_vocabulary(values)
 
