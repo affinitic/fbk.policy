@@ -57,7 +57,7 @@ class IFormationEvent(model.Schema, IEvent):
         required=True,
     )
 
-    language = schema.Choice(
+    training_language = schema.Choice(
         title=_(u'Language'),
         required=True,
         vocabulary='fbk.policy.languages',
@@ -90,11 +90,6 @@ class FormationEventSchemaPolicy(grok.GlobalUtility, DexteritySchemaPolicy):
 
     def bases(self, schema_name, tree):
         return (IFormationEvent, )
-
-
-@indexer(IFormationEvent)
-def training_language(obj):
-    return obj.language
 
 
 @indexer(IFormationEvent)

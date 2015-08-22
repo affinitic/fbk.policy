@@ -24,10 +24,6 @@
   <grok:grok package=".events" />
 
   <!-- indexes -->
-  <adapter
-   factory=".formationevent.training_language"
-   name="training_language"
-   />
 
   <adapter
    factory=".formationevent.training_center"
