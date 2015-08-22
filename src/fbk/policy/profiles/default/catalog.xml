@@ -8,4 +8,22 @@
         <indexed_attr value="fbk_formation"/>
     </index>
     <column value="fbk_formation"/>
+
+    <!-- training event specific indexes -->
+    <index name="training_language" meta_type="FieldIndex">
+        <indexed_attr value="training_language"/>
+    </index>
+    <column value="training_language"/>
+    <index name="training_center" meta_type="FieldIndex">
+        <indexed_attr value="training_center"/>
+    </index>
+    <column value="training_center"/>
+    <index name="training_check" meta_type="FieldIndex">
+        <indexed_attr value="training_check"/>
+    </index>
+    <column value="training_check"/>
+    <index name="instructor" meta_type="FieldIndex">
+        <indexed_attr value="instructor"/>
+    </index>
+    <column value="instructor"/>
 </object>

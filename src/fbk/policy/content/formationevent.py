@@ -14,6 +14,7 @@ from plone.app.contenttypes.interfaces import IEvent
 from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
+from plone.indexer import indexer
 from plone.supermodel import model
 from zope import schema
 
@@ -89,3 +90,13 @@ class FormationEventSchemaPolicy(grok.GlobalUtility, DexteritySchemaPolicy):
 
     def bases(self, schema_name, tree):
         return (IFormationEvent, )
+
+
+@indexer(IFormationEvent)
+def training_language(obj):
+    return obj.language
+
+
+@indexer(IFormationEvent)
+def training_center(obj):
+    return obj.aq_parent.aq_parent.id
