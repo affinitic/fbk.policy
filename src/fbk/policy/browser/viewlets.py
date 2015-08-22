@@ -16,6 +16,7 @@ from fbk.policy.content.formationcenter import IFormationCenter
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 from fbk.policy.content.formationfbk import IFormationFBK
 from fbk.policy.content.kinesiologist import IKinesiologist
+from fbk.policy.content.kinesiologistfolder import IKinesiologistFolder
 
 
 class BaseViewlet(common.ViewletBase):
@@ -45,6 +46,7 @@ class BaseViewlet(common.ViewletBase):
 class AddressViewlet(BaseViewlet):
     authorized_interfaces = (
         IFormationCenterFolder,
+        IKinesiologistFolder,
     )
 
     def update(self):
