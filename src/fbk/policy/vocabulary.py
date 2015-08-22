@@ -144,7 +144,7 @@ class KinesiologistCategories(grok.GlobalUtility):
     grok.implements(IVocabularyFactory)
     grok.name('fbk.policy.kinesiologist.categories')
 
-    def __call_(self, context):
+    def __call__(self, context):
         values = {
             'certified': _(u'Certified'),
             'certification_in_progress': _(u'Certification in progress'),
