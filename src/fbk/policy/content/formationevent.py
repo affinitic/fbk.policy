@@ -27,7 +27,7 @@ class IFormationEvent(model.Schema, IEvent):
         'end_date',
         'price',
         'instructor',
-        'language',
+        'training_language',
         'training_check',
     )
 
