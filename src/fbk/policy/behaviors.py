@@ -50,13 +50,19 @@ class IMembraneContactInfos(IMembraneContact):
     fieldset(
         'contact_informations',
         label=_(u'Contact informations'),
-        fields=['email', 'phone', 'cell_phone', 'website'],
+        fields=['email', 'hide_email', 'phone', 'cell_phone', 'website'],
     )
 
     email = schema.TextLine(
         title=_(u"Email"),
         constraint=validateEmail,
         required=True,
+    )
+
+    hide_email = schema.Bool(
+        title=(u'Hide email address'),
+        required=False,
+        default=False,
     )
 
     phone = schema.TextLine(
