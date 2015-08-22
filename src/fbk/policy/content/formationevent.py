@@ -63,9 +63,11 @@ class IFormationEvent(model.Schema, IEvent):
         vocabulary='fbk.policy.languages',
     )
 
-    training_check = schema.Bool(
+    training_check = schema.Choice(
         title=_(u'Training check'),
-        required=False,
+        required=True,
+        vocabulary='fbk.policy.training_checks',
+        default=u'no',
     )
 
 

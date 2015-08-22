@@ -29,8 +29,32 @@ class FBKFormations(grok.GlobalUtility):
 
     def __call__(self, context):
         root = api.portal.get_navigation_root(context)
-        brains = api.content.find(context=root, portal_type='FormationFBK',
-                                  review_state='published')
+        brains = api.content.find(
+            context=root,
+            portal_type='FormationFBK',
+            review_state='published',
+        )
+
+        terms = []
+        for b in brains:
+            terms.append(SimpleVocabulary.createTerm(
+                b.id,
+                b.id,
+                b.Title,
+            ))
+        return SimpleVocabulary(terms)
+
+
+class FBKFormationCenters(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.fbkformationcenters.vocabulary')
+
+    def __call__(self, context):
+        root = api.portal.get_navigation_root(context)
+        brains = api.content.find(
+            context=root,
+            portal_type='FormationCenterFolder',
+        )
 
         terms = []
         for b in brains:
@@ -52,6 +76,29 @@ class FBKLanguages(grok.GlobalUtility):
             'nl': u'NL',
             'en': u'EN',
             'de': u'DE',
+        }
+        return dict_2_vocabulary(values)
+
+
+class FBKTrainingCheck(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.training_checks')
+
+    def __call__(self, context):
+        values = {
+            u'yes': u'Yes',
+            u'no': u'No',
+        }
+        return dict_2_vocabulary(values)
+
+
+class FBKTrainingCheckFaceted(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.training_checks.faceted')
+
+    def __call__(self, context):
+        values = {
+            u'yes': u'Yes',
         }
         return dict_2_vocabulary(values)
 
