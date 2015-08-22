@@ -25,11 +25,32 @@ class KinesiologistTraverserEditView(TraverserEditView):
 
 class KinesiologistFieldsView(DefaultFieldsView):
     excluded_fields = (
-        'name',
+        'lastname',
+        'firstname',
+        'gender',
+        'photo',
+        'member_type',
         'description_fr',
         'description_en',
         'description_nl',
     )
+
+    def update(self):
+        widgets = self.fieldsets['contact_informations'].widgets
+        if self.can_view_email is False:
+            del widgets['IMembraneContactInfos.email']
+        del widgets['IMembraneContactInfos.hide_email']
+
+    @property
+    def can_view_email(self):
+        result = getattr(self.context, 'hide_email', False)
+        result ^= True  # Toggle the result
+        return result
+
+    @property
+    def photo(self):
+        return self.context.photo
+
 
 class KinesiologistImages(BaseMembraneFolder):
     foldername = 'members'

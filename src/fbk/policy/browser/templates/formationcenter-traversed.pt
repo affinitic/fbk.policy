@@ -6,9 +6,7 @@
       i18n:domain="fbk.policy" lang="en">
 
   <div id="formationcenter" metal:fill-slot="main">
-
     <div tal:replace="structure view/traverse_render" />
-
   </div>
 
   <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" />

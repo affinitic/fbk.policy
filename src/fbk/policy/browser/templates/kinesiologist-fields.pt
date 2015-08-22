@@ -5,11 +5,24 @@
       lang="en"
       i18n:domain="fbk.policy" tal:omit-tag="">
 
+  <img class="picture"
+       tal:define="scales context/@@images;
+                 thumbnail python: scales.scale('photo', width=252, height=184);"
+       tal:condition="thumbnail"
+       tal:attributes="src thumbnail/url;
+                       width thumbnail/width;
+                       height thumbnail/height" />
+
+  <p class="description" tal:content="view/description"></p>
+
   <tal:widgets repeat="widget view/widgets/values">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
   </tal:widgets>
+  <tal:widgets repeat="widget view/fieldsets/contact_informations/widgets/values">
+    <tal:if condition="widget/value">
+    <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+    </tal:if>
+  </tal:widgets>
   <div style="clear: both;"></div>
-
-  <p class="description" tal:content="view/description"></p>
 
 </html>
