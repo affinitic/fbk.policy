@@ -38,10 +38,10 @@ class IKinesiologist(IPerson):
     )
 
     form.widget(languages='z3c.form.browser.checkbox.CheckBoxFieldWidget')
-    languages = schema.Choice(
+    languages = schema.List(
         title=_(u'Language(s)'),
         required=True,
-        vocabulary='fbk.policy.languages',
+        value_type=schema.Choice(vocabulary='fbk.policy.languages'),
     )
 
     member_type = schema.Choice(

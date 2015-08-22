@@ -33,10 +33,10 @@ class IFormationCenter(IPerson):
     )
 
     form.widget(training_languages='z3c.form.browser.checkbox.CheckBoxFieldWidget')
-    training_languages = schema.Choice(
+    training_languages = schema.List(
         title=_(u'Training language(s)'),
         required=True,
-        vocabulary='fbk.policy.languages',
+        value_type=schema.Choice(vocabulary='fbk.policy.languages'),
     )
 
     description_fr = schema.Text(
