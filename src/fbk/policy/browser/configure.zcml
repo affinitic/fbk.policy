@@ -132,9 +132,9 @@
   <!-- Address -->
 
   <browser:page
-    name="customview"
+    name="listingview"
     for="fbk.policy.content.address.IAddress"
-    class=".address.AddressCustomView"
+    class=".address.AddressListingView"
     template="templates/address.pt"
     permission="zope2.View"
     />
@@ -150,7 +150,7 @@
     />
 
   <browser:page
-    name="customview"
+    name="listingview"
     for="fbk.policy.content.formation.IFormation"
     class=".formation.FormationView"
     template="templates/formationcustom.pt"
@@ -168,7 +168,7 @@
     />
 
   <browser:page
-    name="customview"
+    name="listingview"
     for="fbk.policy.content.formationevent.IFormationEvent"
     class=".formationevent.FormationEventView"
     template="templates/formationeventcustom.pt"

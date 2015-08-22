@@ -7,7 +7,7 @@
   <tal:if condition="view/can_view">
   <h2 i18n:translate="">Next Trainings</h2>
   <tal:while repeat="item view/items">
-    <tal:items tal:replace="structure item/@@customview" />
+    <tal:items tal:replace="structure item/@@listingview" />
   </tal:while>
   <tal:if condition="not: view/has_items">
   <p i18n:translate="">There is no trainings in the next months</p>

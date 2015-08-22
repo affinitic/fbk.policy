@@ -6,7 +6,7 @@
       i18n:domain="fbk.policy" lang="en">
 
   <div id="formationevent" metal:fill-slot="content-core">
-    <span tal:content="structure view/parent/@@customview" />
+    <span tal:content="structure view/parent/@@listingview" />
 
     <tal:widgets repeat="widget view/widgets/values">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
