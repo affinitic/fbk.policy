@@ -31,6 +31,11 @@ class KinesiologistFieldsView(DefaultFieldsView):
         'description_nl',
     )
 
+class KinesiologistImages(BaseMembraneFolder):
+    foldername = 'members'
+    contenttype = 'kinesiologist'
+    viewname = 'images'
+
 
 class KinesiologistFolderView(BaseMembraneFolder):
     foldername = 'members'

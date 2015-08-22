@@ -77,6 +77,13 @@
     permission="cmf.ModifyPortalContent"
     />
 
+  <browser:view
+    name="images"
+    for="fbk.policy.content.kinesiologistfolder.IKinesiologistFolder"
+    class=".kinesiologist.KinesiologistImages"
+    permission="zope2.View"
+    />
+
   <!-- FormationCenter -->
 
   <browser:page
