@@ -12,6 +12,7 @@
   <include package="five.grok" />
   <include package="collective.contact.core" />
   <include package="collective.contact.membrane" />
+  <include package="collective.geotransform" />
   <include package="eea.facetednavigation" />
   <include package="fbk.theme" />
 

@@ -43,6 +43,7 @@ setup(
     install_requires=[
         'collective.contact.core',
         'collective.contact.membrane',
+        'collective.geotransform',
         'cpskin.menu',
         'eea.facetednavigation',
         'fbk.theme',

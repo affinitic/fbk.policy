@@ -7,6 +7,7 @@
     <dependency>profile-plone.app.multilingual:default</dependency>
     <dependency>profile-collective.contact.core:default</dependency>
     <dependency>profile-collective.contact.membrane:default</dependency>
+    <dependency>profile-collective.geotransform:default</dependency>
     <dependency>profile-eea.facetednavigation:default</dependency>
     <dependency>profile-cpskin.menu:lite</dependency>
     <dependency>profile-fbk.theme:default</dependency>
