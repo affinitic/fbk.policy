@@ -27,10 +27,28 @@
         </li>
         <li tal:condition="view/is_membrane_user">
             <a href=""
-               tal:attributes="href view/membrane_user_link">
+               tal:attributes="href view/membrane_user_link"
+               i18n:translate="">
                Informations personnelles
             </a>
         </li>
+        <tal:block condition="view/is_administrator"
+                   i18n:domain="fbk.policy">
+        <li>
+            <a href=""
+               tal:attributes="href string:${view/root_url}/members/"
+               i18n:translate="">
+               Gestion des membres
+            </a>
+        </li>
+        <li>
+            <a href=""
+               tal:attributes="href string:${view/root_url}/centers/"
+               i18n:translate="">
+               Gestion des centres de formations
+            </a>
+        </li>
+        </tal:block>
     </ul>
   </dd>
   </tal:block>

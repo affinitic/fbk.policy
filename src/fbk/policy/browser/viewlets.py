@@ -146,7 +146,15 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
 
     @property
     def is_membrane_user(self):
-        if hasattr(self, 'membrane_object'):
+        if hasattr(self, 'membrane_object') and self.membrane_object:
+            return True
+        return False
+
+    @property
+    def is_administrator(self):
+        user = api.user.get_current()
+        roles = user.getRoles()
+        if 'Manager' in roles or 'Site Administrator' in roles:
             return True
         return False
 
@@ -161,3 +169,7 @@ class PersonalBarViewlet(common.PersonalBarViewlet):
             return 'FormationCenterFolder'
         elif IKinesiologist.providedBy(membrane_object):
             return 'KinesiologistFolder'
+
+    @property
+    def root_url(self):
+        return api.portal.get().absolute_url()
