@@ -59,6 +59,14 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    name="kinesiologistlisting-fields"
+    for="fbk.policy.content.kinesiologist.IKinesiologist"
+    class=".kinesiologist.KinesiologistFieldsView"
+    template="templates/kinesiologistlisting-fields.pt"
+    permission="zope2.View"
+    />
+
   <!-- Kinesiologist Folder -->
 
   <browser:page
@@ -81,6 +89,14 @@
     name="images"
     for="fbk.policy.content.kinesiologistfolder.IKinesiologistFolder"
     class=".kinesiologist.KinesiologistImages"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    name="listingview"
+    for="fbk.policy.content.kinesiologistfolder.IKinesiologistFolder"
+    class=".kinesiologist.KinesiologistFolderView"
+    template="templates/kinesiologistlisting.pt"
     permission="zope2.View"
     />
 

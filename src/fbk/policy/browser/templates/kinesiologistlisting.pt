@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="fbk.policy" lang="en">
+
+  <div class="kinesiologist listing">
+    <div class="container">
+      <a href="" tal:attributes="href view/context/absolute_url">
+        <div class="img-container">
+          <img class="picture"
+               tal:define="scales view/obj/@@images;
+                         thumbnail python: scales.scale('photo', width=126, height=92);"
+               tal:condition="thumbnail"
+               tal:attributes="src thumbnail/url;
+                               width thumbnail/width;
+                               height thumbnail/height" />
+        </div>
+      </a>
+
+      <a href="" tal:attributes="href view/context/absolute_url">
+        <h3 tal:content="view/context/Title"></h3>
+      </a>
+      <div tal:replace="structure view/obj/@@kinesiologistlisting-fields" />
+
+    </div>
+  </div>
+
+</html>
