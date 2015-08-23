@@ -17,6 +17,8 @@ from plone.z3cform import layout
 from zope.interface import classImplements
 from zope.publisher.interfaces import NotFound
 
+from fbk.policy.browser.widget import TraversedNamedImageFieldWidget
+
 
 class ContainerView(DefaultView):
     portal_type = None
@@ -57,6 +59,23 @@ class TraverserEditForm(DefaultEditForm):
                 if portal_type in use_view_action:
                     view_url = view_url + '/view'
         return view_url
+
+    def updateWidgets(self):
+        if 'photo' in self.fields:
+            self.fields['photo'].widgetFactory = TraversedNamedImageFieldWidget
+        super(TraverserEditForm, self).updateWidgets()
+
+    def download_url(self):
+        if self.field is None:
+            return None
+        if self.ignoreContext:
+            return None
+        if self.filename_encoded:
+            return "%s/++widget++%s/@@download/%s" % (
+                self.request.getURL(), self.name, self.filename_encoded)
+        else:
+            return "%s/++widget++%s/@@download" % (
+                self.request.getURL(), self.name)
 
 
 TraverserEditView = layout.wrap_form(TraverserEditForm)
