@@ -5,13 +5,17 @@
       lang="en"
       i18n:domain="fbk.policy" tal:omit-tag="">
 
+  <tal:block tal:define="scales context/@@images;
+                         thumbnail python: scales.scale('photo', width=252, height=184);">
   <img class="picture"
-       tal:define="scales context/@@images;
-                 thumbnail python: scales.scale('photo', width=252, height=184);"
        tal:condition="thumbnail"
        tal:attributes="src thumbnail/url;
                        width thumbnail/width;
                        height thumbnail/height" />
+  <img class="picture"
+       tal:condition="not: thumbnail"
+       tal:attributes="src string:/++resource++fbk.policy/${context/gender}-default.png" />
+  </tal:block>
 
   <p class="description" tal:content="view/description"></p>
 

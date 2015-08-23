@@ -8,13 +8,17 @@
     <div class="container">
       <a href="" tal:attributes="href view/context/absolute_url">
         <div class="img-container">
+          <tal:block tal:define="scales view/obj/@@images;
+                                 thumbnail python: scales.scale('photo', width=126, height=92);">
           <img class="picture"
-               tal:define="scales view/obj/@@images;
-                         thumbnail python: scales.scale('photo', width=126, height=92);"
                tal:condition="thumbnail"
                tal:attributes="src thumbnail/url;
                                width thumbnail/width;
                                height thumbnail/height" />
+          <img class="picture"
+               tal:condition="not: thumbnail"
+               tal:attributes="src string:/++resource++fbk.policy/${view/obj/gender}-default.png" />
+          </tal:block>
         </div>
       </a>
 
