@@ -26,4 +26,15 @@
         <indexed_attr value="instructor"/>
     </index>
     <column value="instructor"/>
+
+    <!-- kinesiologist specific indexes -->
+    <index name="languages" meta_type="KeywordIndex">
+        <indexed_attr value="languages"/>
+    </index>
+    <column value="languages"/>
+
+    <index name="provinces" meta_type="KeywordIndex">
+        <indexed_attr value="provinces"/>
+    </index>
+    <column value="provinces"/>
 </object>

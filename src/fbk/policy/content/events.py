@@ -16,7 +16,9 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 from zope.component import getUtility
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 from zope.lifecycleevent.interfaces import IObjectRemovedEvent
+from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
+from fbk.policy.content.address import IAddress
 from fbk.policy.content.formationcenter import IFormationCenter
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 from fbk.policy.content.formationevent import IFormationEvent
@@ -86,6 +88,24 @@ def formation_event_added(event):
             new_id = id
 
         api.content.rename(obj=obj, new_id=new_id)
+
+
+@grok.subscribe(IObjectAddedEvent)
+def address_event_added(event):
+    if IAddress.providedBy(event.object):
+        event.object.aq_parent.reindexObject(idxs=['provinces'])
+
+
+@grok.subscribe(IObjectModifiedEvent)
+def address_event_modified(event):
+    if IAddress.providedBy(event.object):
+        event.object.aq_parent.reindexObject(idxs=['provinces'])
+
+
+@grok.subscribe(IObjectRemovedEvent)
+def address_event_removed(event):
+    if IAddress.providedBy(event.object):
+        event.object.aq_parent.reindexObject(idxs=['provinces'])
 
 
 def check_membrane_contenttype(event):

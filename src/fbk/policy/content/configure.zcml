@@ -26,8 +26,23 @@
   <!-- indexes -->
 
   <adapter
-   factory=".formationevent.training_center"
-   name="training_center"
-   />
+    factory=".formationevent.training_center"
+    name="training_center"
+    />
+
+  <adapter
+    factory=".kinesiologistfolder.languages"
+    name="languages"
+    />
+
+  <adapter
+    factory=".kinesiologistfolder.provinces"
+    name="provinces"
+    />
+
+  <adapter
+    factory=".kinesiologistfolder.description"
+    name="Description"
+    />
 
 </configure>
