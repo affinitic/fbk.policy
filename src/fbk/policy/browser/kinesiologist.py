@@ -8,6 +8,7 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from plone import api
 from plone.dexterity.browser.view import DefaultView
 
 from fbk.policy.browser.base import BaseMembraneFolder
@@ -62,6 +63,15 @@ class KinesiologistFolderView(BaseMembraneFolder):
     foldername = 'members'
     contenttype = 'kinesiologist'
     viewname = 'traverser-view'
+
+    @property
+    def cities(self):
+        brains = api.content.find(
+            context=self.context,
+            portal_type='Address',
+        )
+        cities = [b.getObject().city for b in brains]
+        return ' & '.join(set(cities))
 
 
 class KinesiologistFolderEditView(BaseMembraneFolder):
