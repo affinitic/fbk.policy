@@ -17,12 +17,17 @@
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 
         <div class="eea-preview-items" id="faceted-container">
+          <tal:block condition="batch">
           <tal:entries repeat="brain batch">
             <tal:entry
               define="doc brain/getObject|nothing"
               condition="exists:doc/@@listingview"
               replace="structure doc/@@listingview" />
           </tal:entries>
+          </tal:block>
+          <tal:block condition="not: batch">
+            <span class="message" i18n:translate="">There is no result for the selected filters</span>
+          </tal:block>
         </div>
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
