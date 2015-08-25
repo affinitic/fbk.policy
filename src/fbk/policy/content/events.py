@@ -65,6 +65,21 @@ def membranetype_change_state(event):
         )
 
 
+@grok.subscribe(IObjectModifiedEvent)
+def membranetype_modified(event):
+    contenttype = check_membrane_contenttype(event)
+
+    if contenttype is not None:
+        portal = api.portal.get()
+        brains = api.content.find(
+            id=event.object.id,
+            portal_type=contenttype,
+            context=portal,
+        )
+        for b in brains:
+            b.getObject().reindexObject()
+
+
 @grok.subscribe(IObjectAddedEvent)
 def formation_event_added(event):
     if IFormationEvent.providedBy(event.object):
