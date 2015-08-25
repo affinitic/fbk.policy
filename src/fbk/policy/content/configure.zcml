@@ -41,8 +41,8 @@
     />
 
   <adapter
-    factory=".kinesiologistfolder.description"
-    name="Description"
+    factory=".kinesiologistfolder.searchable_text"
+    name="SearchableText"
     />
 
 </configure>

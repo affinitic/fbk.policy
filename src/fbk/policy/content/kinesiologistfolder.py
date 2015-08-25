@@ -56,7 +56,7 @@ def languages(obj):
 
 
 @indexer(IKinesiologistFolder)
-def description(obj):
+def searchable_text(obj):
     portal = api.portal.get()
     members = portal.get('members')
     brains = api.content.find(
@@ -64,5 +64,22 @@ def description(obj):
         portal_type='Kinesiologist',
         id=obj.id,
     )
-    lang = obj.language
-    return getattr(brains[0].getObject(), 'description_{0}'.format(lang))
+    member = brains[0].getObject()
+    elements = [
+        member.Title(),
+        getattr(member, 'description_{0}'.format(obj.language)) or '',
+    ]
+    brains = api.content.find(
+        context=obj,
+        portal_type='Address',
+        depth=1,
+    )
+    for brain in brains:
+        address = brain.getObject()
+        elements.extend([
+            str(address.zip_code),
+            address.city,
+            address.province,
+            address.country,
+        ])
+    return ' '.join(elements)
