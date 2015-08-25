@@ -167,11 +167,11 @@ msgstr "Luxembourg"
 
 #: ../browser/templates/personal_bar.pt:39
 msgid "Manage members"
-msgstr ""
+msgstr "Gérer les membres"
 
 #: ../browser/templates/personal_bar.pt:46
 msgid "Manage training centers"
-msgstr ""
+msgstr "Gérer les centres de formations"
 
 #: ../vocabulary.py:151
 msgid "Member"
@@ -179,7 +179,7 @@ msgstr "Membre"
 
 #: ../profiles/default/types/MemberFormation.xml
 msgid "Member Training"
-msgstr ""
+msgstr "Formation proposée"
 
 #: ../content/kinesiologist.py:48
 msgid "Member type"
@@ -213,7 +213,7 @@ msgstr "L'adresse email n'est pas unique"
 
 #: ../browser/templates/personal_bar.pt:30
 msgid "Personal informations"
-msgstr ""
+msgstr "Informations personnelles"
 
 #: ../behaviors.py:69
 msgid "Phone"
@@ -251,7 +251,7 @@ msgstr "Texte"
 
 #: ../faceted/templates/faceted-items.pt:29
 msgid "There is no result for the selected filters"
-msgstr ""
+msgstr "Il n'y a aucun résultat pour les filtres sélectionnés"
 
 #: ../browser/templates/formation_viewlet.pt:13
 msgid "There is no trainings for the moment"
