@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-10 12:45+0000\n"
+"POT-Creation-Date: 2015-08-25 09:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fbk.policy\n"
 
-#: ../behaviors.py:106
-#: ../content/address.py:35
+#: ../behaviors.py:112
+#: ../content/address.py:42
 msgid "Additional address details"
 msgstr ""
 
@@ -30,34 +30,30 @@ msgstr ""
 msgid "Addresses"
 msgstr ""
 
-#: ../behaviors.py:163
+#: ../behaviors.py:169
 msgid "Administrator informations"
 msgstr ""
 
-#: ../behaviors.py:129
-#: ../content/address.py:58
+#: ../behaviors.py:135
+#: ../content/address.py:65
 msgid "Belgium"
 msgstr ""
 
-#: ../content/formation.py:35
-#: ../content/formationcenter.py:31
-#: ../content/formationfbk.py:30
+#: ../content/formation.py:36
+#: ../content/formationcenter.py:30
+#: ../content/formationfbk.py:31
 msgid "Category"
 msgstr ""
 
-#: ../content/formation.py:38
-#: ../content/formationcenter.py:34
-#: ../content/formationfbk.py:33
+#: ../vocabulary.py:113
 msgid "Category 1"
 msgstr ""
 
-#: ../content/formation.py:39
-#: ../content/formationcenter.py:35
-#: ../content/formationfbk.py:34
+#: ../vocabulary.py:114
 msgid "Category 2"
 msgstr ""
 
-#: ../behaviors.py:69
+#: ../behaviors.py:75
 msgid "Cell phone"
 msgstr ""
 
@@ -65,16 +61,16 @@ msgstr ""
 msgid "Centers"
 msgstr ""
 
-#: ../content/kinesiologist.py:53
+#: ../vocabulary.py:150
 msgid "Certification in progress"
 msgstr ""
 
-#: ../content/kinesiologist.py:52
+#: ../vocabulary.py:149
 msgid "Certified"
 msgstr ""
 
-#: ../behaviors.py:116
-#: ../content/address.py:45
+#: ../behaviors.py:122
+#: ../content/address.py:52
 msgid "City"
 msgstr ""
 
@@ -82,28 +78,28 @@ msgstr ""
 msgid "Contact informations"
 msgstr ""
 
-#: ../behaviors.py:126
-#: ../content/address.py:55
+#: ../behaviors.py:132
+#: ../content/address.py:62
 msgid "Country"
 msgstr ""
 
-#: ../content/formation.py:44
-#: ../content/formationfbk.py:39
+#: ../content/formation.py:42
+#: ../content/formationfbk.py:37
 msgid "Description"
 msgstr ""
 
-#: ../content/formationcenter.py:52
-#: ../content/kinesiologist.py:66
+#: ../content/formationcenter.py:48
+#: ../content/kinesiologist.py:61
 msgid "Description (EN)"
 msgstr ""
 
-#: ../content/formationcenter.py:47
-#: ../content/kinesiologist.py:61
+#: ../content/formationcenter.py:43
+#: ../content/kinesiologist.py:56
 msgid "Description (FR)"
 msgstr ""
 
-#: ../content/formationcenter.py:57
-#: ../content/kinesiologist.py:71
+#: ../content/formationcenter.py:53
+#: ../content/kinesiologist.py:66
 msgid "Description (NL)"
 msgstr ""
 
@@ -111,34 +107,34 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../content/formationevent.py:33
+#: ../content/formationevent.py:43
 msgid "End date"
 msgstr ""
 
-#: ../behaviors.py:151
+#: ../behaviors.py:157
 msgid "Fax"
 msgstr ""
 
-#: ../behaviors.py:179
-#: ../content/kinesiologist.py:31
+#: ../behaviors.py:185
+#: ../content/kinesiologist.py:30
 msgid "Firstname"
 msgstr ""
 
-#: ../behaviors.py:130
-#: ../content/address.py:59
+#: ../behaviors.py:136
+#: ../content/address.py:66
 msgid "France"
 msgstr ""
 
-#: ../content/kinesiologist.py:36
+#: ../content/kinesiologist.py:35
 msgid "Gender"
 msgstr ""
 
-#: ../behaviors.py:132
-#: ../content/address.py:61
+#: ../behaviors.py:138
+#: ../content/address.py:68
 msgid "Germany"
 msgstr ""
 
-#: ../content/formationevent.py:46
+#: ../content/formationevent.py:56
 msgid "Instructor"
 msgstr ""
 
@@ -154,29 +150,41 @@ msgstr ""
 msgid "Kinesiologist Listing"
 msgstr ""
 
-#: ../content/formationevent.py:51
+#: ../content/formationevent.py:61
 msgid "Language"
 msgstr ""
 
-#: ../content/kinesiologist.py:43
+#: ../content/kinesiologist.py:42
 msgid "Language(s)"
 msgstr ""
 
-#: ../behaviors.py:174
-#: ../content/kinesiologist.py:26
+#: ../behaviors.py:180
+#: ../content/kinesiologist.py:25
 msgid "Lastname"
 msgstr ""
 
-#: ../behaviors.py:131
-#: ../content/address.py:60
+#: ../behaviors.py:137
+#: ../content/address.py:67
 msgid "Luxembourg"
 msgstr ""
 
-#: ../content/kinesiologist.py:54
+#: ../browser/templates/personal_bar.pt:39
+msgid "Manage members"
+msgstr ""
+
+#: ../browser/templates/personal_bar.pt:46
+msgid "Manage training centers"
+msgstr ""
+
+#: ../vocabulary.py:151
 msgid "Member"
 msgstr ""
 
-#: ../content/kinesiologist.py:49
+#: ../profiles/default/types/MemberFormation.xml
+msgid "Member Training"
+msgstr ""
+
+#: ../content/kinesiologist.py:48
 msgid "Member type"
 msgstr ""
 
@@ -184,13 +192,13 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
-#: ../content/formation.py:24
-#: ../content/formationcenter.py:26
+#: ../content/formation.py:25
+#: ../content/formationcenter.py:25
 msgid "Name"
 msgstr ""
 
-#: ../behaviors.py:133
-#: ../content/address.py:62
+#: ../behaviors.py:139
+#: ../content/address.py:69
 msgid "Nederland"
 msgstr ""
 
@@ -206,20 +214,24 @@ msgstr ""
 msgid "Not unique email address"
 msgstr ""
 
-#: ../behaviors.py:63
+#: ../browser/templates/personal_bar.pt:30
+msgid "Personal informations"
+msgstr ""
+
+#: ../behaviors.py:69
 msgid "Phone"
 msgstr ""
 
-#: ../content/formationevent.py:41
+#: ../content/formationevent.py:51
 msgid "Price"
 msgstr ""
 
-#: ../behaviors.py:121
-#: ../content/address.py:50
+#: ../behaviors.py:127
+#: ../content/address.py:57
 msgid "Province"
 msgstr ""
 
-#: ../content/formation.py:29
+#: ../content/formation.py:30
 msgid "Recognized FBK training"
 msgstr ""
 
@@ -227,17 +239,21 @@ msgstr ""
 msgid "Secretariat"
 msgstr ""
 
-#: ../content/formationevent.py:25
+#: ../content/formationevent.py:35
 msgid "Start date"
 msgstr ""
 
-#: ../behaviors.py:101
-#: ../content/address.py:30
+#: ../behaviors.py:107
+#: ../content/address.py:37
 msgid "Street"
 msgstr ""
 
-#: ../content/formationfbk.py:44
+#: ../content/formationfbk.py:42
 msgid "Text"
+msgstr ""
+
+#: ../faceted/templates/faceted-items.pt:29
+msgid "There is no result for the selected filters"
 msgstr ""
 
 #: ../browser/templates/formation_viewlet.pt:13
@@ -248,8 +264,8 @@ msgstr ""
 msgid "There is no trainings in the next months"
 msgstr ""
 
-#: ../content/address.py:25
-#: ../content/formationfbk.py:25
+#: ../content/address.py:32
+#: ../content/formationfbk.py:26
 msgid "Title"
 msgstr ""
 
@@ -277,11 +293,11 @@ msgstr ""
 msgid "Training FBK"
 msgstr ""
 
-#: ../content/formationevent.py:58
+#: ../content/formationevent.py:67
 msgid "Training check"
 msgstr ""
 
-#: ../content/formationcenter.py:41
+#: ../content/formationcenter.py:37
 msgid "Training language(s)"
 msgstr ""
 
@@ -289,12 +305,12 @@ msgstr ""
 msgid "Trainings"
 msgstr ""
 
-#: ../behaviors.py:74
+#: ../behaviors.py:80
 msgid "Website"
 msgstr ""
 
-#: ../behaviors.py:111
-#: ../content/address.py:40
+#: ../behaviors.py:117
+#: ../content/address.py:47
 msgid "Zip code"
 msgstr ""
 

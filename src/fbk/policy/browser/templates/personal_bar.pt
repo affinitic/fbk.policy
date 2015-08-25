@@ -25,11 +25,12 @@
                 action title
             </a>
         </li>
-        <li tal:condition="view/is_membrane_user">
+        <li tal:condition="view/is_membrane_user"
+            i18n:domain="fbk.policy">
             <a href=""
                tal:attributes="href view/membrane_user_link"
                i18n:translate="">
-               Informations personnelles
+               Personal informations
             </a>
         </li>
         <tal:block condition="view/is_administrator"
@@ -38,14 +39,14 @@
             <a href=""
                tal:attributes="href string:${view/root_url}/members/"
                i18n:translate="">
-               Gestion des membres
+               Manage members
             </a>
         </li>
         <li>
             <a href=""
                tal:attributes="href string:${view/root_url}/centers/"
                i18n:translate="">
-               Gestion des centres de formations
+               Manage training centers
             </a>
         </li>
         </tal:block>
