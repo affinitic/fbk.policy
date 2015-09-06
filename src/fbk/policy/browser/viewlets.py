@@ -128,6 +128,21 @@ class FormationEventViewlet(BaseViewlet):
                       if api.content.get_state(i.aq_parent) == 'active']
 
 
+class MemberFormationViewlet(BaseViewlet):
+    authorized_interfaces = (
+        IKinesiologistFolder,
+    )
+
+    def update(self):
+        if self.can_view() is True:
+            self.items = self.query(
+                'MemberFormation',
+                depth=2,
+                sort_on='sortable_title',
+                review_state='active',
+            )
+
+
 class PersonalBarViewlet(common.PersonalBarViewlet):
 
     def update(self):

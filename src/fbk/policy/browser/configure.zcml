@@ -266,6 +266,15 @@
     />
 
   <browser:viewlet
+    name="fbk.policy.memberformation"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+    class=".viewlets.MemberFormationViewlet"
+    template="templates/memberformation_viewlet.pt"
+    layer="fbk.theme.interfaces.IFbkThemeLayer"
+    permission="view.Authenticated"
+    />
+
+  <browser:viewlet
     name="plone.personal_bar"
     manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
     class=".viewlets.PersonalBarViewlet"
