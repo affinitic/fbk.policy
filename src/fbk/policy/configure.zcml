@@ -16,6 +16,11 @@
   <include package="eea.facetednavigation" />
   <include package="fbk.theme" />
 
+  <permission
+    id="view.Authenticated"
+    title="fbk.policy: View Authenticated"
+    />
+
   <include package=".browser" />
   <include package=".content" />
   <include package=".faceted" />
