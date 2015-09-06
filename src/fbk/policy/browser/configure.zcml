@@ -208,6 +208,16 @@
     permission="zope2.View"
     />
 
+  <!-- Member Formation -->
+
+  <browser:page
+    name="listingview"
+    for="fbk.policy.content.memberformation.IMemberFormation"
+    class=".memberformation.MemberFormationView"
+    template="templates/memberformationlisting.pt"
+    permission="zope2.View"
+    />
+
   <!-- Viewlets -->
 
   <browser:viewlet

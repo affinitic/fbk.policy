@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="fbk.policy" tal:omit-tag="">
+
+  <div class="formation listing">
+    <div class="container">
+    <a href="" tal:attributes="href view/context/absolute_url"
+               tal:content="view/context/Title">
+    </a>
+    <tal:if condition="not: view/on_member">
+    -
+    <a href="" tal:content="view/parent/Title"
+                tal:attributes="href view/parent/absolute_url">
+    </a>
+    </tal:if>
+    </div>
+  </div>
+
+</html>
