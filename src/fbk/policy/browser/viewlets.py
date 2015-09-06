@@ -17,6 +17,7 @@ from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 from fbk.policy.content.formationfbk import IFormationFBK
 from fbk.policy.content.kinesiologist import IKinesiologist
 from fbk.policy.content.kinesiologistfolder import IKinesiologistFolder
+from fbk.policy.content.memberformation import IMemberFormation
 
 
 class BaseViewlet(common.ViewletBase):
@@ -114,6 +115,11 @@ class FormationEventViewlet(BaseViewlet):
         IFormation,
         IFormationCenterFolder,
     )
+
+    def can_view(self):
+        if IMemberFormation.providedBy(self.context):
+            return False
+        return super(FormationEventViewlet, self).can_view()
 
     def update(self):
         start = datetime.now()
