@@ -12,4 +12,5 @@
   <object name="Formation" meta_type="Dexterity FTI"/>
   <object name="FormationEvent" meta_type="Dexterity FTI"/>
   <object name="Address" meta_type="Dexterity FTI"/>
+  <object name="MemberFormation" meta_type="Dexterity FTI"/>
 </object>

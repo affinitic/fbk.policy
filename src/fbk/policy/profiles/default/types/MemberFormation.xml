@@ -1,19 +1,16 @@
 <?xml version="1.0"?>
-<object name="KinesiologistFolder" meta_type="Dexterity FTI" i18n:domain="fbk.policy"
+<object name="Formation" meta_type="Dexterity FTI" i18n:domain="fbk.policy"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Kinesiologist Folder</property>
+  <property name="title" i18n:translate="">Member Training</property>
   <property name="description" i18n:translate=""></property>
-  <property name="content_icon">/++resource++fbk.policy/user_icon.png</property>
-  <property name="factory">KinesiologistFolder</property>
-  <property name="add_view_expr">string:${folder_url}/++add++KinesiologistFolder</property>
+  <property name="content_icon">/++resource++fbk.policy/book_icon.png</property>
+  <property name="factory">MemberFormation</property>
+  <property name="add_view_expr">string:${folder_url}/++add++MemberFormation</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-    <element value="Address" />
-    <element value="MemberFormation" />
-  </property>
+  <property name="allowed_content_types"></property>
   <property name="allow_discussion">False</property>
   <property name="default_view">view</property>
   <property name="view_methods">
@@ -21,13 +18,14 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">fbk.policy.content.kinesiologistfolder.KinesiologistFolder</property>
+  <property name="klass">fbk.policy.content.memberformation.MemberFormation</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
     <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable"/>
     <element value="fbk.policy.behaviors.IDefaultExcludeFromNavigation"/>
   </property>
-  <property name="schema_policy">kinesiologistfolder_schema_policy</property>
+  <property name="schema_policy">memberformation_schema_policy</property>
   <alias from="(Default)" to="(dynamic view)"/>
   <alias from="edit" to="@@edit"/>
   <alias from="sharing" to="@@sharing"/>
