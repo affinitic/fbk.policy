@@ -31,7 +31,13 @@
   <browser:menu
     id="plone_contentmenu_multilingual"
     title="Translate menu - contains translation-related actions"
-    class=".menu.TranslationMenu"/>
+    class=".menu.TranslationMenu"
+    />
+
+  <browser:menu
+    id="plone_contentmenu_workflow"
+    title="The 'workflow' menu - allows the user to execute workflow transitions"
+    class=".menu.WorkflowMenu"
     />
 
 </configure>

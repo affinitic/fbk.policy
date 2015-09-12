@@ -86,3 +86,11 @@ class DisplayMenu(MenuMixin, FacetedDisplayMenu):
         if self.is_membrane_object(obj):
             items = []
         return items
+
+
+class WorkflowMenu(MenuMixin, menu.WorkflowMenu):
+
+    def getMenuItems(self, obj, request):
+        if self.is_membrane_object(obj) and self.is_membrane_user:
+            return []
+        return super(WorkflowMenu, self).getMenuItems(obj, request)
