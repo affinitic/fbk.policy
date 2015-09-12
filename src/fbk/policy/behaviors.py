@@ -60,7 +60,7 @@ class IMembraneContactInfos(IMembraneContact):
     )
 
     hide_email = schema.Bool(
-        title=(u'Hide email address'),
+        title=_(u'Hide email address'),
         required=False,
         default=False,
     )

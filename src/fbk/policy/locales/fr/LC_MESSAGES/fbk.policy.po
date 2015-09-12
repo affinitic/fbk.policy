@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-08-25 09:22+0000\n"
+"POT-Creation-Date: 2015-09-12 09:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,7 +38,6 @@ msgstr "Belgique"
 
 #: ../content/formation.py:36
 #: ../content/formationcenter.py:30
-#: ../content/formationfbk.py:31
 msgid "Category"
 msgstr "Catégorie"
 
@@ -81,7 +80,7 @@ msgid "Country"
 msgstr "Pays"
 
 #: ../content/formation.py:42
-#: ../content/formationfbk.py:37
+#: ../content/formationfbk.py:29
 msgid "Description"
 msgstr "Description"
 
@@ -130,6 +129,10 @@ msgstr "Sexe"
 #: ../content/address.py:68
 msgid "Germany"
 msgstr "Allemagne"
+
+#: ../behaviors.py:63
+msgid "Hide email address"
+msgstr "Cacher l'adresse email"
 
 #: ../content/formationevent.py:56
 msgid "Instructor"
@@ -245,7 +248,7 @@ msgstr "Date de début"
 msgid "Street"
 msgstr "Rue"
 
-#: ../content/formationfbk.py:42
+#: ../content/formationfbk.py:34
 msgid "Text"
 msgstr "Texte"
 
@@ -262,7 +265,7 @@ msgid "There is no trainings in the next months"
 msgstr "Il n'y a pas de formation programmée dans les prochains mois"
 
 #: ../content/address.py:32
-#: ../content/formationfbk.py:26
+#: ../content/formationfbk.py:24
 msgid "Title"
 msgstr "Titre"
 
@@ -301,6 +304,10 @@ msgstr "Langue(s) des formations"
 #: ../browser/templates/formation_viewlet.pt:8
 msgid "Trainings"
 msgstr "Formations"
+
+#: ../browser/templates/memberformation_viewlet.pt:9
+msgid "Trainings proposed"
+msgstr "Formations proposées"
 
 #: ../behaviors.py:80
 msgid "Website"
