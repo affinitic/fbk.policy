@@ -65,6 +65,12 @@ def cleanup_contenttypes():
     for t in types:
         if t in portal_types:
             del portal_types[t]
+    types = (
+        'News Item',
+        'Event',
+    )
+    for t in types:
+        portal_types[t].global_allow = False
 
 
 def cleanup_actions():
