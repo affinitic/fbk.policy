@@ -31,6 +31,7 @@ def post_install(context):
     delete_default_content(portal)
     cleanup_contenttypes()
     cleanup_actions()
+    change_behaviors()
 
 
 def setup_languages(portal):
@@ -86,6 +87,21 @@ def cleanup_actions():
     for action in action_list:
         if action in object_buttons:
             del object_buttons[action]
+
+
+def change_behaviors():
+    portal_types = api.portal.get_tool('portal_types')
+    types = ('Image', 'File', 'News Item', 'Event', 'Link')
+    excluded_behaviors = (
+        'plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation',
+    )
+    for t in types:
+        behaviors = list(portal_types[t].behaviors)
+        for behavior in excluded_behaviors:
+            if behavior in behaviors:
+                behaviors.remove(behavior)
+        behaviors.append('fbk.policy.behaviors.IDefaultExcludeFromNavigation')
+        portal_types[t].behaviors = tuple(behaviors)
 
 
 def setup_extra_contents(context):
