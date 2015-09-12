@@ -24,6 +24,15 @@
               condition="exists:doc/@@listingview"
               replace="structure doc/@@listingview" />
           </tal:entries>
+          <script type="text/javascript">
+            jQuery(document).ready(function() {
+              $("span.geomailaddress").each(function(i){
+                encodedMail = $(this).text();
+                decodedMail = $.base64.decode(encodedMail);
+                $(this).replaceWith(decodedMail);
+              });
+            });
+          </script>
           </tal:block>
           <tal:block condition="not: batch">
             <span class="message" i18n:translate="">There is no result for the selected filters</span>
