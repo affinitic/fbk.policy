@@ -12,7 +12,6 @@ from five import grok
 from plone.app.textfield import RichText
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
-from plone.app.multilingual.dx import directives
 from plone.supermodel import model
 from zope import schema
 
@@ -20,17 +19,10 @@ from fbk.policy import _
 
 
 class IFormationFBK(model.Schema):
-    directives.languageindependent('category')
 
     title = schema.TextLine(
         title=_(u'Title'),
         required=True,
-    )
-
-    category = schema.Choice(
-        title=_(u'Category'),
-        required=True,
-        vocabulary='fbk.policy.formationfbk.categories',
     )
 
     description = schema.Text(
