@@ -82,4 +82,13 @@ def searchable_text(obj):
             address.province,
             address.country,
         ])
-    return ' '.join(elements)
+    return ' '.join(decode_utf8(elements))
+
+
+def decode_utf8(elements):
+    for idx, element in enumerate(elements):
+        try:
+            elements[idx] = element.decode('utf8')
+        except UnicodeDecodeError:
+            pass
+    return elements
