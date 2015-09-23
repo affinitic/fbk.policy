@@ -89,6 +89,6 @@ def decode_utf8(elements):
     for idx, element in enumerate(elements):
         try:
             elements[idx] = element.decode('utf8')
-        except UnicodeDecodeError:
+        except UnicodeEncodeError:
             pass
     return elements
