@@ -12,5 +12,7 @@ for lang in $(find . -mindepth 1 -maxdepth 1 -type d); do
 		if test -d $lang/LC_MESSAGES; then
 				touch $lang/LC_MESSAGES/$domain.po
 				i18ndude sync --pot $domain.pot $lang/LC_MESSAGES/$domain.po
+				touch $lang/LC_MESSAGES/dexterity.membrane.po
+				i18ndude sync --pot dexterity.membrane.pot $lang/LC_MESSAGES/dexterity.membrane.po
 		fi
 done
