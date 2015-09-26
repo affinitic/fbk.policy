@@ -161,5 +161,4 @@ class ListingBaseView(DefaultView):
             self.contents = api.content.find(
                 context=self.context,
                 depth=self.depth,
-                sort_on='sortable_title',
             )
