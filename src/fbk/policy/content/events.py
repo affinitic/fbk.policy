@@ -77,7 +77,11 @@ def membranetype_modified(event):
             context=portal,
         )
         for b in brains:
-            b.getObject().reindexObject()
+            obj = b.getObject()
+            obj.firstname = event.object.firstname
+            obj.lastname = event.object.lastname
+            obj.title = event.object.Title()
+            obj.reindexObject()
 
 
 @grok.subscribe(IObjectAddedEvent)

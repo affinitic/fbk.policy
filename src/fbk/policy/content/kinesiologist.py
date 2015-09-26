@@ -71,6 +71,11 @@ class IKinesiologist(IPerson):
 class Kinesiologist(Person):
     grok.implements(IKinesiologist)
 
+    def get_title(self):
+        displayed_attrs = ('lastname', 'firstname')
+        displayed = [getattr(self, attr, None) for attr in displayed_attrs]
+        return u' '.join([x for x in displayed if x])
+
 
 class KinesiologistSchemaPolicy(grok.GlobalUtility, DexteritySchemaPolicy):
     grok.name('kinesiologist_schema_policy')
