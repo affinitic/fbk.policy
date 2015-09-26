@@ -128,18 +128,6 @@ class FormationCategories(grok.GlobalUtility):
         return dict_2_vocabulary(values)
 
 
-class FormationCenterCategories(grok.GlobalUtility):
-    grok.implements(IVocabularyFactory)
-    grok.name('fbk.policy.formationcenter.categories')
-
-    def __call__(self, context):
-        values = {
-            'Category 1': _(u'Category 1'),
-            'Category 2': _(u'Category 2'),
-        }
-        return dict_2_vocabulary(values)
-
-
 class KinesiologistCategories(grok.GlobalUtility):
     grok.implements(IVocabularyFactory)
     grok.name('fbk.policy.kinesiologist.categories')

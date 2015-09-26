@@ -26,12 +26,6 @@ class IFormationCenter(IPerson):
         required=True,
     )
 
-    category = schema.Choice(
-        title=_(u'Category'),
-        required=True,
-        vocabulary='fbk.policy.formationcenter.categories',
-    )
-
     form.widget(training_languages='z3c.form.browser.checkbox.CheckBoxFieldWidget')
     training_languages = schema.List(
         title=_(u'Training language(s)'),
