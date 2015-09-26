@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-12 09:00+0000\n"
+"POT-Creation-Date: 2015-09-26 12:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,10 +36,9 @@ msgstr "Informations sur l'administrateur"
 msgid "Belgium"
 msgstr "Belgique"
 
-#: ../content/formation.py:36
-#: ../content/formationcenter.py:30
-msgid "Category"
-msgstr "Catégorie"
+#: ../content/formation.py:30
+msgid "Branch"
+msgstr "Branche"
 
 #: ../vocabulary.py:113
 msgid "Category 1"
@@ -57,11 +56,11 @@ msgstr "GSM"
 msgid "Centers"
 msgstr "Centres"
 
-#: ../vocabulary.py:150
+#: ../vocabulary.py:138
 msgid "Certification in progress"
 msgstr "Certification en cours"
 
-#: ../vocabulary.py:149
+#: ../vocabulary.py:137
 msgid "Certified"
 msgstr "Certifié"
 
@@ -84,17 +83,17 @@ msgstr "Pays"
 msgid "Description"
 msgstr "Description"
 
-#: ../content/formationcenter.py:48
+#: ../content/formationcenter.py:42
 #: ../content/kinesiologist.py:61
 msgid "Description (EN)"
 msgstr "Description (EN)"
 
-#: ../content/formationcenter.py:43
+#: ../content/formationcenter.py:37
 #: ../content/kinesiologist.py:56
 msgid "Description (FR)"
 msgstr "Description (FR)"
 
-#: ../content/formationcenter.py:53
+#: ../content/formationcenter.py:47
 #: ../content/kinesiologist.py:66
 msgid "Description (NL)"
 msgstr "Description (NL)"
@@ -163,6 +162,10 @@ msgstr "Langue(s)"
 msgid "Lastname"
 msgstr "Nom"
 
+#: ../content/formation.py:36
+msgid "Lesson"
+msgstr "Cours"
+
 #: ../behaviors.py:137
 #: ../content/address.py:67
 msgid "Luxembourg"
@@ -176,7 +179,7 @@ msgstr "Gérer les membres"
 msgid "Manage training centers"
 msgstr "Gérer les centres de formations"
 
-#: ../vocabulary.py:151
+#: ../vocabulary.py:139
 msgid "Member"
 msgstr "Membre"
 
@@ -231,10 +234,6 @@ msgstr "Prix"
 msgid "Province"
 msgstr "Province"
 
-#: ../content/formation.py:30
-msgid "Recognized FBK training"
-msgstr "Formations reconnues par la FBK"
-
 #: ../browser/templates/formationcenter-fields.pt:17
 msgid "Secretariat"
 msgstr "Secrétariat"
@@ -252,7 +251,7 @@ msgstr "Rue"
 msgid "Text"
 msgstr "Texte"
 
-#: ../faceted/templates/faceted-items.pt:29
+#: ../faceted/templates/faceted-items.pt:38
 msgid "There is no result for the selected filters"
 msgstr "Il n'y a aucun résultat pour les filtres sélectionnés"
 
@@ -297,7 +296,7 @@ msgstr "Formation reconnue FBK"
 msgid "Training check"
 msgstr "Prise en charge des chèques formations"
 
-#: ../content/formationcenter.py:37
+#: ../content/formationcenter.py:31
 msgid "Training language(s)"
 msgstr "Langue(s) des formations"
 

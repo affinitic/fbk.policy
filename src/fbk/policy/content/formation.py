@@ -27,13 +27,13 @@ class IFormation(model.Schema):
     )
 
     fbk_formation = schema.Choice(
-        title=_(u'Recognized FBK training'),
+        title=_(u'Branch'),
         required=False,
         vocabulary='fbk.policy.fbkformations.vocabulary',
     )
 
     category = schema.Choice(
-        title=_(u'Category'),
+        title=_(u'Lesson'),
         required=True,
         vocabulary='fbk.policy.formation.categories',
     )

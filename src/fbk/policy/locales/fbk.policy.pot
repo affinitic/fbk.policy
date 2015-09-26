@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-12 09:00+0000\n"
+"POT-Creation-Date: 2015-09-26 12:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,8 @@ msgstr ""
 msgid "Belgium"
 msgstr ""
 
-#: ../content/formation.py:36
-#: ../content/formationcenter.py:30
-msgid "Category"
+#: ../content/formation.py:30
+msgid "Branch"
 msgstr ""
 
 #: ../vocabulary.py:113
@@ -60,11 +59,11 @@ msgstr ""
 msgid "Centers"
 msgstr ""
 
-#: ../vocabulary.py:150
+#: ../vocabulary.py:138
 msgid "Certification in progress"
 msgstr ""
 
-#: ../vocabulary.py:149
+#: ../vocabulary.py:137
 msgid "Certified"
 msgstr ""
 
@@ -87,17 +86,17 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../content/formationcenter.py:48
+#: ../content/formationcenter.py:42
 #: ../content/kinesiologist.py:61
 msgid "Description (EN)"
 msgstr ""
 
-#: ../content/formationcenter.py:43
+#: ../content/formationcenter.py:37
 #: ../content/kinesiologist.py:56
 msgid "Description (FR)"
 msgstr ""
 
-#: ../content/formationcenter.py:53
+#: ../content/formationcenter.py:47
 #: ../content/kinesiologist.py:66
 msgid "Description (NL)"
 msgstr ""
@@ -166,6 +165,10 @@ msgstr ""
 msgid "Lastname"
 msgstr ""
 
+#: ../content/formation.py:36
+msgid "Lesson"
+msgstr ""
+
 #: ../behaviors.py:137
 #: ../content/address.py:67
 msgid "Luxembourg"
@@ -179,7 +182,7 @@ msgstr ""
 msgid "Manage training centers"
 msgstr ""
 
-#: ../vocabulary.py:151
+#: ../vocabulary.py:139
 msgid "Member"
 msgstr ""
 
@@ -234,10 +237,6 @@ msgstr ""
 msgid "Province"
 msgstr ""
 
-#: ../content/formation.py:30
-msgid "Recognized FBK training"
-msgstr ""
-
 #: ../browser/templates/formationcenter-fields.pt:17
 msgid "Secretariat"
 msgstr ""
@@ -255,7 +254,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: ../faceted/templates/faceted-items.pt:29
+#: ../faceted/templates/faceted-items.pt:38
 msgid "There is no result for the selected filters"
 msgstr ""
 
@@ -300,7 +299,7 @@ msgstr ""
 msgid "Training check"
 msgstr ""
 
-#: ../content/formationcenter.py:37
+#: ../content/formationcenter.py:31
 msgid "Training language(s)"
 msgstr ""
 
