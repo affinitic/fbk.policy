@@ -10,6 +10,8 @@ Created by mpeeters
 
 from plone import api
 from plone.dexterity.browser.view import DefaultView
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 from fbk.policy.browser.base import BaseMembraneFolder
 from fbk.policy.browser.base import DefaultFieldsView
@@ -35,6 +37,13 @@ class KinesiologistFieldsView(DefaultFieldsView):
         'description_en',
         'description_nl',
     )
+
+    @property
+    def member_type(self):
+        factory = getUtility(IVocabularyFactory,
+                             'fbk.policy.kinesiologist.categories')
+        vocabulary = factory(self.context)
+        return vocabulary.getTerm(self.context.member_type).title
 
     def update(self):
         widgets = self.fieldsets['contact_informations'].widgets

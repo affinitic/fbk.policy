@@ -17,6 +17,7 @@
        tal:attributes="src string:/++resource++fbk.policy/${context/gender}-default.png" />
   </tal:block>
 
+  <p class="member-type" tal:content="view/member_type"></p>
   <p class="description" tal:content="view/description"></p>
 
   <tal:widgets repeat="widget view/widgets/values">
