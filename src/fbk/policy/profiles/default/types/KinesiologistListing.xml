@@ -22,6 +22,8 @@
   <property name="add_permission">cmf.AddPortalContent</property>
   <property name="klass">fbk.policy.content.kinesiologistlisting.KinesiologistListing</property>
   <property name="behaviors">
+    <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
     <element value="plone.app.content.interfaces.INameFromTitle"/>
     <element value="plone.app.multilingual.dx.interfaces.IDexterityTranslatable"/>
   </property>

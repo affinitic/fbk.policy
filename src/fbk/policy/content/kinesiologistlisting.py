@@ -10,13 +10,12 @@ Created by mpeeters
 
 from five import grok
 from plone.app.contenttypes.interfaces import IFolder
-from plone.autoform import directives as form
 from plone.dexterity.content import Container
 from plone.dexterity.schema import DexteritySchemaPolicy
 
 
 class IKinesiologistListing(IFolder):
-    form.omitted('description')
+    pass
 
 
 class KinesiologistListing(Container):
