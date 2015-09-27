@@ -10,6 +10,7 @@ Created by mpeeters
 
 from five import grok
 from plone.app.textfield import RichText
+from plone.autoform import directives as form
 from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
 from plone.supermodel import model
@@ -33,6 +34,12 @@ class IFormationFBK(model.Schema):
     text = RichText(
         title=_(u'Text'),
         required=True,
+    )
+
+    form.widget(lessons='plone.z3cform.textlines.TextLinesFieldWidget')
+    lessons = schema.Text(
+        title=_(u'Lessons'),
+        required=False,
     )
 
 

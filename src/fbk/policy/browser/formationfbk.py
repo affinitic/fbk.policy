@@ -16,4 +16,5 @@ class FormationFBKView(DefaultFieldsView):
         'title',
         'description',
         'text',
+        'lessons',
     )
