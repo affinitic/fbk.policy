@@ -29,6 +29,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 from fbk.policy.exception import NotUniqueEmailAddress
+from fbk.policy.form.zip import Zip
 
 
 class IMembraneContact(Interface):
@@ -113,7 +114,7 @@ class ICenterContactInfos(IMembraneContact):
         required=False,
     )
 
-    zip_code = schema.Int(
+    zip_code = Zip(
         title=_(u'Zip code'),
         required=True,
     )

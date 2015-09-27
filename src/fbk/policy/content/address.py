@@ -17,6 +17,7 @@ from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
+from fbk.policy.form.zip import Zip
 
 
 class IAddress(model.Schema):
@@ -43,7 +44,7 @@ class IAddress(model.Schema):
         required=False,
     )
 
-    zip_code = schema.Int(
+    zip_code = Zip(
         title=_(u'Zip code'),
         required=True,
     )

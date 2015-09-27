@@ -24,6 +24,7 @@
   <include package=".browser" />
   <include package=".content" />
   <include package=".faceted" />
+  <include package=".form" />
 
   <include file="behaviors.zcml" />
 
