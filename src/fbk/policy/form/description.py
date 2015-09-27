@@ -37,7 +37,8 @@ class DescriptionConverter(converter.BaseDataConverter, grok.MultiAdapter):
     def toFieldValue(self, value):
         if self._strip_value and isinstance(value, basestring):
             value = value.strip()
-            value = unicode(lxml.html.fromstring(value).text_content())
+            if value:
+                value = unicode(lxml.html.fromstring(value).text_content())
         if value == u'':
             return self.field.missing_value
         value = self.field.fromUnicode(value)
