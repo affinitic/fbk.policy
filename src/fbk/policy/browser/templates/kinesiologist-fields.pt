@@ -18,7 +18,7 @@
   </tal:block>
 
   <p class="member-type" tal:content="view/member_type"></p>
-  <p class="description" tal:content="view/description"></p>
+  <p class="description" tal:content="structure view/description"></p>
 
   <tal:widgets repeat="widget view/widgets/values">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>

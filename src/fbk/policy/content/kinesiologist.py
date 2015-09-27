@@ -16,6 +16,7 @@ from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
 
 from fbk.policy import _
+from fbk.policy.form.description import Description
 
 
 class IKinesiologist(IPerson):
@@ -52,17 +53,17 @@ class IKinesiologist(IPerson):
 
     form.order_after(photo='member_type')
 
-    description_fr = schema.Text(
+    description_fr = Description(
         title=_(u'Description (FR)'),
         required=False,
     )
 
-    description_en = schema.Text(
+    description_en = Description(
         title=_(u'Description (EN)'),
         required=False,
     )
 
-    description_nl = schema.Text(
+    description_nl = Description(
         title=_(u'Description (NL)'),
         required=False,
     )
