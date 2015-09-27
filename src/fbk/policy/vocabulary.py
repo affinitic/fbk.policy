@@ -8,9 +8,11 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
+from Products.CMFPlone import PloneMessageFactory as PMF
 from five import grok
 from plone import api
-from Products.CMFPlone import PloneMessageFactory as PMF
+from plone.i18n.normalizer.interfaces import IIDNormalizer
+from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -121,11 +123,25 @@ class FormationCategories(grok.GlobalUtility):
     grok.name('fbk.policy.formation.categories')
 
     def __call__(self, context):
-        values = {
-            'Category 1': _(u'Category 1'),
-            'Category 2': _(u'Category 2'),
-        }
-        return dict_2_vocabulary(values)
+        root = api.portal.get_navigation_root(context)
+        brains = api.content.find(
+            context=root,
+            portal_type='FormationFBK',
+            review_state='published',
+        )
+
+        terms = []
+        normalizer = getUtility(IIDNormalizer)
+        for b in brains:
+            obj = b.getObject()
+            for lesson in obj.lessons.splitlines():
+                lesson_id = normalizer.normalize(lesson)
+                terms.append(SimpleVocabulary.createTerm(
+                    '{0}|{1}'.format(b.id, lesson_id),
+                    '{0}|{1}'.format(b.id, lesson_id),
+                    lesson,
+                ))
+        return SimpleVocabulary(terms)
 
 
 class KinesiologistCategories(grok.GlobalUtility):
