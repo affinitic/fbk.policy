@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-26 12:33+0000\n"
+"POT-Creation-Date: 2015-09-27 10:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../behaviors.py:112
-#: ../content/address.py:42
+#: ../behaviors.py:113
+#: ../content/address.py:43
 msgid "Additional address details"
 msgstr "Informations complémentaires"
 
@@ -27,28 +27,28 @@ msgstr "Adresse"
 msgid "Addresses"
 msgstr "Adresses"
 
-#: ../behaviors.py:169
+#: ../behaviors.py:170
 msgid "Administrator informations"
 msgstr "Informations sur l'administrateur"
 
-#: ../behaviors.py:135
-#: ../content/address.py:65
+#: ../behaviors.py:136
+#: ../content/address.py:66
 msgid "Belgium"
 msgstr "Belgique"
 
-#: ../content/formation.py:30
+#: ../content/formation.py:31
 msgid "Branch"
 msgstr "Branche"
 
-#: ../vocabulary.py:113
+#: ../vocabulary.py:115
 msgid "Category 1"
 msgstr "Première Catégorie"
 
-#: ../vocabulary.py:114
+#: ../vocabulary.py:116
 msgid "Category 2"
 msgstr "Seconde Catégorie"
 
-#: ../behaviors.py:75
+#: ../behaviors.py:76
 msgid "Cell phone"
 msgstr "GSM"
 
@@ -56,49 +56,49 @@ msgstr "GSM"
 msgid "Centers"
 msgstr "Centres"
 
-#: ../vocabulary.py:138
+#: ../vocabulary.py:154
 msgid "Certification in progress"
 msgstr "Certification en cours"
 
-#: ../vocabulary.py:137
+#: ../vocabulary.py:153
 msgid "Certified"
 msgstr "Certifié"
 
-#: ../behaviors.py:122
-#: ../content/address.py:52
+#: ../behaviors.py:123
+#: ../content/address.py:53
 msgid "City"
 msgstr "Ville"
 
-#: ../behaviors.py:52
+#: ../behaviors.py:53
 msgid "Contact informations"
 msgstr "Informations de contact"
 
-#: ../behaviors.py:132
-#: ../content/address.py:62
+#: ../behaviors.py:133
+#: ../content/address.py:63
 msgid "Country"
 msgstr "Pays"
 
-#: ../content/formation.py:42
-#: ../content/formationfbk.py:29
+#: ../content/formation.py:43
+#: ../content/formationfbk.py:30
 msgid "Description"
 msgstr "Description"
 
 #: ../content/formationcenter.py:42
-#: ../content/kinesiologist.py:61
+#: ../content/kinesiologist.py:62
 msgid "Description (EN)"
 msgstr "Description (EN)"
 
 #: ../content/formationcenter.py:37
-#: ../content/kinesiologist.py:56
+#: ../content/kinesiologist.py:57
 msgid "Description (FR)"
 msgstr "Description (FR)"
 
 #: ../content/formationcenter.py:47
-#: ../content/kinesiologist.py:66
+#: ../content/kinesiologist.py:67
 msgid "Description (NL)"
 msgstr "Description (NL)"
 
-#: ../behaviors.py:57
+#: ../behaviors.py:58
 msgid "Email"
 msgstr "Email"
 
@@ -106,30 +106,30 @@ msgstr "Email"
 msgid "End date"
 msgstr "Date de fin"
 
-#: ../behaviors.py:157
+#: ../behaviors.py:158
 msgid "Fax"
 msgstr "Fax"
 
-#: ../behaviors.py:185
-#: ../content/kinesiologist.py:30
+#: ../behaviors.py:186
+#: ../content/kinesiologist.py:31
 msgid "Firstname"
 msgstr "Prénom"
 
-#: ../behaviors.py:136
-#: ../content/address.py:66
+#: ../behaviors.py:137
+#: ../content/address.py:67
 msgid "France"
 msgstr "France"
 
-#: ../content/kinesiologist.py:35
+#: ../content/kinesiologist.py:36
 msgid "Gender"
 msgstr "Sexe"
 
-#: ../behaviors.py:138
-#: ../content/address.py:68
+#: ../behaviors.py:139
+#: ../content/address.py:69
 msgid "Germany"
 msgstr "Allemagne"
 
-#: ../behaviors.py:63
+#: ../behaviors.py:64
 msgid "Hide email address"
 msgstr "Cacher l'adresse email"
 
@@ -153,21 +153,25 @@ msgstr "Listing de Kinésiologue"
 msgid "Language"
 msgstr "Langue"
 
-#: ../content/kinesiologist.py:42
+#: ../content/kinesiologist.py:43
 msgid "Language(s)"
 msgstr "Langue(s)"
 
-#: ../behaviors.py:180
-#: ../content/kinesiologist.py:25
+#: ../behaviors.py:181
+#: ../content/kinesiologist.py:26
 msgid "Lastname"
 msgstr "Nom"
 
-#: ../content/formation.py:36
+#: ../content/formation.py:37
 msgid "Lesson"
 msgstr "Cours"
 
-#: ../behaviors.py:137
-#: ../content/address.py:67
+#: ../content/formationfbk.py:41
+msgid "Lessons"
+msgstr "Cours"
+
+#: ../behaviors.py:138
+#: ../content/address.py:68
 msgid "Luxembourg"
 msgstr "Luxembourg"
 
@@ -179,7 +183,7 @@ msgstr "Gérer les membres"
 msgid "Manage training centers"
 msgstr "Gérer les centres de formations"
 
-#: ../vocabulary.py:139
+#: ../vocabulary.py:155
 msgid "Member"
 msgstr "Membre"
 
@@ -187,7 +191,7 @@ msgstr "Membre"
 msgid "Member Training"
 msgstr "Formation proposée"
 
-#: ../content/kinesiologist.py:48
+#: ../content/kinesiologist.py:49
 msgid "Member type"
 msgstr "Type de membre"
 
@@ -195,13 +199,13 @@ msgstr "Type de membre"
 msgid "Members"
 msgstr "Membres"
 
-#: ../content/formation.py:25
+#: ../content/formation.py:26
 #: ../content/formationcenter.py:25
 msgid "Name"
 msgstr "Nom"
 
-#: ../behaviors.py:139
-#: ../content/address.py:69
+#: ../behaviors.py:140
+#: ../content/address.py:70
 msgid "Nederland"
 msgstr "Pays-Bas"
 
@@ -221,7 +225,7 @@ msgstr "L'adresse email n'est pas unique"
 msgid "Personal informations"
 msgstr "Informations personnelles"
 
-#: ../behaviors.py:69
+#: ../behaviors.py:70
 msgid "Phone"
 msgstr "Téléphone"
 
@@ -229,8 +233,8 @@ msgstr "Téléphone"
 msgid "Price"
 msgstr "Prix"
 
-#: ../behaviors.py:127
-#: ../content/address.py:57
+#: ../behaviors.py:128
+#: ../content/address.py:58
 msgid "Province"
 msgstr "Province"
 
@@ -242,12 +246,12 @@ msgstr "Secrétariat"
 msgid "Start date"
 msgstr "Date de début"
 
-#: ../behaviors.py:107
-#: ../content/address.py:37
+#: ../behaviors.py:108
+#: ../content/address.py:38
 msgid "Street"
 msgstr "Rue"
 
-#: ../content/formationfbk.py:34
+#: ../content/formationfbk.py:35
 msgid "Text"
 msgstr "Texte"
 
@@ -263,8 +267,8 @@ msgstr "Il n'y a pas de formation pour le moment"
 msgid "There is no trainings in the next months"
 msgstr "Il n'y a pas de formation programmée dans les prochains mois"
 
-#: ../content/address.py:32
-#: ../content/formationfbk.py:24
+#: ../content/address.py:33
+#: ../content/formationfbk.py:25
 msgid "Title"
 msgstr "Titre"
 
@@ -308,12 +312,12 @@ msgstr "Formations"
 msgid "Trainings proposed"
 msgstr "Formations proposées"
 
-#: ../behaviors.py:80
+#: ../behaviors.py:81
 msgid "Website"
 msgstr "Site internet"
 
-#: ../behaviors.py:117
-#: ../content/address.py:47
+#: ../behaviors.py:118
+#: ../content/address.py:48
 msgid "Zip code"
 msgstr "Code postal"
 
