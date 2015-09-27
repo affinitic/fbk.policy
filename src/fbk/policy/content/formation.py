@@ -16,6 +16,7 @@ from plone.supermodel import model
 from zope import schema
 
 from fbk.policy import _
+from fbk.policy.form.description import Description
 
 
 class IFormation(model.Schema):
@@ -38,7 +39,7 @@ class IFormation(model.Schema):
         vocabulary='fbk.policy.formation.categories',
     )
 
-    description = schema.Text(
+    description = Description(
         title=_(u'Description'),
         required=True,
     )

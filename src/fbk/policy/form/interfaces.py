@@ -11,5 +11,9 @@ Created by mpeeters
 from zope.interface import Interface
 
 
+class IDescription(Interface):
+    """Marker interface for description field"""
+
+
 class IZip(Interface):
     """Marker interface for zip field"""

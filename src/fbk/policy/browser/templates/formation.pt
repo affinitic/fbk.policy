@@ -10,7 +10,7 @@
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
     </tal:widgets>
     <div style="clear: both;"></div>
-    <p class="description" tal:content="view/context/description"></p>
+    <p class="description" tal:content="structure view/context/description"></p>
   </div>
 
 </html>
