@@ -134,6 +134,8 @@ class FormationCategories(grok.GlobalUtility):
         normalizer = getUtility(IIDNormalizer)
         for b in brains:
             obj = b.getObject()
+            if not obj.lessons:
+                continue
             for lesson in obj.lessons.splitlines():
                 lesson_id = normalizer.normalize(lesson)
                 terms.append(SimpleVocabulary.createTerm(
