@@ -63,13 +63,6 @@ class IFormationEvent(model.Schema, IEvent):
         vocabulary='fbk.policy.languages',
     )
 
-    training_check = schema.Choice(
-        title=_(u'Training check'),
-        required=True,
-        vocabulary='fbk.policy.training_checks',
-        default=u'no',
-    )
-
 
 class FormationEvent(Item):
     grok.implements(IFormationEvent)

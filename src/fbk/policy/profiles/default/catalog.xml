@@ -18,10 +18,6 @@
         <indexed_attr value="training_center"/>
     </index>
     <column value="training_center"/>
-    <index name="training_check" meta_type="FieldIndex">
-        <indexed_attr value="training_check"/>
-    </index>
-    <column value="training_check"/>
     <index name="instructor" meta_type="FieldIndex">
         <indexed_attr value="instructor"/>
     </index>
