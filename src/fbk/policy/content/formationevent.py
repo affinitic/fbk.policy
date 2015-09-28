@@ -28,7 +28,6 @@ class IFormationEvent(model.Schema, IEvent):
         'price',
         'instructor',
         'training_language',
-        'training_check',
     )
 
     start_date = schema.Datetime(
