@@ -11,7 +11,7 @@
   </tal:widgets>
   <div style="clear: both;"></div>
 
-  <p class="description" tal:content="view/description"></p>
+  <p class="description" tal:content="structure view/description"></p>
 
   <div id="secretariat">
     <h2 i18n:translate="">Secretariat</h2>
