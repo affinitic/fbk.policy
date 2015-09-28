@@ -78,9 +78,7 @@ def membranetype_modified(event):
         )
         for b in brains:
             obj = b.getObject()
-            obj.firstname = event.object.firstname
-            obj.lastname = event.object.lastname
-            obj.title = event.object.Title()
+            obj.title = event.object.Title().decode('utf8')
             obj.reindexObject()
 
 
