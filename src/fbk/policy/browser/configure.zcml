@@ -9,6 +9,11 @@
     directory="static"
     />
 
+  <browser:resource
+    file="js/branch-lessons.js"
+    name="branch-lessons.js"
+    />
+
   <browser:page
     name="view"
     for="fbk.policy.content.centers.ICenters"

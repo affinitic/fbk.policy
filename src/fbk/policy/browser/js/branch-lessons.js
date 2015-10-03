@@ -1,0 +1,38 @@
+jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
+  return this.each(function() {
+    var select = this;
+    var options = [];
+    $(select).find('option').each(function() {
+      options.push({value: $(this).val(), text: $(this).text()});
+    });
+    console.log(options);
+    $(select).data('options', options);
+    $(textbox).bind('change', function() {
+      var options = $(select).empty().scrollTop(0).data('options');
+      var search = $.trim($(this).val());
+      var regex = new RegExp(search,'gi');
+
+      $.each(options, function(i) {
+        var option = options[i];
+        console.log(option);
+        if(option.value.match(regex) !== null) {
+          $(select).append(
+             $('<option>').text(option.text).val(option.value)
+          );
+        }
+      });
+      if (selectSingleMatch === true &&
+          $(select).children().length === 1) {
+        $(select).children().get(0).selected = true;
+      }
+    });
+  });
+};
+
+
+jQuery(document).ready(function($) {
+
+  $('select#form-widgets-category').filterByText($('select#form-widgets-fbk_formation'), true);
+  $('select#form-widgets-fbk_formation').trigger('change');
+
+});
