@@ -22,6 +22,10 @@
         <indexed_attr value="instructor"/>
     </index>
     <column value="instructor"/>
+    <index name="parent_state" meta_type="FieldIndex">
+        <indexed_attr value="parent_state"/>
+    </index>
+    <column value="parent_state"/>
 
     <!-- kinesiologist specific indexes -->
     <index name="languages" meta_type="KeywordIndex">

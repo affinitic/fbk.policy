@@ -10,6 +10,7 @@ Created by mpeeters
 
 from datetime import datetime
 from five import grok
+from plone import api
 from plone.app.contenttypes.interfaces import IEvent
 from plone.app.multilingual.dx import directives
 from plone.dexterity.content import Item
@@ -89,3 +90,8 @@ class FormationEventSchemaPolicy(grok.GlobalUtility, DexteritySchemaPolicy):
 @indexer(IFormationEvent)
 def training_center(obj):
     return obj.aq_parent.aq_parent.id
+
+
+@indexer(IFormationEvent)
+def parent_state(obj):
+    return api.content.get_state(obj.aq_parent)

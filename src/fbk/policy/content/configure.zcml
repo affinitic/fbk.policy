@@ -33,6 +33,11 @@
     />
 
   <adapter
+    factory=".formationevent.parent_state"
+    name="parent_state"
+    />
+
+  <adapter
     factory=".kinesiologistfolder.languages"
     name="languages"
     />

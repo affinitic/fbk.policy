@@ -19,6 +19,7 @@ from zope.lifecycleevent.interfaces import IObjectRemovedEvent
 from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
 from fbk.policy.content.address import IAddress
+from fbk.policy.content.formation import IFormation
 from fbk.policy.content.formationcenter import IFormationCenter
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 from fbk.policy.content.formationevent import IFormationEvent
@@ -79,6 +80,18 @@ def membranetype_modified(event):
         for b in brains:
             obj = b.getObject()
             obj.title = event.object.Title().decode('utf8')
+            obj.reindexObject()
+
+
+@grok.subscribe(IAfterTransitionEvent)
+def formation_change_state(event):
+    if IFormation.providedBy(event.object):
+        brains = api.content.find(
+            portal_type='FormationEvent',
+            contenxt=event.object,
+        )
+        for b in brains:
+            obj = b.getObject()
             obj.reindexObject()
 
 
