@@ -154,6 +154,7 @@ class KinesiologistCategories(grok.GlobalUtility):
         values = {
             'certified': _(u'Certified'),
             'certification_in_progress': _(u'Certification in progress'),
-            'member': _(u'Member'),
+            'member': _(u'Adherent Member'),
+            'honor_member': _(u'Honoured Member'),
         }
         return dict_2_vocabulary(values)
