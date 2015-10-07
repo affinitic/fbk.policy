@@ -17,7 +17,17 @@
     <h2 i18n:translate="">Secretariat</h2>
     <tal:widgets repeat="widget view/fieldsets/contact_informations/widgets/values">
       <tal:if condition="widget/value">
+      <tal:email condition="not: python: widget.name == 'form.widgets.ICenterContactInfos.contact_email'">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+      </tal:email>
+      <tal:email condition="python: widget.name == 'form.widgets.ICenterContactInfos.contact_email'">
+        <div id="formfield-form-widgets-ICenterContactInfos-contact_email" class="field z3cformInlineValidation kssattr-fieldname-form.widgets.ICenterContactInfos.email" data-fieldname="form.widgets.ICenterContactInfos.contact_email">
+        <span>
+        <a href="" tal:attributes="href string:mailto:${widget/value}"
+                   tal:content="widget/value"></a>
+        </span>
+        </div>
+      </tal:email>
       </tal:if>
     </tal:widgets>
     <div style="clear: both;"></div>
