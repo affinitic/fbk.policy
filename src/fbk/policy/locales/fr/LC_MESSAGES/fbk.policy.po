@@ -29,7 +29,7 @@ msgstr "Adresses"
 
 #: ../behaviors.py:170
 msgid "Administrator informations"
-msgstr "Informations sur l'administrateur"
+msgstr "Informations sur la personne responsable"
 
 #: ../behaviors.py:136
 #: ../content/address.py:66
