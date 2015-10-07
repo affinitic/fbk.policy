@@ -45,6 +45,7 @@ class IKinesiologist(IPerson):
         value_type=schema.Choice(vocabulary='fbk.policy.languages'),
     )
 
+    form.write_permission(member_type='cmf.ManagePortal')
     member_type = schema.Choice(
         title=_(u'Member type'),
         required=True,
