@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-09-27 10:16+0000\n"
+"POT-Creation-Date: 2015-10-07 18:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,10 @@ msgstr "Adresse"
 #: ../browser/templates/address_viewlet.pt:8
 msgid "Addresses"
 msgstr "Adresses"
+
+#: ../vocabulary.py:157
+msgid "Adherent Member"
+msgstr "Membre adhérent"
 
 #: ../behaviors.py:170
 msgid "Administrator informations"
@@ -56,11 +60,11 @@ msgstr "GSM"
 msgid "Centers"
 msgstr "Centres"
 
-#: ../vocabulary.py:154
+#: ../vocabulary.py:156
 msgid "Certification in progress"
 msgstr "Certification en cours"
 
-#: ../vocabulary.py:153
+#: ../vocabulary.py:155
 msgid "Certified"
 msgstr "Certifié"
 
@@ -83,18 +87,18 @@ msgstr "Pays"
 msgid "Description"
 msgstr "Description"
 
-#: ../content/formationcenter.py:42
-#: ../content/kinesiologist.py:62
+#: ../content/formationcenter.py:43
+#: ../content/kinesiologist.py:63
 msgid "Description (EN)"
 msgstr "Description (EN)"
 
-#: ../content/formationcenter.py:37
-#: ../content/kinesiologist.py:57
+#: ../content/formationcenter.py:38
+#: ../content/kinesiologist.py:58
 msgid "Description (FR)"
 msgstr "Description (FR)"
 
-#: ../content/formationcenter.py:47
-#: ../content/kinesiologist.py:67
+#: ../content/formationcenter.py:48
+#: ../content/kinesiologist.py:68
 msgid "Description (NL)"
 msgstr "Description (NL)"
 
@@ -132,6 +136,10 @@ msgstr "Allemagne"
 #: ../behaviors.py:64
 msgid "Hide email address"
 msgstr "Cacher l'adresse email"
+
+#: ../vocabulary.py:158
+msgid "Honoured Member"
+msgstr "Membre d'honneur"
 
 #: ../content/formationevent.py:56
 msgid "Instructor"
@@ -183,15 +191,11 @@ msgstr "Gérer les membres"
 msgid "Manage training centers"
 msgstr "Gérer les centres de formations"
 
-#: ../vocabulary.py:155
-msgid "Member"
-msgstr "Membre"
-
 #: ../profiles/default/types/MemberFormation.xml
 msgid "Member Training"
 msgstr "Formation proposée"
 
-#: ../content/kinesiologist.py:49
+#: ../content/kinesiologist.py:50
 msgid "Member type"
 msgstr "Type de membre"
 
@@ -200,7 +204,7 @@ msgid "Members"
 msgstr "Membres"
 
 #: ../content/formation.py:26
-#: ../content/formationcenter.py:25
+#: ../content/formationcenter.py:26
 msgid "Name"
 msgstr "Nom"
 
@@ -296,11 +300,7 @@ msgstr "Programmation d'un événement"
 msgid "Training FBK"
 msgstr "Formation reconnue FBK"
 
-#: ../content/formationevent.py:67
-msgid "Training check"
-msgstr "Prise en charge des chèques formations"
-
-#: ../content/formationcenter.py:31
+#: ../content/formationcenter.py:32
 msgid "Training language(s)"
 msgstr "Langue(s) des formations"
 
