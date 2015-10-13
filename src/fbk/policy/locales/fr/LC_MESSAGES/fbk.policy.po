@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-07 18:37+0000\n"
+"POT-Creation-Date: 2015-10-13 08:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: ../browser/templates/kinesiologistlisting.pt:35
+msgid "&raquo; view more"
+msgstr "&raquo; en savoir plus"
 
 #: ../behaviors.py:113
 #: ../content/address.py:43
@@ -259,7 +263,7 @@ msgstr "Rue"
 msgid "Text"
 msgstr "Texte"
 
-#: ../faceted/templates/faceted-items.pt:38
+#: ../faceted/templates/faceted-items.pt:44
 msgid "There is no result for the selected filters"
 msgstr "Il n'y a aucun résultat pour les filtres sélectionnés"
 
