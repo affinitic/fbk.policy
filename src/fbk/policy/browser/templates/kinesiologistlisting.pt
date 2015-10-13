@@ -32,6 +32,12 @@
       </div>
       </tal:block>
       <div tal:replace="structure view/obj/@@kinesiologistlisting-fields" />
+      <a href=""
+         class="view-more"
+         tal:attributes="href view/context/absolute_url"
+         i18n:translate="">
+        &raquo; view more
+      </a>
 
     </div>
   </div>
