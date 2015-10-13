@@ -25,9 +25,9 @@
   </tal:widgets>
   <tal:widgets repeat="widget view/fieldsets/contact_informations/widgets/values">
     <tal:if condition="widget/value">
-    <tal:email condition="not: python: widget.name == 'form.widgets.IMembraneContactInfos.email'">
+    <tal:specific condition="not: python: widget.name in ('form.widgets.IMembraneContactInfos.email', 'form.widgets.IMembraneContactInfos.website')">
     <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
-    </tal:email>
+    </tal:specific>
     <tal:email condition="python: widget.name == 'form.widgets.IMembraneContactInfos.email'">
       <div id="formfield-form-widgets-IMembraneContactInfos-email" class="field z3cformInlineValidation kssattr-fieldname-form.widgets.IMembraneContactInfos.email" data-fieldname="form.widgets.IMembraneContactInfos.email">
       <span>
@@ -36,6 +36,14 @@
       </span>
       </div>
     </tal:email>
+    <tal:website condition="python: widget.name == 'form.widgets.IMembraneContactInfos.website'">
+      <div id="formfield-form-widgets-IMembraneContactInfos-website" class="field z3cformInlineValidation kssattr-fieldname-form.widgets.IMembraneContactInfos.website" data-fieldname="form.widgets.IMembraneContactInfos.website">
+      <span>
+      <a href="" tal:attributes="href view/website_url"
+                 tal:content="widget/value"></a>
+      </span>
+      </div>
+    </tal:website>
     </tal:if>
   </tal:widgets>
   <div style="clear: both;"></div>

@@ -39,6 +39,13 @@ class KinesiologistFieldsView(DefaultFieldsView):
     )
 
     @property
+    def website_url(self):
+        if self.context.website:
+            if not self.context.website.startswith('http'):
+                return 'http://{0}'.format(self.context.website)
+            return self.context.website
+
+    @property
     def member_type(self):
         factory = getUtility(IVocabularyFactory,
                              'fbk.policy.kinesiologist.categories')

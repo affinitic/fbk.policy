@@ -31,6 +31,13 @@ class FormationCenterFieldsView(DefaultFieldsView):
         'description_nl',
     )
 
+    @property
+    def website_url(self):
+        if self.context.website:
+            if not self.context.website.startswith('http'):
+                return 'http://{0}'.format(self.context.website)
+            return self.context.website
+
 
 class FormationCenterFolderView(BaseMembraneFolder):
     foldername = 'centers'
