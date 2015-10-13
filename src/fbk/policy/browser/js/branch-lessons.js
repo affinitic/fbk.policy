@@ -27,8 +27,28 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
   });
 };
 
+jQuery.fn.facetedFilterDeactivated = function() {
+  return this.each(function() {
+    var select = this;
+    var content = $(select).html();
+    $(Faceted.Events).bind(Faceted.Events.FORM_DO_QUERY, function(evt, data) {
+      if ($(select).attr('id') !== data.wid) {
+        $(select).html(content);
+      }
+    });
+
+    $(Faceted.Events).bind(Faceted.Events.AJAX_QUERY_SUCCESS, function() {
+      $(select).find('option[disabled="disabled"]').remove();
+    });
+  });
+};
+
 
 jQuery(document).ready(function($) {
+  var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+  if (isSafari === true) {
+    $('select.faceted_select').facetedFilterDeactivated();
+  }
 
   $('select#form-widgets-category').filterByText($('select#form-widgets-fbk_formation'), true);
   $('select#form-widgets-fbk_formation').trigger('change');
