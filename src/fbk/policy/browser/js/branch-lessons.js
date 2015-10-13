@@ -5,7 +5,6 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
     $(select).find('option').each(function() {
       options.push({value: $(this).val(), text: $(this).text()});
     });
-    console.log(options);
     $(select).data('options', options);
     $(textbox).bind('change', function() {
       var options = $(select).empty().scrollTop(0).data('options');
@@ -14,7 +13,6 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
 
       $.each(options, function(i) {
         var option = options[i];
-        console.log(option);
         if(option.value.match(regex) !== null) {
           $(select).append(
              $('<option>').text(option.text).val(option.value)
