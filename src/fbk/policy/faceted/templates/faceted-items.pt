@@ -31,6 +31,12 @@
                 decodedMail = $.base64.decode(encodedMail);
                 $(this).replaceWith(decodedMail);
               });
+
+              $("a[href^=geomailto]").each(function(i){
+                  $(this).attr('class', 'link-mailto');
+                  encodedMail = $(this).attr('href').replace("geomailto:", "");
+                  $(this).attr('href', 'mailto:' + $.base64.decode(encodedMail));
+              });
             });
           </script>
           </tal:block>
