@@ -55,14 +55,12 @@
   </tal:block>
 </dl>
 
-<ul class="actionMenu deactivated" id="portal-personaltools"
+<ul class="actionMenu deactivated" id="personaltools"
     tal:condition="python:view.user_actions and view.anonymous">
   <li id="anon-personalbar">
     <tal:actions repeat="action view/user_actions">
         <a href=""
-           tal:attributes="href action/url;
-                           id string:personaltools-${action/id};
-                           target action/link_target|nothing;"
+           tal:attributes="href action/url"
            tal:content="action/title"
            i18n:translate="">
             action title
