@@ -81,6 +81,13 @@ class KinesiologistFolderView(BaseMembraneFolder):
     viewname = 'traverser-view'
 
     @property
+    def member_type(self):
+        factory = getUtility(IVocabularyFactory,
+                             'fbk.policy.kinesiologist.categories')
+        vocabulary = factory(self.obj)
+        return vocabulary.getTerm(self.obj.member_type).title
+
+    @property
     def cities(self):
         brains = api.content.find(
             context=self.context,
