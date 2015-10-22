@@ -8,6 +8,17 @@
   <div id="formationevent" metal:fill-slot="content-core">
     <span tal:content="structure view/parent/@@listingview" />
 
+    <div class="field field-date">
+      <span tal:content="view/start_date"></span>
+      <span i18n:translate=""> to </span>
+      <span tal:content="view/end_date"></span>
+    </div>
+    <div class="field field-date" tal:condition="view/second_start_date">
+      <span tal:content="view/second_start_date"></span>
+      <span i18n:translate=""> to </span>
+      <span tal:content="view/second_end_date"></span>
+    </div>
+
     <tal:widgets repeat="widget view/widgets/values">
       <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
     </tal:widgets>

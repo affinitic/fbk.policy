@@ -8,12 +8,37 @@ Created by mpeeters
 :license: GPL, see LICENCE.txt for more details.
 """
 
-from plone.dexterity.browser.view import DefaultView
-
+from fbk.policy.browser.base import DefaultFieldsView
 from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
-class FormationEventView(DefaultView):
+class FormationEventView(DefaultFieldsView):
+    excluded_fields = [
+        'start_date',
+        'end_date',
+        'second_start_date',
+        'second_end_date',
+    ]
+
+    date_format = '%d/%m/%Y %H:%M'
+
+    @property
+    def start_date(self):
+        return self.context.start_date.strftime(self.date_format)
+
+    @property
+    def end_date(self):
+        return self.context.end_date.strftime(self.date_format)
+
+    @property
+    def second_start_date(self):
+        if self.context.second_start_date:
+            return self.context.second_start_date.strftime(self.date_format)
+
+    @property
+    def second_end_date(self):
+        if self.context.second_end_date:
+            return self.context.second_end_date.strftime(self.date_format)
 
     def on_formation_center(self):
         published = self.request.get('PUBLISHED', None)

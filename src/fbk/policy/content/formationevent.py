@@ -26,6 +26,8 @@ class IFormationEvent(model.Schema, IEvent):
     directives.languageindependent(
         'start_date',
         'end_date',
+        'second_start_date',
+        'second_end_date',
         'price',
         'instructor',
         'training_language',
@@ -45,6 +47,20 @@ class IFormationEvent(model.Schema, IEvent):
         min=datetime.now().replace(hour=0, minute=0, second=0),
         max=datetime(2030, 12, 31),
         default=datetime.now().replace(hour=0, minute=0, second=0),
+    )
+
+    second_start_date = schema.Datetime(
+        title=_(u'Second start date'),
+        required=False,
+        min=datetime.now().replace(hour=0, minute=0, second=0),
+        max=datetime(2030, 12, 31),
+    )
+
+    second_end_date = schema.Datetime(
+        title=_(u'Second end date'),
+        required=False,
+        min=datetime.now().replace(hour=0, minute=0, second=0),
+        max=datetime(2030, 12, 31),
     )
 
     price = schema.Int(
