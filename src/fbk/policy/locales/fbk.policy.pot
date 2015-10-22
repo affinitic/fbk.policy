@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-13 08:13+0000\n"
+"POT-Creation-Date: 2015-10-22 16:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: fbk.policy\n"
 
-#: ../browser/templates/kinesiologistlisting.pt:35
+#: ../browser/templates/kinesiologistlisting.pt:38
 msgid "&raquo; view more"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../content/formationevent.py:43
+#: ../content/formationevent.py:45
 msgid "End date"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Honoured Member"
 msgstr ""
 
-#: ../content/formationevent.py:56
+#: ../content/formationevent.py:72
 msgid "Instructor"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Kinesiologist Listing"
 msgstr ""
 
-#: ../content/formationevent.py:61
+#: ../content/formationevent.py:77
 msgid "Language"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: ../content/formationevent.py:51
+#: ../content/formationevent.py:67
 msgid "Price"
 msgstr ""
 
@@ -249,11 +249,19 @@ msgstr ""
 msgid "Province"
 msgstr ""
 
+#: ../content/formationevent.py:60
+msgid "Second end date"
+msgstr ""
+
+#: ../content/formationevent.py:53
+msgid "Second start date"
+msgstr ""
+
 #: ../browser/templates/formationcenter-fields.pt:17
 msgid "Secretariat"
 msgstr ""
 
-#: ../content/formationevent.py:35
+#: ../content/formationevent.py:37
 msgid "Start date"
 msgstr ""
 
@@ -326,5 +334,10 @@ msgstr ""
 #: ../behaviors.py:118
 #: ../content/address.py:48
 msgid "Zip code"
+msgstr ""
+
+#: ../browser/templates/formationevent.pt:13
+#: ../browser/templates/formationeventcustom.pt:21
+msgid "to"
 msgstr ""
 
