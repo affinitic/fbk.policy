@@ -306,4 +306,14 @@
     permission="zope2.View"
     />
 
+  <!-- migrations views -->
+
+  <browser:page
+    name="migrate-formationfbk"
+    for="*"
+    class=".migration.FormationFBKMigrationView"
+    template="templates/migration.pt"
+    permission="cmf.ManagePortal"
+    />
+
 </configure>
