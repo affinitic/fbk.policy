@@ -136,12 +136,12 @@ class FormationCategories(grok.GlobalUtility):
             obj = b.getObject()
             if not obj.lessons:
                 continue
-            for lesson in obj.lessons.splitlines():
-                lesson_id = normalizer.normalize(lesson)
+            for lesson in obj.lessons:
+                lesson_id = normalizer.normalize(lesson['title'])
                 terms.append(SimpleVocabulary.createTerm(
                     '{0}|{1}'.format(b.id, lesson_id),
                     '{0}|{1}'.format(b.id, lesson_id),
-                    lesson,
+                    lesson['title'],
                 ))
         return SimpleVocabulary(terms)
 

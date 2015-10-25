@@ -44,6 +44,7 @@ setup(
         'collective.contact.core',
         'collective.contact.membrane',
         'collective.geotransform',
+        'collective.z3cform.datagridfield',
         'cpskin.menu',
         'eea.facetednavigation',
         'fbk.theme',
@@ -53,8 +54,10 @@ setup(
         'plone.app.dexterity',
         'plone.app.multilingual',
         'plone.autoform',
+        'plone.z3ctable',
         'setuptools',
         'z3c.jbot',
+        'z3c.table',
         'z3c.unconfigure',
     ],
     extras_require={
