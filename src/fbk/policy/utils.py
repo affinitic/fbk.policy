@@ -18,3 +18,12 @@ def is_membrane_user(user):
     if tool.getUserObject(user_id=user.id):
         return True
     return False
+
+
+def get_navigation_root():
+    portal = api.portal.get()
+    return portal['fr']
+
+
+def get_invariant_data(obj, key):
+    return obj._Data_data___.get(key)

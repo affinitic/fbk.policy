@@ -13,6 +13,7 @@
   <include package="collective.contact.core" />
   <include package="collective.contact.membrane" />
   <include package="collective.geotransform" />
+  <include package="collective.z3cform.datagridfield" />
   <include package="eea.facetednavigation" />
   <include package="fbk.theme" />
 
@@ -25,6 +26,7 @@
   <include package=".content" />
   <include package=".faceted" />
   <include package=".form" />
+  <include package=".table" />
 
   <include file="behaviors.zcml" />
 

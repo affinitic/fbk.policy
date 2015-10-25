@@ -139,9 +139,11 @@ class DefaultFieldsView(DefaultView):
         return self.context.description_fr
 
     def updateWidgets(self):
+        self.excluded_widgets = {}
         super(DefaultFieldsView, self).updateWidgets()
         for field in self.excluded_fields:
             if field in self.widgets:
+                self.excluded_widgets[field] = self.widgets[field]
                 del self.widgets[field]
 
 

@@ -9,14 +9,17 @@ Created by mpeeters
 """
 
 from Products.CMFPlone import PloneMessageFactory as PMF
+from datetime import datetime
 from five import grok
 from plone import api
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from z3c.form.interfaces import NO_VALUE
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
+from fbk.policy import utils
 
 
 def dict_2_vocabulary(dictionary):
@@ -123,7 +126,10 @@ class FormationCategories(grok.GlobalUtility):
     grok.name('fbk.policy.formation.categories')
 
     def __call__(self, context):
-        root = api.portal.get_navigation_root(context)
+        if context == NO_VALUE or isinstance(context, dict):
+            root = utils.get_navigation_root()
+        else:
+            root = api.portal.get_navigation_root(context)
         brains = api.content.find(
             context=root,
             portal_type='FormationFBK',
@@ -156,5 +162,26 @@ class KinesiologistCategories(grok.GlobalUtility):
             'certification_in_progress': _(u'Certification in progress'),
             'member': _(u'Adherent Member'),
             'honor_member': _(u'Honoured Member'),
+        }
+        return dict_2_vocabulary(values)
+
+
+class MembershipFeeYears(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.membership.fee.years')
+
+    def __call__(self, context):
+        values = {y: y for y in range(2015, datetime.now().year + 2)}
+        return dict_2_vocabulary(values)
+
+
+class MembershipFeePayment(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.membership.fee.payment')
+
+    def __call__(self, context):
+        values = {
+            True: _(u'Paid'),
+            False: _(u'Non paid'),
         }
         return dict_2_vocabulary(values)

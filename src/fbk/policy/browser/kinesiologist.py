@@ -36,6 +36,8 @@ class KinesiologistFieldsView(DefaultFieldsView):
         'description_fr',
         'description_en',
         'description_nl',
+        'membership_fees',
+        'followed_trainings',
     )
 
     @property
@@ -67,6 +69,23 @@ class KinesiologistFieldsView(DefaultFieldsView):
     @property
     def photo(self):
         return self.context.photo
+
+    @property
+    def can_modify(self):
+        if api.user.is_anonymous() is True:
+            return False
+        user = api.user.get_current()
+        user_roles = api.user.get_roles(user=user, obj=self.context)
+        return ('Manager' in user_roles or 'Owner' in user_roles
+                or 'Editor' in user_roles)
+
+    @property
+    def is_manager(self):
+        if api.user.is_anonymous() is True:
+            return False
+        user = api.user.get_current()
+        user_roles = api.user.get_roles(user=user, obj=self.context)
+        return 'Manager' in user_roles
 
 
 class KinesiologistImages(BaseMembraneFolder):

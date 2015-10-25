@@ -10,13 +10,54 @@ Created by mpeeters
 
 from collective.contact.core.content.person import IPerson
 from collective.contact.core.content.person import Person
+from collective.z3cform.datagridfield import DictRow
+from datetime import datetime
 from five import grok
 from plone.autoform import directives as form
 from plone.dexterity.schema import DexteritySchemaPolicy
 from zope import schema
+from zope.interface import Interface
+from zope.interface import invariant
+
+import itertools
 
 from fbk.policy import _
+from fbk.policy import utils
+from fbk.policy.content import exception
 from fbk.policy.form.description import Description
+
+
+class IMembershipFee(Interface):
+
+    year = schema.Choice(
+        title=_(u'Year'),
+        required=True,
+        vocabulary='fbk.policy.membership.fee.years',
+        default=datetime.now().year,
+    )
+
+    payment = schema.Choice(
+        title=_('Payment'),
+        required=True,
+        vocabulary='fbk.policy.membership.fee.payment',
+    )
+
+
+class IFollowedTraining(Interface):
+
+    date = schema.Date(
+        title=_(u'Date'),
+        required=True,
+        min=datetime(2015, 1, 1).date(),
+        max=datetime.now().date(),
+        default=datetime.now().date(),
+    )
+
+    training = schema.Choice(
+        title=_(u'Lesson'),
+        required=True,
+        vocabulary='fbk.policy.formation.categories',
+    )
 
 
 class IKinesiologist(IPerson):
@@ -68,6 +109,43 @@ class IKinesiologist(IPerson):
         title=_(u'Description (NL)'),
         required=False,
     )
+
+    form.write_permission(member_type='cmf.ManagePortal')
+    form.widget(membership_fees='collective.z3cform.datagridfield.DataGridFieldFactory')
+    membership_fees = schema.List(
+        title=_(u'Membership Fee'),
+        value_type=DictRow(
+            title=_(u'Membership Fee'),
+            schema=IMembershipFee,
+        ),
+        required=False,
+    )
+
+    form.widget(followed_trainings='collective.z3cform.datagridfield.DataGridFieldFactory')
+    followed_trainings = schema.List(
+        title=_(u'Followed trainings'),
+        value_type=DictRow(
+            title=_(u'Followed trainings'),
+            schema=IFollowedTraining,
+        ),
+        required=False,
+    )
+
+    @invariant
+    def membership_fees_unicity(obj):
+        value = utils.get_invariant_data(obj, 'membership_fees')
+        if value is not None:
+            if len(value) > len(set([e['year'] for e in value])):
+                raise exception.MembershipFeeDuplicated
+
+    @invariant
+    def followed_trainings_unicty(obj):
+        value = utils.get_invariant_data(obj, 'followed_trainings')
+        if value is not None:
+            value.sort()
+            value2 = [x for x, _ in itertools.groupby(value)]
+            if len(value) > len(value2):
+                raise exception.FollowedTrainingDuplicated
 
 
 class Kinesiologist(Person):

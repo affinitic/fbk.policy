@@ -46,6 +46,14 @@
     </tal:website>
     </tal:if>
   </tal:widgets>
+  <div tal:condition="view/can_modify">
+    <h2 i18n:translate="">Followed trainings</h2>
+    <tal:block replace="structure view/excluded_widgets/followed_trainings/@@ploneform-render-widget" />
+  </div>
+  <div tal:condition="view/is_manager">
+    <h2 i18n:translate="">Membership Fee</h2>
+    <tal:block replace="structure view/excluded_widgets/membership_fees/@@ploneform-render-widget" />
+  </div>
   <div style="clear: both;"></div>
 
 </html>
