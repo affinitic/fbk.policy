@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-22 16:38+0000\n"
+"POT-Creation-Date: 2015-10-27 20:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +34,16 @@ msgstr ""
 msgid "Addresses"
 msgstr ""
 
-#: ../vocabulary.py:157
+#: ../vocabulary.py:163
 msgid "Adherent Member"
 msgstr ""
 
 #: ../behaviors.py:170
 msgid "Administrator informations"
+msgstr ""
+
+#: ../table/view.py:43
+msgid "All"
 msgstr ""
 
 #: ../behaviors.py:136
@@ -51,11 +55,11 @@ msgstr ""
 msgid "Branch"
 msgstr ""
 
-#: ../vocabulary.py:115
+#: ../vocabulary.py:118
 msgid "Category 1"
 msgstr ""
 
-#: ../vocabulary.py:116
+#: ../vocabulary.py:119
 msgid "Category 2"
 msgstr ""
 
@@ -67,11 +71,11 @@ msgstr ""
 msgid "Centers"
 msgstr ""
 
-#: ../vocabulary.py:156
+#: ../vocabulary.py:162
 msgid "Certification in progress"
 msgstr ""
 
-#: ../vocabulary.py:155
+#: ../vocabulary.py:161
 msgid "Certified"
 msgstr ""
 
@@ -89,23 +93,27 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
+#: ../content/kinesiologist.py:49
+msgid "Date"
+msgstr ""
+
 #: ../content/formation.py:43
-#: ../content/formationfbk.py:30
+#: ../content/formationfbk.py:46
 msgid "Description"
 msgstr ""
 
 #: ../content/formationcenter.py:43
-#: ../content/kinesiologist.py:63
+#: ../content/kinesiologist.py:104
 msgid "Description (EN)"
 msgstr ""
 
 #: ../content/formationcenter.py:38
-#: ../content/kinesiologist.py:58
+#: ../content/kinesiologist.py:99
 msgid "Description (FR)"
 msgstr ""
 
 #: ../content/formationcenter.py:48
-#: ../content/kinesiologist.py:68
+#: ../content/kinesiologist.py:109
 msgid "Description (NL)"
 msgstr ""
 
@@ -122,8 +130,17 @@ msgid "Fax"
 msgstr ""
 
 #: ../behaviors.py:186
-#: ../content/kinesiologist.py:31
+#: ../content/kinesiologist.py:72
 msgid "Firstname"
+msgstr ""
+
+#: ../browser/templates/personal_bar.pt:53
+msgid "Followed members"
+msgstr ""
+
+#: ../browser/templates/kinesiologist-fields.pt:50
+#: ../content/kinesiologist.py:126
+msgid "Followed trainings"
 msgstr ""
 
 #: ../behaviors.py:137
@@ -131,7 +148,7 @@ msgstr ""
 msgid "France"
 msgstr ""
 
-#: ../content/kinesiologist.py:36
+#: ../content/kinesiologist.py:77
 msgid "Gender"
 msgstr ""
 
@@ -144,8 +161,12 @@ msgstr ""
 msgid "Hide email address"
 msgstr ""
 
-#: ../vocabulary.py:158
+#: ../vocabulary.py:164
 msgid "Honoured Member"
+msgstr ""
+
+#: ../content/formationfbk.py:32
+msgid "Hours"
 msgstr ""
 
 #: ../content/formationevent.py:72
@@ -168,20 +189,25 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: ../content/kinesiologist.py:43
+#: ../content/kinesiologist.py:84
 msgid "Language(s)"
 msgstr ""
 
 #: ../behaviors.py:181
-#: ../content/kinesiologist.py:26
+#: ../content/kinesiologist.py:67
 msgid "Lastname"
 msgstr ""
 
+#: ../table/managementcolumns.py:25
+msgid "Lastname & firstname"
+msgstr ""
+
 #: ../content/formation.py:37
+#: ../content/kinesiologist.py:57
 msgid "Lesson"
 msgstr ""
 
-#: ../content/formationfbk.py:41
+#: ../content/formationfbk.py:57
 msgid "Lessons"
 msgstr ""
 
@@ -202,7 +228,11 @@ msgstr ""
 msgid "Member Training"
 msgstr ""
 
-#: ../content/kinesiologist.py:50
+#: ../table/templates/member-management.pt:5
+msgid "Member management"
+msgstr ""
+
+#: ../content/kinesiologist.py:91
 msgid "Member type"
 msgstr ""
 
@@ -210,8 +240,19 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
+#: ../browser/templates/kinesiologist-fields.pt:54
+#: ../content/kinesiologist.py:116
+msgid "Membership Fee"
+msgstr ""
+
+#: ../table/managementcolumns.py:55
+#: ../table/templates/member-management.pt:34
+msgid "Membership fee"
+msgstr ""
+
 #: ../content/formation.py:26
 #: ../content/formationcenter.py:26
+#: ../content/formationfbk.py:27
 msgid "Name"
 msgstr ""
 
@@ -228,8 +269,28 @@ msgstr ""
 msgid "No address given"
 msgstr ""
 
+#: ../table/view.py:31
+msgid "No result for selected filters"
+msgstr ""
+
+#: ../table/managementcolumns.py:60
+#: ../table/view.py:45
+#: ../vocabulary.py:185
+msgid "Non paid"
+msgstr ""
+
 #: ../exception.py:18
 msgid "Not unique email address"
+msgstr ""
+
+#: ../table/managementcolumns.py:59
+#: ../table/view.py:44
+#: ../vocabulary.py:184
+msgid "Paid"
+msgstr ""
+
+#: ../content/kinesiologist.py:40
+msgid "Payment"
 msgstr ""
 
 #: ../browser/templates/personal_bar.pt:30
@@ -270,8 +331,16 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
-#: ../content/formationfbk.py:35
+#: ../content/formationfbk.py:51
 msgid "Text"
+msgstr ""
+
+#: ../content/exception.py:21
+msgid "There is a duplicated followed training"
+msgstr ""
+
+#: ../content/exception.py:17
+msgid "There is a duplicated membership fee for a year"
 msgstr ""
 
 #: ../faceted/templates/faceted-items.pt:44
@@ -287,7 +356,7 @@ msgid "There is no trainings in the next months"
 msgstr ""
 
 #: ../content/address.py:33
-#: ../content/formationfbk.py:25
+#: ../content/formationfbk.py:41
 msgid "Title"
 msgstr ""
 
@@ -315,6 +384,14 @@ msgstr ""
 msgid "Training FBK"
 msgstr ""
 
+#: ../table/managementcolumns.py:72
+msgid "Training Hours"
+msgstr ""
+
+#: ../table/templates/member-management.pt:57
+msgid "Training hours (under)"
+msgstr ""
+
 #: ../content/formationcenter.py:32
 msgid "Training language(s)"
 msgstr ""
@@ -327,8 +404,18 @@ msgstr ""
 msgid "Trainings proposed"
 msgstr ""
 
+#: ../table/templates/member-management.pt:63
+msgid "Update"
+msgstr ""
+
 #: ../behaviors.py:81
 msgid "Website"
+msgstr ""
+
+#: ../content/kinesiologist.py:33
+#: ../table/managementcolumns.py:43
+#: ../table/templates/member-management.pt:11
+msgid "Year"
 msgstr ""
 
 #: ../behaviors.py:118
