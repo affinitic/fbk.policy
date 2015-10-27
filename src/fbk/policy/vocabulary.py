@@ -185,3 +185,33 @@ class MembershipFeePayment(grok.GlobalUtility):
             False: _(u'Non paid'),
         }
         return dict_2_vocabulary(values)
+
+
+class FormationHours(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.membership.trainings.hours')
+
+    def __call__(self, context):
+        if context == NO_VALUE or isinstance(context, dict):
+            root = utils.get_navigation_root()
+        else:
+            root = api.portal.get_navigation_root(context)
+        brains = api.content.find(
+            context=root,
+            portal_type='FormationFBK',
+        )
+
+        terms = []
+        normalizer = getUtility(IIDNormalizer)
+        for b in brains:
+            obj = b.getObject()
+            if not obj.lessons:
+                continue
+            for lesson in obj.lessons:
+                lesson_id = normalizer.normalize(lesson['title'])
+                terms.append(SimpleVocabulary.createTerm(
+                    '{0}|{1}'.format(b.id, lesson_id),
+                    '{0}|{1}'.format(b.id, lesson_id),
+                    lesson['hours'],
+                ))
+        return SimpleVocabulary(terms)

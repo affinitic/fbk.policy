@@ -1,0 +1,69 @@
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="fbk.policy">
+  <body>
+    <div metal:fill-slot="main" id="management">
+      <h1 i18n:translate="" class="documentFirstHeading">Member management</h1>
+      <form id="faceted-form" action="" method="get"
+            tal:attributes="action view/url">
+        <div id="top-area"><div id="faceted-top-column"><div>
+          <div class="faceted-widget">
+            <fieldset class="widget-fieldset">
+              <legend i18n:translate="">Year</legend>
+              <select id="year" name="year">
+                <tal:while repeat="year view/get_years">
+                <tal:if condition="python: view.request.get('year') == year">
+                <option value=""
+                        tal:attributes="value year"
+                        tal:content="year"
+                        selected="selected">
+                </option>
+                </tal:if>
+                <tal:if condition="not: python: view.request.get('year') == year">
+                <option value=""
+                        tal:attributes="value year"
+                        tal:content="year">
+                </option>
+                </tal:if>
+                </tal:while>
+              </select>
+            </fieldset>
+          </div>
+          <div class="faceted-widget">
+            <fieldset class="widget-fieldset">
+              <legend i18n:translate="">Membership fee</legend>
+              <select id="payment" name="payment">
+                <tal:while repeat="payment view/get_membership_fees">
+                <tal:if condition="python: view.request.get('payment') == payment[1]">
+                <option value=""
+                        tal:attributes="value python: payment[1]"
+                        tal:content="python: payment[0]"
+                        selected="selected">
+                </option>
+                </tal:if>
+                <tal:if condition="not: python: view.request.get('payment') == payment[1]">
+                <option value=""
+                        tal:attributes="value python: payment[1]"
+                        tal:content="python: payment[0]">
+                </option>
+                </tal:if>
+                </tal:while>
+
+              </select>
+            </fieldset>
+          </div>
+          <div class="faceted-widget">
+            <fieldset class="widget-fieldset">
+              <legend i18n:translate="" class="hours">Training hours</legend>
+              <input id="hours" name="hours" value=""
+                     tal:attributes="value view/hours" />
+            </fieldset>
+          </div>
+        </div></div></div>
+        <input type="submit" value="Update"
+               i18n:attributes="value Update"
+               id="submit" />
+      </form>
+      <div class="content" tal:content="structure view/get_table_render"></div>
+    </div>
+  </body>
+</html>

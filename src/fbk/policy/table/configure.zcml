@@ -1,0 +1,16 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:grok="http://namespaces.zope.org/grok">
+
+  <grok:grok package=".management" />
+  <grok:grok package=".managementcolumns" />
+
+  <browser:page
+    for="*"
+    permission="cmf.ManagePortal"
+    class=".view.MemberManagementView"
+    name="member-management"
+    template="templates/member-management.pt"
+    />
+
+</configure>
