@@ -9,16 +9,17 @@
           <div class="faceted-widget">
             <fieldset class="widget-fieldset">
               <legend i18n:translate="">Year</legend>
-              <select id="year" name="year">
+              <select id="year" name="year"
+                      tal:define="selected_year python:view.request.get('year')">
                 <tal:while repeat="year view/get_years">
-                <tal:if condition="python: view.request.get('year') == year">
+                <tal:if condition="python: selected_year == str(year)">
                 <option value=""
                         tal:attributes="value year"
                         tal:content="year"
                         selected="selected">
                 </option>
                 </tal:if>
-                <tal:if condition="not: python: view.request.get('year') == year">
+                <tal:if condition="python: selected_year != str(year)">
                 <option value=""
                         tal:attributes="value year"
                         tal:content="year">
@@ -53,7 +54,7 @@
           </div>
           <div class="faceted-widget">
             <fieldset class="widget-fieldset">
-              <legend i18n:translate="" class="hours">Training hours</legend>
+              <legend i18n:translate="" class="hours">Training hours (under)</legend>
               <input id="hours" name="hours" value=""
                      tal:attributes="value view/hours" />
             </fieldset>
