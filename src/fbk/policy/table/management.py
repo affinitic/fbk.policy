@@ -115,10 +115,17 @@ class ManagementTable(SequenceTable):
         values.sort(key=lambda x: x.name)
         return values
 
+    def get_vocabulary(self, name):
+        factory = getUtility(IVocabularyFactory, name)
+        return factory(self.context)
+
     def update(self):
-        voc = getUtility(IVocabularyFactory,
-                         'fbk.policy.membership.trainings.hours')
-        self.vocabulary = voc(self.context)
+        self.vocabulary = self.get_vocabulary(
+            'fbk.policy.membership.trainings.hours',
+        )
+        self.payments = self.get_vocabulary(
+            'fbk.policy.membership.fee.payment',
+        )
         self.year = int(self.request.get('year', datetime.now().year))
         try:
             self.hours = float(self.request.get('hours', 0))

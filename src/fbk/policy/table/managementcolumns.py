@@ -12,6 +12,7 @@ from five import grok
 from z3c.table import column
 from z3c.table.interfaces import IColumn
 from zope.interface import Interface
+from zope.i18n import translate
 
 from fbk.policy import _
 from fbk.policy.table.interfaces import IManagementTable
@@ -55,13 +56,9 @@ class CotisationColumn(column.GetAttrColumn, grok.MultiAdapter):
     header = _(u'Membership fee')
     weight = 20
 
-    _membership_fee_values = {
-        True: _(u'Paid'),
-        False: _(u'Non paid'),
-    }
-
     def renderCell(self, item):
-        return self._membership_fee_values.get(item.membership_fee)
+        value = self.table.payments.getTerm(item.membership_fee).title
+        return translate(value, context=self.request)
 
 
 class TrainingHoursColumn(column.GetAttrColumn, grok.MultiAdapter):
