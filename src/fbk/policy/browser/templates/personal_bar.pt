@@ -49,6 +49,12 @@
                Manage training centers
             </a>
         </li>
+        <li>
+            <a href=""
+               tal:attributes="href string:${view/root_url}/@@member-management"
+               i18n:translate="">
+               Followed members
+            </a>
         </tal:block>
     </ul>
   </dd>
