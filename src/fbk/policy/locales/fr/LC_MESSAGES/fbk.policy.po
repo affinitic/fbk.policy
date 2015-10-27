@@ -41,7 +41,7 @@ msgstr "Informations sur la personne responsable"
 
 #: ../table/view.py:43
 msgid "All"
-msgstr ""
+msgstr "Tous"
 
 #: ../behaviors.py:136
 #: ../content/address.py:66
@@ -92,7 +92,7 @@ msgstr "Pays"
 
 #: ../content/kinesiologist.py:49
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #: ../content/formation.py:43
 #: ../content/formationfbk.py:46
@@ -133,12 +133,12 @@ msgstr "Prénom"
 
 #: ../browser/templates/personal_bar.pt:53
 msgid "Followed members"
-msgstr ""
+msgstr "Suivi des membres"
 
 #: ../browser/templates/kinesiologist-fields.pt:50
 #: ../content/kinesiologist.py:126
 msgid "Followed trainings"
-msgstr ""
+msgstr "Formations suivies"
 
 #: ../behaviors.py:137
 #: ../content/address.py:67
@@ -164,7 +164,7 @@ msgstr "Membre d'honneur"
 
 #: ../content/formationfbk.py:32
 msgid "Hours"
-msgstr ""
+msgstr "Heures"
 
 #: ../content/formationevent.py:72
 msgid "Instructor"
@@ -197,7 +197,7 @@ msgstr "Nom"
 
 #: ../table/managementcolumns.py:25
 msgid "Lastname & firstname"
-msgstr ""
+msgstr "Nom & prénom"
 
 #: ../content/formation.py:37
 #: ../content/kinesiologist.py:57
@@ -227,7 +227,7 @@ msgstr "Formation proposée"
 
 #: ../table/templates/member-management.pt:5
 msgid "Member management"
-msgstr ""
+msgstr "Gestion des membres"
 
 #: ../content/kinesiologist.py:91
 msgid "Member type"
@@ -240,12 +240,12 @@ msgstr "Membres"
 #: ../browser/templates/kinesiologist-fields.pt:54
 #: ../content/kinesiologist.py:116
 msgid "Membership Fee"
-msgstr ""
+msgstr "Cotisation"
 
 #: ../table/managementcolumns.py:55
 #: ../table/templates/member-management.pt:34
 msgid "Membership fee"
-msgstr ""
+msgstr "Cotisation"
 
 #: ../content/formation.py:26
 #: ../content/formationcenter.py:26
@@ -268,13 +268,13 @@ msgstr "Aucune adresse renseignée"
 
 #: ../table/view.py:31
 msgid "No result for selected filters"
-msgstr ""
+msgstr "Aucun résultat pour les filtres sélectionnés"
 
 #: ../table/managementcolumns.py:60
 #: ../table/view.py:45
 #: ../vocabulary.py:185
 msgid "Non paid"
-msgstr ""
+msgstr "Non payée"
 
 #: ../exception.py:18
 msgid "Not unique email address"
@@ -284,11 +284,11 @@ msgstr "L'adresse email n'est pas unique"
 #: ../table/view.py:44
 #: ../vocabulary.py:184
 msgid "Paid"
-msgstr ""
+msgstr "Payée"
 
 #: ../content/kinesiologist.py:40
 msgid "Payment"
-msgstr ""
+msgstr "Paiement"
 
 #: ../browser/templates/personal_bar.pt:30
 msgid "Personal informations"
@@ -334,11 +334,11 @@ msgstr "Texte"
 
 #: ../content/exception.py:21
 msgid "There is a duplicated followed training"
-msgstr ""
+msgstr "Il existe une formation suivie dupliquée"
 
 #: ../content/exception.py:17
 msgid "There is a duplicated membership fee for a year"
-msgstr ""
+msgstr "Il existe une cotisation dupliquée pour une année"
 
 #: ../faceted/templates/faceted-items.pt:44
 msgid "There is no result for the selected filters"
@@ -383,11 +383,11 @@ msgstr "Formation reconnue FBK"
 
 #: ../table/managementcolumns.py:72
 msgid "Training Hours"
-msgstr ""
+msgstr "Heures de formation"
 
 #: ../table/templates/member-management.pt:57
 msgid "Training hours (under)"
-msgstr ""
+msgstr "Heures de formation (en dessous)"
 
 #: ../content/formationcenter.py:32
 msgid "Training language(s)"
@@ -403,7 +403,7 @@ msgstr "Formations proposées"
 
 #: ../table/templates/member-management.pt:63
 msgid "Update"
-msgstr ""
+msgstr "Mise à jour"
 
 #: ../behaviors.py:81
 msgid "Website"
@@ -413,7 +413,7 @@ msgstr "Site internet"
 #: ../table/managementcolumns.py:43
 #: ../table/templates/member-management.pt:11
 msgid "Year"
-msgstr ""
+msgstr "Année"
 
 #: ../behaviors.py:118
 #: ../content/address.py:48
