@@ -110,7 +110,7 @@ class IKinesiologist(IPerson):
         required=False,
     )
 
-    form.write_permission(member_type='cmf.ManagePortal')
+    form.write_permission(membership_fees='cmf.ManagePortal')
     form.widget(membership_fees='collective.z3cform.datagridfield.DataGridFieldFactory')
     membership_fees = schema.List(
         title=_(u'Membership Fee'),
