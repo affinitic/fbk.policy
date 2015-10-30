@@ -17,8 +17,11 @@ from plone.dexterity.schema import DexteritySchemaPolicy
 from plone.supermodel import model
 from zope import schema
 from zope.interface import Interface
+from zope.interface import invariant
 
 from fbk.policy import _
+from fbk.policy import utils
+from fbk.policy.content import exception
 
 
 class ILesson(Interface):
@@ -61,6 +64,13 @@ class IFormationFBK(model.Schema):
         ),
         required=False,
     )
+
+    @invariant
+    def lessons_unicity(obj):
+        value = utils.get_invariant_data(obj, 'lessons')
+        if value is not None:
+            if len(value) > len(set([e.get('title') for e in value])):
+                raise exception.LessonDuplicated
 
 
 class FormationFBK(Item):

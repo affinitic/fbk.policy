@@ -19,3 +19,7 @@ class MembershipFeeDuplicated(ValidationError):
 
 class FollowedTrainingDuplicated(ValidationError):
     __doc__ = _(u'There is a duplicated followed training')
+
+
+class LessonDuplicated(ValidationError):
+    __doc__ = _(u'There is a duplicated lesson')
