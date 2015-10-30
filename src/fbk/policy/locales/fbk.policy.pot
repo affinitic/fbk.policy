@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-27 20:36+0000\n"
+"POT-Creation-Date: 2015-10-30 11:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,7 +98,7 @@ msgid "Date"
 msgstr ""
 
 #: ../content/formation.py:43
-#: ../content/formationfbk.py:46
+#: ../content/formationfbk.py:49
 msgid "Description"
 msgstr ""
 
@@ -165,7 +165,7 @@ msgstr ""
 msgid "Honoured Member"
 msgstr ""
 
-#: ../content/formationfbk.py:32
+#: ../content/formationfbk.py:35
 msgid "Hours"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "Lastname"
 msgstr ""
 
-#: ../table/managementcolumns.py:25
+#: ../table/managementcolumns.py:26
 msgid "Lastname & firstname"
 msgstr ""
 
@@ -207,7 +207,7 @@ msgstr ""
 msgid "Lesson"
 msgstr ""
 
-#: ../content/formationfbk.py:57
+#: ../content/formationfbk.py:60
 msgid "Lessons"
 msgstr ""
 
@@ -245,14 +245,14 @@ msgstr ""
 msgid "Membership Fee"
 msgstr ""
 
-#: ../table/managementcolumns.py:55
+#: ../table/managementcolumns.py:56
 #: ../table/templates/member-management.pt:34
 msgid "Membership fee"
 msgstr ""
 
 #: ../content/formation.py:26
 #: ../content/formationcenter.py:26
-#: ../content/formationfbk.py:27
+#: ../content/formationfbk.py:30
 msgid "Name"
 msgstr ""
 
@@ -273,7 +273,6 @@ msgstr ""
 msgid "No result for selected filters"
 msgstr ""
 
-#: ../table/managementcolumns.py:60
 #: ../table/view.py:45
 #: ../vocabulary.py:185
 msgid "Non paid"
@@ -283,7 +282,6 @@ msgstr ""
 msgid "Not unique email address"
 msgstr ""
 
-#: ../table/managementcolumns.py:59
 #: ../table/view.py:44
 #: ../vocabulary.py:184
 msgid "Paid"
@@ -331,12 +329,16 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
-#: ../content/formationfbk.py:51
+#: ../content/formationfbk.py:54
 msgid "Text"
 msgstr ""
 
 #: ../content/exception.py:21
 msgid "There is a duplicated followed training"
+msgstr ""
+
+#: ../content/exception.py:25
+msgid "There is a duplicated lesson"
 msgstr ""
 
 #: ../content/exception.py:17
@@ -356,7 +358,7 @@ msgid "There is no trainings in the next months"
 msgstr ""
 
 #: ../content/address.py:33
-#: ../content/formationfbk.py:41
+#: ../content/formationfbk.py:44
 msgid "Title"
 msgstr ""
 
@@ -384,7 +386,7 @@ msgstr ""
 msgid "Training FBK"
 msgstr ""
 
-#: ../table/managementcolumns.py:72
+#: ../table/managementcolumns.py:69
 msgid "Training Hours"
 msgstr ""
 
@@ -413,7 +415,7 @@ msgid "Website"
 msgstr ""
 
 #: ../content/kinesiologist.py:33
-#: ../table/managementcolumns.py:43
+#: ../table/managementcolumns.py:44
 #: ../table/templates/member-management.pt:11
 msgid "Year"
 msgstr ""
