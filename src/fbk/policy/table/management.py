@@ -64,8 +64,11 @@ class Member(object):
         trainings = [e.get('training') for e in obj.followed_trainings
                      if e.get('date').year == self.year]
         for training in trainings:
-            term = self.vocabulary.getTerm(training)
-            value += term.title
+            try:
+                term = self.vocabulary.getTerm(training)
+                value += term.title
+            except LookupError:
+                value += 0
         return value
 
 
