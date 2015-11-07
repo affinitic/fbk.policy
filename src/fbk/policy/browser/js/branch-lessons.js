@@ -3,7 +3,7 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
     var select = this;
     var options = [];
     $(select).find('option').each(function() {
-      options.push({value: $(this).val(), text: $(this).text()});
+      options.push({value: $(this).val(), text: $(this).text(), selected: $(this).attr('selected')});
     });
     $(select).data('options', options);
     $(textbox).bind('change', function() {
@@ -14,9 +14,15 @@ jQuery.fn.filterByText = function(textbox, selectSingleMatch) {
       $.each(options, function(i) {
         var option = options[i];
         if(option.value.match(regex) !== null) {
-          $(select).append(
-             $('<option>').text(option.text).val(option.value)
-          );
+          if(option.selected == 'selected') {
+            $(select).append(
+               $('<option>').text(option.text).val(option.value).attr('selected', 'selected')
+            );
+          } else {
+            $(select).append(
+               $('<option>').text(option.text).val(option.value)
+            );
+          }
         }
       });
       if (selectSingleMatch === true &&
