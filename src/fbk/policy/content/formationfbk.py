@@ -31,10 +31,10 @@ class ILesson(Interface):
         required=True,
     )
 
-    hours = schema.Int(
+    hours = schema.Float(
         title=_(u'Hours'),
         required=True,
-        default=0,
+        default=0.0,
     )
 
 
