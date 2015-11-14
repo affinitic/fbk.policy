@@ -48,7 +48,7 @@ class IFollowedTraining(Interface):
     date = schema.Date(
         title=_(u'Date'),
         required=True,
-        min=datetime(2015, 1, 1).date(),
+        min=datetime(1990, 1, 1).date(),
         max=datetime.now().date(),
         default=datetime.now().date(),
     )
