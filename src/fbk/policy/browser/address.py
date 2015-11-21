@@ -12,6 +12,6 @@ from fbk.policy.browser.base import DefaultFieldsView
 
 
 class AddressListingView(DefaultFieldsView):
-    excluded_fields = (
+    exclude_fields = (
         'title',
     )

@@ -13,7 +13,7 @@ from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
 class FormationView(DefaultFieldsView):
-    excluded_fields = (
+    exclude_fields = (
         'title',
         'fbk_formation',
         'description',

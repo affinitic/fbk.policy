@@ -67,7 +67,7 @@
   <browser:page
     name="kinesiologistlisting-fields"
     for="fbk.policy.content.kinesiologist.IKinesiologist"
-    class=".kinesiologist.KinesiologistFieldsView"
+    class=".kinesiologist.KinesiologistFieldsListingView"
     template="templates/kinesiologistlisting-fields.pt"
     permission="zope2.View"
     />

@@ -13,7 +13,7 @@ from fbk.policy.content.formationcenterfolder import IFormationCenterFolder
 
 
 class FormationEventView(DefaultFieldsView):
-    excluded_fields = [
+    exclude_fields = [
         'start_date',
         'end_date',
         'second_start_date',

@@ -130,7 +130,8 @@ class BaseMembraneFolder(DefaultView):
 
 
 class DefaultFieldsView(DefaultView):
-    excluded_fields = []
+    exclude_fields = []
+    exclude_widgets = []
 
     @property
     def description(self):
@@ -140,8 +141,11 @@ class DefaultFieldsView(DefaultView):
 
     def updateWidgets(self):
         self.excluded_widgets = {}
+        for field in self.exclude_fields:
+            if field in self.fields:
+                del self.fields[field]
         super(DefaultFieldsView, self).updateWidgets()
-        for field in self.excluded_fields:
+        for field in self.exclude_widgets:
             if field in self.widgets:
                 self.excluded_widgets[field] = self.widgets[field]
                 del self.widgets[field]

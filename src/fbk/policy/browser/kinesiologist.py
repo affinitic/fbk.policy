@@ -27,7 +27,7 @@ class KinesiologistTraverserEditView(TraverserEditView):
 
 
 class KinesiologistFieldsView(DefaultFieldsView):
-    excluded_fields = (
+    exclude_fields = (
         'lastname',
         'firstname',
         'gender',
@@ -36,6 +36,8 @@ class KinesiologistFieldsView(DefaultFieldsView):
         'description_fr',
         'description_en',
         'description_nl',
+    )
+    exclude_widgets = (
         'membership_fees',
         'followed_trainings',
     )
@@ -86,6 +88,21 @@ class KinesiologistFieldsView(DefaultFieldsView):
         user = api.user.get_current()
         user_roles = api.user.get_roles(user=user, obj=self.context)
         return 'Manager' in user_roles
+
+
+class KinesiologistFieldsListingView(KinesiologistFieldsView):
+    exclude_fields = (
+        'lastname',
+        'firstname',
+        'gender',
+        'photo',
+        'member_type',
+        'description_fr',
+        'description_en',
+        'description_nl',
+        'membership_fees',
+        'followed_trainings',
+    )
 
 
 class KinesiologistImages(BaseMembraneFolder):

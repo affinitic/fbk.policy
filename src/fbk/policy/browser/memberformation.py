@@ -13,7 +13,7 @@ from fbk.policy.content.kinesiologistfolder import IKinesiologistFolder
 
 
 class MemberFormationView(DefaultFieldsView):
-    excluded_fields = (
+    exclude_fields = (
         'title',
         'description',
     )

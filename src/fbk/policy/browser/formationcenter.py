@@ -24,7 +24,7 @@ class FormationCenterTraverserEditView(TraverserEditView):
 
 
 class FormationCenterFieldsView(DefaultFieldsView):
-    excluded_fields = (
+    exclude_fields = (
         'name',
         'description_fr',
         'description_en',
