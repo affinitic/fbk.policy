@@ -66,6 +66,6 @@ class TrainingHoursColumn(column.GetAttrColumn, grok.MultiAdapter):
     grok.name('training-hours')
     grok.adapts(Interface, Interface, IManagementTable)
 
-    header = _(u'Training Hours')
+    header = _(u'Training Hours (last 3 years)')
     weight = 30
     attrName = 'hours'

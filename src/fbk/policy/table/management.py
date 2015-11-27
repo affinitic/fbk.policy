@@ -57,18 +57,22 @@ class Member(object):
     def _url(self, obj):
         return obj.absolute_url()
 
+    @property
+    def year_range(self):
+        return range(self.year - 3, self.year)
+
     def _hours(self, obj):
         if not obj.followed_trainings:
-            return 0
-        value = 0
+            return 0.0
+        value = 0.0
         trainings = [e.get('training') for e in obj.followed_trainings
-                     if e.get('date').year == self.year]
+                     if e.get('date').year in self.year_range]
         for training in trainings:
             try:
                 term = self.vocabulary.getTerm(training)
                 value += term.title
             except LookupError:
-                value += 0
+                value += 0.0
         return value
 
 
