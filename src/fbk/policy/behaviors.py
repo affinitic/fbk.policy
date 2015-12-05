@@ -19,8 +19,11 @@ from five import grok
 from plone import api
 from plone.app.dexterity import MessageFactory as DX_MF
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel.directives import fieldset
+from z3c.form.interfaces import IEditForm
+from z3c.form.interfaces import IAddForm
 from zope import schema
 from zope.interface import Interface
 from zope.interface import alsoProvides
@@ -226,3 +229,10 @@ class IDefaultExcludeFromNavigation(IExcludeFromNavigation):
         ),
         default=True
     )
+
+    form.omitted('exclude_from_nav')
+    form.no_omit(IEditForm, 'exclude_from_nav')
+    form.no_omit(IAddForm, 'exclude_from_nav')
+
+
+alsoProvides(IDefaultExcludeFromNavigation, IFormFieldProvider)
