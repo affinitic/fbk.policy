@@ -13,6 +13,8 @@ from datetime import datetime
 from five import grok
 from plone import api
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone.memoize import ram
+from time import time
 from z3c.form.interfaces import NO_VALUE
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
@@ -34,21 +36,24 @@ class FBKFormations(grok.GlobalUtility):
     grok.name('fbk.policy.fbkformations.vocabulary')
 
     def __call__(self, context):
-        root = api.portal.get_navigation_root(context)
-        brains = api.content.find(
-            context=root,
-            portal_type='FormationFBK',
-            review_state='published',
-        )
-
         terms = []
-        for b in brains:
+        for b in fbk_formations_query(context):
             terms.append(SimpleVocabulary.createTerm(
                 b.id,
                 b.id,
                 b.Title,
             ))
         return SimpleVocabulary(terms)
+
+
+@ram.cache(lambda *args: time() // 10)
+def fbk_formations_query(context):
+    root = api.portal.get_navigation_root(context)
+    return api.content.find(
+        context=root,
+        portal_type='FormationFBK',
+        review_state='published',
+    )
 
 
 class FBKFormationCenters(grok.GlobalUtility):
@@ -56,20 +61,23 @@ class FBKFormationCenters(grok.GlobalUtility):
     grok.name('fbk.policy.fbkformationcenters.vocabulary')
 
     def __call__(self, context):
-        root = api.portal.get_navigation_root(context)
-        brains = api.content.find(
-            context=root,
-            portal_type='FormationCenterFolder',
-        )
-
         terms = []
-        for b in brains:
+        for b in fbk_formation_centers_query(context):
             terms.append(SimpleVocabulary.createTerm(
                 b.id,
                 b.id,
                 b.Title,
             ))
         return SimpleVocabulary(terms)
+
+
+@ram.cache(lambda *args: time() // 10)
+def fbk_formation_centers_query(context):
+    root = api.portal.get_navigation_root(context)
+    return api.content.find(
+        context=root,
+        portal_type='FormationCenterFolder',
+    )
 
 
 class FBKLanguages(grok.GlobalUtility):
@@ -126,30 +134,34 @@ class FormationCategories(grok.GlobalUtility):
     grok.name('fbk.policy.formation.categories')
 
     def __call__(self, context):
-        if context == NO_VALUE or isinstance(context, dict):
-            root = utils.get_navigation_root()
-        else:
-            root = api.portal.get_navigation_root(context)
-        brains = api.content.find(
-            context=root,
-            portal_type='FormationFBK',
-            review_state='published',
-        )
-
         terms = []
         normalizer = getUtility(IIDNormalizer)
-        for b in brains:
-            obj = b.getObject()
+        for obj in formation_categories_query(context):
             if not obj.lessons:
                 continue
             for lesson in obj.lessons:
                 lesson_id = normalizer.normalize(lesson['title'])
                 terms.append(SimpleVocabulary.createTerm(
-                    '{0}|{1}'.format(b.id, lesson_id),
-                    '{0}|{1}'.format(b.id, lesson_id),
+                    '{0}|{1}'.format(obj.id, lesson_id),
+                    '{0}|{1}'.format(obj.id, lesson_id),
                     lesson['title'],
                 ))
         return SimpleVocabulary(terms)
+
+
+@ram.cache(lambda *args: time() // 10)
+def formation_categories_query(context):
+    if context == NO_VALUE or isinstance(context, dict):
+        root = utils.get_navigation_root()
+    else:
+        root = api.portal.get_navigation_root(context)
+    brains = api.content.find(
+        context=root,
+        portal_type='FormationFBK',
+        review_state='published',
+    )
+
+    return [b.getObject() for b in brains]
 
 
 class KinesiologistCategories(grok.GlobalUtility):
@@ -192,26 +204,29 @@ class FormationHours(grok.GlobalUtility):
     grok.name('fbk.policy.membership.trainings.hours')
 
     def __call__(self, context):
-        if context == NO_VALUE or isinstance(context, dict):
-            root = utils.get_navigation_root()
-        else:
-            root = api.portal.get_navigation_root(context)
-        brains = api.content.find(
-            context=root,
-            portal_type='FormationFBK',
-        )
-
         terms = []
         normalizer = getUtility(IIDNormalizer)
-        for b in brains:
-            obj = b.getObject()
+        for obj in formation_hours_query(context):
             if not obj.lessons:
                 continue
             for lesson in obj.lessons:
                 lesson_id = normalizer.normalize(lesson['title'])
                 terms.append(SimpleVocabulary.createTerm(
-                    '{0}|{1}'.format(b.id, lesson_id),
-                    '{0}|{1}'.format(b.id, lesson_id),
+                    '{0}|{1}'.format(obj.id, lesson_id),
+                    '{0}|{1}'.format(obj.id, lesson_id),
                     lesson['hours'],
                 ))
         return SimpleVocabulary(terms)
+
+
+@ram.cache(lambda *args: time() // 10)
+def formation_hours_query(context):
+    if context == NO_VALUE or isinstance(context, dict):
+        root = utils.get_navigation_root()
+    else:
+        root = api.portal.get_navigation_root(context)
+    brains = api.content.find(
+        context=root,
+        portal_type='FormationFBK',
+    )
+    return [b.getObject() for b in brains]
