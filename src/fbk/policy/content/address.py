@@ -14,7 +14,6 @@ from plone.dexterity.content import Item
 from plone.dexterity.schema import DexteritySchemaPolicy
 from plone.supermodel import model
 from zope import schema
-from zope.schema.vocabulary import SimpleVocabulary
 
 from fbk.policy import _
 from fbk.policy.form.zip import Zip
@@ -62,14 +61,8 @@ class IAddress(model.Schema):
     country = schema.Choice(
         title=_(u'Country'),
         required=True,
-        vocabulary=SimpleVocabulary.fromValues([
-            _(u'Belgium'),
-            _(u'France'),
-            _(u'Luxembourg'),
-            _(u'Germany'),
-            _(u'Nederland'),
-        ]),
-        default=_(u'Belgium'),
+        vocabulary='fbk.policy.countries',
+        default=u'Belgium',
     )
 
 

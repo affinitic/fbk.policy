@@ -37,4 +37,9 @@
         <indexed_attr value="provinces"/>
     </index>
     <column value="provinces"/>
+
+    <index name="countries" meta_type="KeywordIndex">
+        <indexed_attr value="countries"/>
+    </index>
+    <column value="countries"/>
 </object>

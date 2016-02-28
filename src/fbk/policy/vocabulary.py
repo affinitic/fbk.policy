@@ -94,6 +94,21 @@ class FBKLanguages(grok.GlobalUtility):
         return dict_2_vocabulary(values)
 
 
+class FBKCountries(grok.GlobalUtility):
+    grok.implements(IVocabularyFactory)
+    grok.name('fbk.policy.countries')
+
+    def __call__(self, context):
+        values = {
+            'Belgium': _(u'Belgium'),
+            'France': _(u'France'),
+            'Luxembourg': _(u'Luxembourg'),
+            'Germany': _(u'Germany'),
+            'Nederland': _(u'Nederland'),
+        }
+        return dict_2_vocabulary(values)
+
+
 class FBKTrainingCheck(grok.GlobalUtility):
     grok.implements(IVocabularyFactory)
     grok.name('fbk.policy.training_checks')

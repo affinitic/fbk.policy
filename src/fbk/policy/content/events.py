@@ -135,19 +135,25 @@ def formation_event_added(event):
 @grok.subscribe(IObjectAddedEvent)
 def address_event_added(event):
     if IAddress.providedBy(event.object):
-        event.object.aq_parent.reindexObject(idxs=['provinces'])
+        event.object.aq_parent.reindexObject(
+            idxs=['provinces', 'countries']
+        )
 
 
 @grok.subscribe(IObjectModifiedEvent)
 def address_event_modified(event):
     if IAddress.providedBy(event.object):
-        event.object.aq_parent.reindexObject(idxs=['provinces'])
+        event.object.aq_parent.reindexObject(
+            idxs=['provinces', 'countries']
+        )
 
 
 @grok.subscribe(IObjectRemovedEvent)
 def address_event_removed(event):
     if IAddress.providedBy(event.object):
-        event.object.aq_parent.reindexObject(idxs=['provinces'])
+        event.object.aq_parent.reindexObject(
+            idxs=['provinces', 'countries']
+        )
 
 
 def check_membrane_contenttype(event):

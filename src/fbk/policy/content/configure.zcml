@@ -52,4 +52,9 @@
     name="SearchableText"
     />
 
+  <adapter
+    factory=".kinesiologistfolder.countries"
+    name="countries"
+    />
+
 </configure>

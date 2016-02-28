@@ -85,6 +85,16 @@ def searchable_text(obj):
     return ' '.join(decode_utf8(elements))
 
 
+@indexer(IKinesiologistFolder)
+def countries(obj):
+    brains = api.content.find(
+        context=obj,
+        portal_type='Address',
+    )
+    if brains:
+        return [b.getObject().country for b in brains]
+
+
 def decode_utf8(elements):
     for idx, element in enumerate(elements):
         try:
