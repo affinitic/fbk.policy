@@ -9,6 +9,7 @@ Created by mpeeters
 """
 
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from plone import api
 from plone.app.layout.viewlets import common
 from fbk.policy.content.formation import IFormation
@@ -123,7 +124,7 @@ class FormationEventViewlet(BaseViewlet):
 
     def update(self):
         start = datetime.now()
-        end = datetime.now().replace(year=start.year + 1)
+        end = start + relativedelta(year=+1)
         self.items = self.query(
             'FormationEvent',
             depth=2,
