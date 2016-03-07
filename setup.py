@@ -55,6 +55,7 @@ setup(
         'plone.app.multilingual',
         'plone.autoform',
         'plone.z3ctable',
+        'python-dateutil',
         'setuptools',
         'z3c.jbot',
         'z3c.table',
