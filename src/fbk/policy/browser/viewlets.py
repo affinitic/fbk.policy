@@ -126,7 +126,7 @@ class FormationEventViewlet(BaseViewlet):
         if not self.can_view():
             return
         start = datetime.now()
-        end = start + relativedelta(months=+1)
+        end = start + relativedelta(months=+12)
         self.items = self.query(
             'FormationEvent',
             depth=2,
